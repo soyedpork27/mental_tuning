@@ -115,5 +115,14 @@ main {
   border-radius : 15px;
   padding : 16px;
   box-sizing : border-box;
+  margin : 0 32px 32px 0;
 }
 
+.art-title{
+  font-size : var(--f-size03);
+}
+
+.sect-ctnt02 {
+  width : 1332px;
+  flex-wrap : wrap;
+}

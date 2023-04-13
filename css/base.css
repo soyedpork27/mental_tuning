@@ -16,7 +16,7 @@
   --f-color02: #111;
   --f-color03 : #888;
 
-  
+
   --f-size01: 32px; /*title*/
   --f-size02: 28px;
   --f-size03: 24px;
@@ -30,6 +30,6 @@
 
 body{
   font-family: 'Pretendard', '맑은 고딕', Arial, Helvetica, sans-serif;
-  font-size: var(--f-size04);
+  font-size: var(--f-size07);
   color: var(--f-color02);
 }
