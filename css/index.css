@@ -103,3 +103,17 @@ main {
 .gray {
   color : var(--f-color03);
 }
+
+#sect-title01 {
+  margin-bottom : 32px;
+}
+
+.ctnt_box02 {
+  width : 634px;
+  height : 290px;
+  background-color : #BBC2FF;
+  border-radius : 15px;
+  padding : 16px;
+  box-sizing : border-box;
+}
+
