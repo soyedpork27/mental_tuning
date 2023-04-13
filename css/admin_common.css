@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+.hidden{
+  display: none;
+}
+
+.t_wrap{
+  display: flex;
+}
+.left_box{
+  width: 250px;
+  flex: 0 0 auto;
+}
+
+/* 헤더 (메뉴바) */
+
+header{
+  position: fixed;
+  top: 0px; left: 0px;
+  width: 250px;
+  height: 100vh; 
+  background-color: #333;
+}
+header > h1{
+  text-align: center;
+}
+header > h1  img{
+  width: 160px;
+  margin-top: 24px;
+}

@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 100, 400, 600, 900;
+  font-style: normal;
+}
+
+:root{
+  --m-color: #FB4C4F;
+
+  --bg-color: #151515;
+
+  --f-color01: #fff;
+  --f-color02: #151515;
+
+  --f-size01: 32px; /*title*/
+  --f-size02: 24px;
+  --f-size03: 20px;
+  --f-size04: 16px;  /*기본*/
+
+}
+
+body{
+  font-family: 'Pretendard', '맑은 고딕', Arial, Helvetica, sans-serif;
+  font-size: var(--f-size04);
+  color: var(--f-color02);
+}
