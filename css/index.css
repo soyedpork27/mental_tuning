@@ -126,3 +126,7 @@ main {
   width : 1332px;
   flex-wrap : wrap;
 }
+
+.manage_title {
+  font-size : var(--f-size03);
+}
