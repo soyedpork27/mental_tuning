@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>회원 정보</title>
+
+  <link rel="stylesheet" href="../css/reset.css" type="text/css">
+  <link rel="stylesheet" href="../css/base.css" type="text/css">
+  <link rel="stylesheet" href="../css/admin_common.css" type="text/css">
+  <link rel="stylesheet" href="./css/mem_list.css" type="text/css">
+  
+</head>
+<body>
+  <div class="t_wrap">
+    <div class="left_box">
+      &nbsp;
+    </div>
+    <header>
+      <h1>
+        <a href="index.html" title="메인 바로가기">
+          <img src="../images/logo_w_r.png" alt="로고 이미지">
+        </a>
+      </h1>
+    </header>
+
+    <main>
+      <section id="mem_list">
+        <h2>
+          <a href="#" title="대시보드 바로가기">
+            <img src="../images/back.png" alt="뒤로가기"> 회원 정보
+          </a>
+        </h2>
+
+        <form name="" method="" action="">
+          <fieldset class="searchbox">
+              <legend class="hidden">회원 정보 검색</legend>
+              <label for="filter"><img src="../images/fillter.png" alt="필터 아이콘"></label>
+              <select name="searchfilter" id="searchfilter" class="filter">
+                <option value="검색할 항목을 선택하세요">검색할 항목을 선택하세요</option>
+                <option value="이름">이름</option>
+                <option value="이메일">이메일</option>
+                <option value="생년월일">생년월일</option>
+                <option value="성별">성별</option>
+                <option value="성별">성별</option>
+                <option value="성별">성별</option>
+                <option value="성별">성별</option>
+                <option value="성별">성별</option>
+                <option value="성별">성별</option>
+              </select>
+              <label for="search"><img src="../images/research.png" alt="검색 아이콘"></label>
+              <input type="searchbox" placeholder="검색어를 입력하세요" class="search">
+          </fieldset>
+
+          <article id="mem_list_table">
+            <h2 class="hidden">회원 정보 조회</h2>
+            <table>
+              <caption class="hidden"></caption>
+              <thead>
+                  <tr>
+                      <th><input type="checkbox" class="check_all"></th>
+                      <th>No</th>
+                      <th>이름</th>
+                      <th>이메일</th>
+                      <th>생년월일</th>
+                      <th>성별</th>
+                      <th>관심분야</th>
+                      <th>수강강좌</th>
+                      <th>개설강좌</th>
+                  </tr>
+              </thead>
+    
+              <tbody>
+                  <!--
+                    데이터 입력 할 때 사용
+                    <tr>
+                      <td><input type="checkbox" class="checkselect"></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="btn"><a href="#" title=""></a></td>
+                    </tr> -->
+
+                  <tr>
+                      <td><input type="checkbox" class="checkselect"></td>
+                      <td>1</td>
+                      <td>홍길동</td>
+                      <td>mail@naver.com</td>
+                      <td>00.00.00</td>
+                      <td>M</td>
+                      <td>어학, 재테크</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td class="btn"><a href="#" title="">관리</a></td>
+                  </tr>
+
+                  <tr>
+                      <td><input type="checkbox" class="checkselect"></td>
+                      <td>2</td>
+                      <td>홍길동</td>
+                      <td>mail@naver.com</td>
+                      <td>00.00.00</td>
+                      <td>M</td>
+                      <td>어학, 재테크</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td class="btn"><a href="#" title="">관리</a></td>
+                  </tr>
+
+                  <tr>
+                    <td><input type="checkbox" class="checkselect"></td>
+                    <td>3</td>
+                    <td>홍길동</td>
+                    <td>mail@naver.com</td>
+                    <td>00.00.00</td>
+                    <td>M</td>
+                    <td>어학, 재테크</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td class="btn"><a href="#" title="">관리</a></td>
+                  </tr> 
+
+                  <tr>
+                    <td><input type="checkbox" class="checkselect"></td>
+                    <td>4</td>
+                    <td>홍길동</td>
+                    <td>mail@naver.com</td>
+                    <td>00.00.00</td>
+                    <td>M</td>
+                    <td>어학, 재테크</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td class="btn"><a href="#" title="">관리</a></td>
+                  </tr>
+
+                  <tr>
+                    <td><input type="checkbox" class="checkselect"></td>
+                    <td>5</td>
+                    <td>홍길동</td>
+                    <td>mail@naver.com</td>
+                    <td>00.00.00</td>
+                    <td>M</td>
+                    <td>어학, 재테크</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td class="btn"><a href="#" title="">관리</a></td>
+                  </tr>
+
+                  <tr>
+                    <td><input type="checkbox" class="checkselect"></td>
+                    <td>6</td>
+                    <td>홍길동</td>
+                    <td>mail@naver.com</td>
+                    <td>00.00.00</td>
+                    <td>M</td>
+                    <td>어학, 재테크</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td class="btn"><a href="#" title="">관리</a></td>
+                  </tr>
+
+                  <tr>
+                    <td><input type="checkbox" class="checkselect"></td>
+                    <td>7</td>
+                    <td>홍길동</td>
+                    <td>mail@naver.com</td>
+                    <td>00.00.00</td>
+                    <td>M</td>
+                    <td>어학, 재테크</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td class="btn"><a href="#" title="">관리</a></td>
+                  </tr>
+
+                  <tr>
+                    <td><input type="checkbox" class="checkselect"></td>
+                    <td>8</td>
+                    <td>홍길동</td>
+                    <td>mail@naver.com</td>
+                    <td>00.00.00</td>
+                    <td>M</td>
+                    <td>어학, 재테크</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td class="btn"><a href="#" title="">관리</a></td>
+                  </tr>
+
+                  <tr>
+                    <td><input type="checkbox" class="checkselect"></td>
+                    <td>9</td>
+                    <td>홍길동</td>
+                    <td>mail@naver.com</td>
+                    <td>00.00.00</td>
+                    <td>M</td>
+                    <td>어학, 재테크</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td class="btn"><a href="#" title="">관리</a></td>
+                  </tr>
+
+                  <tr>
+                    <td><input type="checkbox" class="checkselect"></td>
+                    <td>10</td>
+                    <td>홍길동</td>
+                    <td>mail@naver.com</td>
+                    <td>00.00.00</td>
+                    <td>M</td>
+                    <td>어학, 재테크</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td class="btn"><a href="#" title="">관리</a></td>
+                  </tr>
+              </tbody>
+    
+              <tfoot>
+              </tfoot>
+            </table>
+            <ul class="pagination">
+              <li><a href="#" title=""><i class="fa fa-angle-left"></i></a></li>
+              <li><a href="#" title="" class="on">1</a></li>
+              <li><a href="#" title="">2</a></li>
+              <li><a href="#" title="">3</a></li>
+              <li><a href="#" title="">4</a></li>
+              <li><a href="#" title="">5</a></li>
+              <li><a href="#" title=""><i class="fa fa-angle-right"></i></a></li>
+            </ul>
+          </article>
+        </form>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
