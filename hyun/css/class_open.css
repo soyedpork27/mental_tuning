@@ -1,29 +1,5 @@
 @charset "utf-8";
-a{
-  text-decoration: none;
-  color: #333;
-}
-.t_wrap{
-  display: flex;
-}
-.left_box{
-  width: 250px;
-  flex: 0 0 auto;
-}
-header{
-  position: fixed;
-  top: 0px; left: 0px;
-  width: 250px;
-  height: 100vh; 
-  background-color: #333;
-}
-header > h1{
-  text-align: center;
-}
-header > h1  img{
-  width: 160px;
-  margin-top: 24px;
-}
+
 /* 메인서식 */
 main{
   width: calc(100%-250px);
