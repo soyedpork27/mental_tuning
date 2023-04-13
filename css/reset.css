@@ -17,4 +17,7 @@ blockquote:before, blockquote:after,q:before, q:after {content: '';	content: non
 /* 테이블 태그 작성시 셀과 셀과 사이 여백을 없앰.*/
 table {border-collapse: collapse;	border-spacing: 0;} 
 
-a{text-decoration: none;}
+a{
+  text-decoration: none;
+  color : #000;
+}
