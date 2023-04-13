@@ -119,7 +119,8 @@ main {
 }
 
 .art-title{
-  font-size : var(--f-size03);
+  font-size : var(--f-size02);
+  font-weight : bold;
 }
 
 .sect-ctnt02 {
@@ -130,3 +131,15 @@ main {
 .manage_title {
   font-size : var(--f-size03);
 }
+
+.manage_bar {
+  width : 550px;
+  border-radius : 25px;
+  background-color : #A3FF78;
+  height : 60px;
+  line-height : 60px;
+  padding : 0 32px;
+  box-sizing : border-box;
+  margin : 16px auto;
+}
+
