@@ -14,11 +14,16 @@
 
   --f-color01: #fff;
   --f-color02: #111;
+  --f-color03 : #888;
 
+  
   --f-size01: 32px; /*title*/
   --f-size02: 24px;
-  --f-size03: 20px;
-  --f-size04: 16px;  /*기본*/
+  --f-size03: 22px;
+  --f-size04: 20px;
+  --f-size05: 18px;
+  --f-size06: 16px;  /*기본*/
+  --f-size07: 14px;
 
 }
 
