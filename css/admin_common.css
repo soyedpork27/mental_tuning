@@ -17,12 +17,11 @@
 
 /* 헤더 (메뉴바) */
 
-
-
 .left_box{
   width: 250px;
   flex: 0 0 auto;
 }
+
 header{
   position: fixed;
   top: 0px; left: 0px;
