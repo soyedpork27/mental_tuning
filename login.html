@@ -6,37 +6,85 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+  <!-- 공통 서식 css 시작 -->
   <link rel="stylesheet" href="./css/common.css">
 
   <link rel="stylesheet" href="./css/reset.css">
 
   <link rel="stylesheet" href="./css/base.css">
+  <!-- 공통 서식 css 끝 -->
+
+  <!-- 로그인 css -->
+  <link rel="stylesheet" href="./css/login.css">
 
 
 
-  <title>로그인</title>
-
+  
   <!-- 폰트어썸 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-
+  
   <!-- 제이쿼리 CDN -->
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-  <form action="./login_db.php" name="login" method="post">
-    
-    <label for="id" class="hidden">
-      이메일
-    </label>
-    <input type="text" id="email" name="email" placeholder="이메일">
-
-    <label for="pass"></label>
-
-  </form>
-
-
-
+  
+  
+  
+  <title>로그인</title>
+  
 </head>
 <body>
+
+  <!-- 헤더 영역 시작 -->
+  <header>
+
+  </header>
+  <!-- 헤더 영역 끝 -->
+
+  <!-- 메인 영역 시작 -->
+  <main>
+    <section class="">
+
+      <article>
+        <form action="./login_db.php" name="login" method="post" class="login_form">
+        
+          <label for="id" class="hidden">
+            이메일
+          </label>
+          <input type="text" id="email" name="email" placeholder="이메일을 입력해 주세요.">
+      
+          <label for="pass" class="hidden">
+            비밀번호
+          </label>
+          <input type="password" id="password" name="password" placeholder="비밀번호를 입력해 주세요.">
+
+          <div class="login_form-find_wrap">
+            <div class="find_wrap-find_text">
+              <a href="#none" title="이메일 찾기">이메일 찾기</a>
+              <a href="#none" title="비밀번호 찾기">비밀번호 찾기</a>
+            </div>
+
+            <!-- 체크박스 -->
+            <div></div>
+
+          </div>
+
+
+      
+        </form>
+
+
+      </article>
+
+    </section>
+
+
+  </main>
+  <!-- 메인 영역 끝 -->
+
+  <!-- 푸터 영역 시작 -->
+  <footer>
+
+  </footer>
+  <!-- 푸터 영역 끝 -->
   
 </body>
 </html>
