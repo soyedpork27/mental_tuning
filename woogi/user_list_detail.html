@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>클래스 개설 신청 관리</title>
+  <link rel="stylesheet" href="../css/reset.css" type="text/css">
+  <link rel="stylesheet" href="../css/base.css" type="text/css">
+  <link rel="stylesheet" href="../css/admin_common.css" type="text/css">
+  <link rel="stylesheet" href="./css/style.css" type="text/css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="../script/script.js"></script>
+</head>
+<body>
+
+  <div class="t_wrap">
+
+    <!-- 헤더(&내비게이션)영역 -->
+    <div class="left_box">
+      &nbsp;
+    </div>
+
+    <header>
+      <h1>
+        <a href="index.html" title="메인 바로가기">
+          <img src="../images/classu_logo.png" alt="로고 이미지">
+          <p>ADMIN PAGE</p>
+        </a>
+      </h1>
+      <nav>
+        <ul class="nav-lv1">
+          <li><a href="#none"><img src="../images/icon_dashboard.png" alt="대시보드">대시보드</a></li>
+          <li><a href="#none"><img src="../images/icon_user.png" alt="회원 관리">회원 관리</a></li>
+          <li class="nav-open">
+            <a href="#none"><img src="../images/icon_class.png" alt="클래스 관리">클래스 관리</a>
+            <ul class="nav-lv2">
+              <li><a href="#none">클래스 신청내역</a></li>
+              <li><a href="#none">클래스 개설목록</a></li>
+            </ul>
+          </li>
+          <li class="nav-open">
+            <a href="#none"><img src="../images/icon_content.png" alt="콘텐츠 관리">콘텐츠 관리</a>
+            <ul class="nav-lv2">
+              <li><a href="#none">커뮤니티 관리</a></li>
+              <li><a href="#none">공지사항 관리</a></li>
+              <li><a href="#none">이벤트 관리</a></li>
+            </ul>
+          </li>
+          <li><a href="#none"><img src="../images/icon_customer.png" alt="고객지원 관리">고객지원 관리</a></li>
+        </ul>
+
+        <div class="logout_btn"><a href="#none"><img src="../images/icon_logout.png" alt="로그아웃">로그아웃</a></div>
+      </nav>
+    </header>
+
+    <!-- 메인영역 -->
+    <main>
+      <section>
+        <!-- 페이지 타이틀 -->
+        <h2>
+          <a href="#none" title="대쉬보드 바로가기">
+            <img src="../images/back.png" alt="뒤로가기">
+          </a>
+          <a href="#none">회원 관리</a>
+        </h2>
+
+        <!-- 회원정보 아티클 -->
+        <article class="box user-info">
+          <h3 class="profile-title">회원 정보</h3>
+
+            <div class="user-wrap-top">
+              <div class="profile-flex">
+                <div class="user-profile">
+                  <div class="profile-circle">
+                    <img src="./images/user_profile.png" alt="일반회원 프로필사진">
+                  </div>
+                  <p class="profile-name">홍길동</p>
+                </div>
+                <div class="tutor-profile">
+                  <div class="profile-circle">
+                    <img src="./images/user_profile.png" alt="강사회원 프로필사진">
+                  </div>
+                  <p class="profile-name">코딩선생님</p>
+                </div>
+
+            <!-- 프로필 테이블 -->
+              <div>
+                <table class="profile-table">
+                  <colgroup>
+                  <col width="120px">
+                  <col width="200px">
+                  <col width="120px">
+                  <col width="200px">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <td>이름</td>
+                      <td>홍길동</td>
+                      <td>강사명</td>
+                      <td>코딩선생님</td>
+                    </tr>
+                    <tr>
+                      <td>생년월일</td>
+                      <td>98.01.04</td>
+                      <td>성별</td>
+                      <td>남</td>
+                    </tr>
+                    <tr>
+                      <td>이메일</td>
+                      <td>hong@naver.com</td>
+                      <td>마케팅 수신</td>
+                      <td>Y</td>
+                    </tr>
+                    <tr>
+                      <td>전화번호</td>
+                      <td>010-6539-0018</td>
+                      <td>가입날짜</td>
+                      <td>23.04.12 22:14</td>
+                    </tr>
+                    <tr>
+                      <td>직업</td>
+                      <td>학생</td>
+                      <td>관심분야</td>
+                      <td>어학/코딩</td>
+                    </tr>
+                  </tbody>
+                  </table>
+                </div>
+              </div>
+              <a href="#none" class="edit-btn">수정</a>
+            </div>
+
+            <div class="user-wrap-bottom">
+              
+              <!-- 탭메뉴 목록 -->
+              <ul class="profile-tabmenu">
+                <li class="tab-on" data-tab="menu1"><a href="#none">수강중인 클래스<span>5</span></a></li>
+                <li data-tab="menu2"><a href="#none">개설한 클래스<span>3</span></a></li>
+              </ul>
+
+              <div id="menu1" class="tabcon-on">  <!-- 탭메뉴 1 :: 수강중인 클래스 -->
+                <ul>
+                  <li>
+                    <a href="#none"><div class="img_overflow"><img src="./images/class_thum.jpg" alt=""></div></a>
+                    <div class="class-desc">
+                      <span>D-28</span>
+                      <span>2023.04.10 - 2023.05.10</span>
+                      <p><a href="#none">프로그램 개발자 양성 강의</a></p>
+                      <p>전창우 강사</p>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="#none"><div class="img_overflow"><img src="./images/class_thum2.jpg" alt=""></div></a>
+                    <div class="class-desc">
+                      <span>D-28</span>
+                      <span>2023.04.10 - 2023.05.10</span>
+                      <p><a href="#none">프로그램 개발자 양성 강의</a></p>
+                      <p>전창우 강사</p>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="#none"><div class="img_overflow"><img src="./images/class_thum.jpg" alt=""></div></a>
+                    <div class="class-desc">
+                      <span>D-28</span>
+                      <span>2023.04.10 - 2023.05.10</span>
+                      <p><a href="#none">프로그램 개발자 양성 강의</a></p>
+                      <p>전창우 강사</p>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="#none"><div class="img_overflow"><img src="./images/class_thum2.jpg" alt=""></div></a>
+                    <div class="class-desc">
+                      <span>D-28</span>
+                      <span>2023.04.10 - 2023.05.10</span>
+                      <p><a href="#none">프로그램 개발자 양성 강의</a></p>
+                      <p>전창우 강사</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div id="menu2" class="tabcon">  <!-- 탭메뉴 2 :: 개설한 클래스 -->
+                <ul>
+                  <li>
+                      <a href="#none"><div class="img_overflow"><img src="./images/class_thum.jpg" alt=""></div></a>
+                    <div class="class-desc">
+                      <span>D-28</span>
+                      <span>2023.04.10 - 2023.05.10</span>
+                      <p><a href="#none">프로그램 개발자 양성 강의</a></p>
+                      <p>전창우 강사</p>
+                    </div>
+                  </li>
+                  <li>
+                      <a href="#none"><div class="img_overflow"><img src="./images/class_thum.jpg" alt=""></div></a>
+                    <div class="class-desc">
+                      <span>D-28</span>
+                      <span>2023.04.10 - 2023.05.10</span>
+                      <p><a href="#none">프로그램 개발자 양성 강의</a></p>
+                      <p>전창우 강사</p>
+                    </div>
+                  </li>
+                  <li>
+                      <a href="#none"><div class="img_overflow"><img src="./images/class_thum.jpg" alt=""></div></a>
+                    <div class="class-desc">
+                      <span>D-28</span>
+                      <span>2023.04.10 - 2023.05.10</span>
+                      <p><a href="#none">프로그램 개발자 양성 강의</a></p>
+                      <p>전창우 강사</p>
+                    </div>
+                  </li>
+                  <li>
+                      <a href="#none"><div class="img_overflow"><img src="./images/class_thum.jpg" alt=""></div></a>
+                    <div class="class-desc">
+                      <span>D-28</span>
+                      <span>2023.04.10 - 2023.05.10</span>
+                      <p><a href="#none">프로그램 개발자 양성 강의</a></p>
+                      <p>전창우 강사</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+            </div>  
+        </article>
+
+        <!-- 회원문의 아티클 -->
+        <article class="box user-qna">
+          <h3 class="profile-title">회원 문의내역<a href="#none"><span>3</span></a></h3>
+            <table class="qna-table">
+              <colgroup>
+                <col width="10%">
+                <col width="35%">
+                <col width="20%">
+                <col width="20%">
+                <col width="15%">
+              </colgroup>
+              <thead>
+                <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>문의등록일</th>
+                <th>답변답변일</th>
+                <th>답변상태</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                <td>00003</td>
+                <td><a href="#none">수강신청을 하고 싶은데 어떻게 하나요?</a></td>
+                <td>2023.04.11 PM 05:59</td>
+                <td>2023.04.11 PM 05:59</td>
+                <td><span class="answer-ing">답변대기</span></td>
+                </tr>
+                <tr>
+                <td>00002</td>
+                <td><a href="#none">결제를 했는데 강의가 보이지 않아요.</a></td>
+                <td>2023.04.11 PM 05:59</td>
+                <td>2023.04.11 PM 05:59</td>
+                <td><span class="answer-end">답변완료</span></td>
+                </tr>
+                <tr>
+                <td>00001</td>
+                <td><a href="#none">회원정보 수정에서 오류가 떠요.</a></td>
+                <td>2023.04.11 PM 05:59</td>
+                <td>2023.04.11 PM 05:59</td>
+                <td><span class="answer-end">답변완료</span></td>
+                </tr>
+              </tbody>
+            </table>
+        </article>
+
+      </section>
+    </main>
+  </div>
+</body>
+</html>
