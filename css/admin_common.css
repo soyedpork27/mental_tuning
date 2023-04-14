@@ -15,11 +15,7 @@
 
 /* 헤더 (메뉴바) */
 
-a{
-  text-decoration: none;
-  color: #111;
-  font-family: 'Pretendard-Regular';
-}
+
 .t_wrap{
   display: flex;
   position: relative;
