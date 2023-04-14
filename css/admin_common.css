@@ -15,17 +15,129 @@
 
 /* 헤더 (메뉴바) */
 
+a{
+  text-decoration: none;
+  color: #111;
+  font-family: 'Pretendard-Regular';
+}
+.t_wrap{
+  display: flex;
+  position: relative;
+}
+.left_box{
+  width: 250px;
+  flex: 0 0 auto;
+}
 header{
   position: fixed;
   top: 0px; left: 0px;
   width: 250px;
   height: 100vh; 
-  background-color: #333;
+  background-color: #111;
+  margin-bottom: 60px;
+  z-index : 1;
 }
-header > h1{
+header > h1 {
   text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 header > h1  img{
-  width: 160px;
-  margin-top: 24px;
+  width: 180px;
 }
+header > h1 a p {
+  font-family: 'SUIT-Regular';
+  font-size: 20px;
+  color: #fff;
+  margin-top: 5px;
+  padding-right:5px;
+}
+
+/* 내비게이션 서식 */
+header nav{
+  position: relative;
+}
+
+.nav-lv1 > li {
+  display: block;
+  width: 210px;
+  height: 56px;
+  border-radius: 7px;
+  background: #111;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  text-align: left;
+  text-indent: 60px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+.nav-lv1 > li:hover {
+  background: #FB4C4F;
+}
+
+.nav-lv1 > li a {
+  position: relative;
+  display: block;
+  width: 210px;
+  height: 56px;
+  color: #fff;
+  line-height: 56px;
+}
+
+.nav-lv1 > li img {
+  position: absolute;
+  left: 20px; top: 13px;
+}
+
+.nav-lv2 {
+  position: absolute;
+  right: -200px;
+  transform: translateY(-56px);
+  display: none;
+  color: #fff;
+  background: #000000c0;
+  border-radius: 0px 7px 7px 0px;
+}
+
+.nav-lv2 li {
+  display: block;
+  width: 200px;
+  height: 56px;
+  line-height: 56px;
+  text-indent: 30px;
+  border-bottom: 1px solid #666;
+}
+
+.logout_btn {
+  display: block;
+  width: 210px;
+  height: 56px;
+  border-radius: 7px;
+  background: #111;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  text-align: left;
+  text-indent: 60px;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 10px; left: 20px;
+}
+
+.logout_btn:hover {
+  background: #333;
+}
+
+nav div a {
+  display: block;
+  width: 210px;
+  height: 56px;
+  color: #fff;
+  line-height: 56px;
+}
+
+nav div img {
+  position: absolute;
+  left: 20px; top: 13px;
+}
+
