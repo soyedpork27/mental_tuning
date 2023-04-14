@@ -178,5 +178,20 @@ main {
 /* 회원관리 표 서식 */
 
 .mem_table{
-  
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.u_table {
+  width : 280px;
+}
+
+td, th {
+  border: 1px solid #000;
+  padding: 10px 5px;
+  text-align: center;
+}
+
+.u_table-title {
+  font-size : var(--f-size03);
 }
