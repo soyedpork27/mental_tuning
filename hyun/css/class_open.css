@@ -10,7 +10,7 @@ a{
   width: 250px;
   flex: 0 0 auto;
 }
-header{
+/* header{
   position: fixed;
   top: 0px; left: 0px;
   width: 250px;
@@ -23,7 +23,7 @@ header > h1{
 header > h1  img{
   width: 160px;
   margin-top: 24px;
-}
+} */
 /* 메인서식 */
 main{
   width: calc(100%-250px);

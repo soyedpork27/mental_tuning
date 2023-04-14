@@ -141,5 +141,10 @@ main {
   padding : 0 32px;
   box-sizing : border-box;
   margin : 16px auto;
+  justify-content : space-between;
 }
 
+.angle_60::before {
+  line-height : 60px;
+  font-size : var(--f-size03);
+}
