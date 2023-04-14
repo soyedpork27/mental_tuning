@@ -1,6 +1,28 @@
 @charset "utf-8";
 
 
+
+
+/* 표 서식 시작 */
+
+/* table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+thead, tfoot {
+  background-color: #f8f8f8;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 16px 24px;
+  text-align: center;
+} */
+
+/* 표 서식 끝 */
+
+
 main {
   background-color : #fbfbfb;
   width : calc(100% - 250px);
@@ -147,4 +169,14 @@ main {
 .angle_60::before {
   line-height : 60px;
   font-size : var(--f-size03);
+}
+
+
+
+
+
+/* 회원관리 표 서식 */
+
+.mem_table{
+  
 }
