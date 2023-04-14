@@ -1,11 +1,13 @@
 @charset "utf-8";
 
-.hidden{
-  display: none;
-}
 
 .t_wrap{
   display: flex;
+  position: relative;
+}
+
+.hidden{
+  display: none;
 }
 
 .left_box{
@@ -16,10 +18,7 @@
 /* 헤더 (메뉴바) */
 
 
-.t_wrap{
-  display: flex;
-  position: relative;
-}
+
 .left_box{
   width: 250px;
   flex: 0 0 auto;

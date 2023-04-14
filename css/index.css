@@ -102,6 +102,22 @@ main {
   top : 0;
 }
 
+#tab01-ctnt01 {
+  width : 100%;
+  padding : 80px 0;
+  justify-content : space-around;
+}
+
+.alarm_title {
+  text-align : center;
+  margin-top : 32px;
+}
+
+.alarm_title > a {
+  font-size : var(--f-size03);
+  font-weight : bold;
+}
+
 #tab01-ctnt02 {
   padding : 80px 0;
 }
