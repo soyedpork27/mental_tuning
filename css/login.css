@@ -1,3 +1,45 @@
 @charset "utf-8";
 
 
+
+/* 이메일, 비밀번호 인풋 박스 서식 */
+.form-input01 {
+  display : block;
+  width : 496px;
+  height : 48px;
+  border : none;
+  border-radius : 15px;
+  margin : 30px 0;
+}
+
+
+/* 찾기, 체크박스 박스 서식 시작 */
+.login_form-find_wrap{
+  margin : 40px 0 ;
+}
+
+/* 로그인, 회원가입 버튼 공통서식 */
+.login_btn, .signup_btn{
+  display : block;
+  width : 500px;
+  height : 50px;
+  border-radius : 15px;
+  border : none;
+  font-size : var(--f-size05);
+  margin : 30px 0;
+}
+
+/* 로그인 버튼 서식 */
+.login_btn{
+  background-color : var(--m-color);
+  color : var(--f-color01);
+  cursor : pointer;
+}
+
+/* 회원 가입 버튼 서식 */
+.signup_btn {
+  background-color : #fff;
+  color : var(--f-color02);
+  text-align : center;
+  line-height : 50px;
+}

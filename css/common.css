@@ -25,6 +25,9 @@
   margin-bottom : 50px;
 }
 
+.sect_title01 {
+  font-size : var(--f-size01);
+}
 
 
 
@@ -33,15 +36,25 @@
 
 
 body{
+
+  /* 검정 배경 */
   background-color : var(--bg-color);
+
+  /* 하얀 텍스트 */
+  color : var(--f-color01);
+}
+
+/* reset 의 검정 컬러 변경하기 */
+a {
   color : var(--f-color01);
 }
 
 
 
 
-/* 헤더 영역 서식 시작 */
 
+
+/* 헤더 영역 서식 시작 */
 header {
   width : 100%;
   height : 120px;
@@ -75,11 +88,44 @@ header {
 
 /* 우측 토글버튼 서식 시작 */
 
+.header-toggle_box {
+  position : absolute;
+  width : 360px;
+  right : 0;
+  top : 0;
+}
+
 .gnb_btn {
   display : block;
   cursor : pointer;
   margin-top : calc( ( 120px - 44px ) / 2 );
   margin-right : calc( ( 120px - 44px ) / 2 );
+
+}
+
+.gnb {
+  width : 100%;
 }
 
 
+
+/* 헤더영역 서식 끝 */
+
+
+
+
+
+/* 메인 영역 서식 시작 */
+
+main {
+
+}
+
+
+
+
+/* 푸터영역 서식 시작 */
+
+footer {
+
+}

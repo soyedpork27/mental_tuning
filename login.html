@@ -61,6 +61,13 @@
     <!-- 우측 토글버튼 시작 -->
     <div class="header-toggle_box">
       <img src="./images/gnb_btn.png" alt="gnb 버튼" class="gnb_btn">
+      <ul class="gnb hidden">
+        <li class="gnb-cate">카테고리</li>
+        <li class="gnb-class">CLASS</li>
+        <li class="gnb-event">이벤트</li>
+        <li class="gnb-community">커뮤니티</li>
+        <li class="gnb-create">클래스 개설</li>
+      </ul>
     </div>
     <!-- 우측 토글 버튼 끝 -->
 
@@ -71,29 +78,59 @@
   <main>
     <section class="login-sect01 ctnt_area sect_margin">
 
+      <h2 class="hidden">섹션 제목 (숨겨짐)</h2>
+
       <!-- 로그인 박스 시작 -->
       <article class="sect01-art01 ">
+        
+        <h3 class="sect_title01">로그인</h3>
+
         <!-- 로그인 폼 태그 시작 -->
         <form action="./login_db.php" name="login" method="post" class="art01_form">
         
-          <label for="id" class="hidden">
+          <!-- 이메일 인풋박스 -->
+          <label for="email" class="hidden">
             이메일
           </label>
-          <input type="text" id="email" name="email" placeholder="이메일을 입력해 주세요.">
+          <input type="text" id="email" name="email" placeholder="이메일을 입력해 주세요." class="form-input01">
       
-          <label for="pass" class="hidden">
+          <!-- 비밀번호 인풋박스 -->
+          <label for="pw" class="hidden">
             비밀번호
           </label>
-          <input type="password" id="password" name="password" placeholder="비밀번호를 입력해 주세요.">
+          <input type="password" id="pw" name="pw" placeholder="비밀번호를 입력해 주세요." class="form-input01">
 
-          <div class="login_form-find_wrap">
+          <!-- 계정 정보 / 체크박스 시작 -->
+          <div class="login_form-find_wrap flexable">
+
+            <!-- 계정 정보 찾기 박스 시작 -->
             <div class="find_wrap-find_text">
               <a href="#none" title="이메일 찾기">이메일 찾기</a>
               <a href="#none" title="비밀번호 찾기">비밀번호 찾기</a>
             </div>
 
-            <!-- 체크박스 -->
-            <div></div>
+            <!-- 체크박스 감싸는 박스 시작 -->
+            <div>
+              <input type="checkbox" value="savemail" id="savemail">
+              <label for="savemail">이메일 저장</label>
+            </div>
+            <!-- 체크박스 감싸는 박스 끝 -->
+
+
+
+            
+          </div>
+
+          <button type="submit" class="login_btn form_btn">
+            로그인
+          </button>
+
+          <a href="./signup.php" title="회원가입" class="signup_btn">
+            회원 가입
+          </a>
+
+          <!-- sns 로그인 아이콘 감싸는 박스 -->
+          <div class="">
 
           </div>
 

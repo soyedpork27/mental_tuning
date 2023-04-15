@@ -1,5 +1,7 @@
 <?php
 
+// 데이터 베이스 접근 변수 선언하기
+
 //변수
 $mysql_host = 'localhost';
 $mysql_user = 'root';
