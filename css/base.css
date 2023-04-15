@@ -17,28 +17,58 @@
 
 
 :root{
+
+  /* 메인 컬러 색상 시작 */
+
   --m-color: #FB4C4F;
 
+  /* 메인 컬러 색상 끝 */
+
+
+  /* 기본 배경 색상 (어두움) */
   --bg-color: #151515;
 
+
+  /* 텍스트 컬러 변수 시작 */
+
+  /* 하얀 텍스트 컬러 */
   --f-color01: #fff;
+
+  /* 검정 텍스트 컬러 */
   --f-color02: #111;
+
+  /* 회색 텍스트 컬러 */
   --f-color03 : #888;
 
+  /* 텍스트 컬러 변수 끝 */
 
-  --f-size01: 32px; /*title*/
-  --f-size02: 28px;
-  --f-size03: 24px;
-  --f-size04: 22px;
-  --f-size05: 20px;
-  --f-size06: 18px;
-  --f-size07: 16px;  /*기본*/
-  --f-size08: 14px;
+
+
+  /* 폰트 사이즈 변수 시작 */
+  
+  --f-size01: 2rem;      /* title 32px */
+  --f-size02: 1.75rem;   /* 28px */
+  --f-size03: 1.5rem;    /* 24px */
+  --f-size04: 1.375rem;  /* 22px */
+  --f-size05: 1.25rem;   /* 20px */
+  --f-size06: 1.125rem;  /* 18px */
+  --f-size07: 1rem;      /* 기본 16px */
+  --f-size08: 0.875rem;  /* 14px */
+  --f-size09: 0.75rem;   /* 12px */
+
+  /* 폰트 사이즈 변수 끝 */
+
 
 }
 
 body{
+
   font-family: 'Pretendard', '맑은 고딕', Arial, Helvetica, sans-serif;
+  
+  /* 기본 폰트 사이즈 16px = 1rem */
   font-size: var(--f-size07);
+
+  /* 기본 텍스트 색상 */
   color: var(--f-color02);
+
 }
