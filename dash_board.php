@@ -233,7 +233,7 @@
 
                   <tbody class="u_table-body">
                     <?php
-                    $sql_member = "select * from member where code<5";
+                    $sql_member = "select * from member order by code desc limit 4";
                     $result_member = mysqli_query($con, $sql_member);
                     while($row_member = mysqli_fetch_assoc($result_member)){
                     ?>
@@ -267,7 +267,7 @@
                   <tbody class="u_table-body">
                   <?php
 
-                    $sql_member = "select * from member where level=3 and code<5";
+                    $sql_member = "select * from member where level=3 order by code desc limit 4 ";
                     $result_member = mysqli_query($con, $sql_member);
                     while($row_member = mysqli_fetch_assoc($result_member)){
                     ?>
@@ -335,5 +335,3 @@
   </div>
 </body>
 </html>
-
-

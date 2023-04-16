@@ -32,7 +32,7 @@
       function out_modal(){
         let lgout_bool = confirm('로그아웃 하시겠습니까?');
 
-        if(logout_bool){
+        if(lgout_bool){
           location.href='./logout.php';
         }
         else{
@@ -40,5 +40,10 @@
         }
       }
   
+
+
+
+
+
   
   
