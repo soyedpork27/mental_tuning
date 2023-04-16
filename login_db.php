@@ -87,7 +87,7 @@ if($row01){
         echo("
           <script>
             alert('관리자 계정입니다.');
-            location.href='./index.html';
+            location.href='./dash_board.php';
           </script>
         ");
       

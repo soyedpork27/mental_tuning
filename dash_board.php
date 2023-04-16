@@ -3,6 +3,19 @@
   include './db_con.php';
   include './config.php';
 
+
+
+
+  if (!$user_code || $user_level != 4){
+    echo ("
+      <script>
+        alert('권한이 없는 계정입니다.');
+        location.href='index.php';
+      </script>
+    ");
+
+  }
+
 ?>
 
 
@@ -38,38 +51,10 @@
     <div class="left_box">
       &nbsp;
     </div>
-    <header>
-      <h1>
-        <a href="index.html" title="메인 바로가기">
-          <img src="../images/classu_logo.png" alt="로고 이미지">
-          <p>ADMIN PAGE</p>
-        </a>
-      </h1>
-      <nav>
-        <ul class="nav-lv1">
-          <li><a href="#none"><img src="../images/icon_dashboard.png" alt="대시보드">대시보드</a></li>
-          <li><a href="#none"><img src="../images/icon_user.png" alt="회원 관리">회원 관리</a></li>
-          <li class="nav-open">
-            <a href="#none"><img src="../images/icon_class.png" alt="클래스 관리">클래스 관리</a>
-            <ul class="nav-lv2">
-              <li><a href="#none">클래스 신청내역</a></li>
-              <li><a href="#none">클래스 개설목록</a></li>
-            </ul>
-          </li>
-          <li class="nav-open">
-            <a href="#none"><img src="../images/icon_content.png" alt="콘텐츠 관리">콘텐츠 관리</a>
-            <ul class="nav-lv2">
-              <li><a href="#none">커뮤니티 관리</a></li>
-              <li><a href="#none">공지사항 관리</a></li>
-              <li><a href="#none">이벤트 관리</a></li>
-            </ul>
-          </li>
-          <li><a href="#none"><img src="../images/icon_customer.png" alt="고객지원 관리">고객지원 관리</a></li>
-        </ul>
-
-        <div class="logout_btn"><a href="#none" title="로그아웃" id="logout_btn"><img src="../images/icon_logout.png" alt="로그아웃">로그아웃</a></div>
-      </nav>
-    </header>
+    <?php
+    include './admin_header.php'
+    ?>
+    
 
 
 
@@ -219,7 +204,19 @@
                   </thead>
 
                   <tbody class="u_table-body">
-
+                    <?php
+                    $sql_member = "select * from member where code<5";
+                    $result_member = mysqli_query($con, $sql_member);
+                    while($row_member = mysqli_fetch_assoc($result_member)){
+                    ?>
+                      <tr>
+                        <td><?=$row_member['name']?></td>
+                        <td><?=$row_member['interest']?></td>
+                        <td><?=$row_member['apply_class']?></td>
+                      </tr>
+                    <?php
+                    }
+                    ?>
                   </tbody>
 
                 </table>
@@ -240,7 +237,19 @@
                   </thead>
 
                   <tbody class="u_table-body">
-
+                  <?php
+                    $sql_member = "select * from member where level=3 and code<5";
+                    $result_member = mysqli_query($con, $sql_member);
+                    while($row_member = mysqli_fetch_assoc($result_member)){
+                    ?>
+                      <tr>
+                        <td><?=$row_member['name']?></td>
+                        <td><?=$row_member['interest']?></td>
+                        <td><?=$row_member['apply_class']?></td>
+                      </tr>
+                    <?php
+                    }
+                    ?>
                   </tbody>
                   
                 </table>
