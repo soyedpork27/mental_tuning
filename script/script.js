@@ -15,8 +15,6 @@ $(function(){
 
 
 
-let last_location = location.href;
-
 
 const logout_btn = document.getElementById("logout_btn");
   
