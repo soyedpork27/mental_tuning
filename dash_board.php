@@ -135,20 +135,29 @@
                 신규클래스
               </span>
               <ul class="tab01_ctnt t_wrap" id="tab01-ctnt02">
-                <li class="t-01_ctntimg"><a href="#none" title="클래스 관리 바로가기" class="tab01-class_img"><img src="./images/main/class01.png" alt="클래스 사진"></a>
+
+                <?php
+                  $sql_count = "select * from class_list order by code desc limit 4;";
+                  $result_count = mysqli_query($con, $sql_count);
+
+                  while($row_count = mysqli_fetch_assoc($result_count)){
+                ?>
+                  <li class="t-01_ctntimg"><a href="#none" title="클래스 관리 바로가기" class="tab01-class_img"><img src="<?=$row_count['class_img']?>" alt="클래스 사진" class="class_img"></a>
                   <p class="tab01-ctnt_date text-margin01">
-                      <span class="gray">2023.04.10 PM 05&#58;30</span>
+                      <span class="gray"><?=$row_count['open_date']?></span>
                   </p>
                   <p class="tab01-ctnt_title text-margin01">
                     <a href="#none" title="">
-                      <span class="bold">프로그램 개발자 양성 강의</span>
+                      <span class="bold"><?=$row_count['class_name']?></span>
                     </a>
                   </p>
-                  <p class="tab01-ctnt_lect text-margin01"><span class="">전창우 강사</span></p>
+                  <p class="tab01-ctnt_lect text-margin01"><span class=""><?=$row_count['tutor_name']?></span></p>
                 </li>
+                <?php
+                  }
+                ?>
 
-
-                <li class="t-01_ctntimg"><a href="#none" title="클래스 관리 바로가기" class="tab01-class_img"><img src="./images/main/class01.png" alt="클래스 사진"></a>
+                <!-- <li class="t-01_ctntimg"><a href="#none" title="클래스 관리 바로가기" class="tab01-class_img"><img src="./images/main/class01.png" alt="클래스 사진"></a>
                   <p class="tab01-ctnt_date text-margin01">
                       <span class="gray">2023.04.10 PM 05&#58;30</span>
                   </p>
@@ -158,29 +167,43 @@
                     </a>
                   </p>
                   <p class="tab01-ctnt_lect text-margin01"><span class="">전창우 강사</span></p>
-                  </li>
-                  <li class="t-01_ctntimg"><a href="#none" title="클래스 관리 바로가기" class="tab01-class_img"><img src="./images/main/class01.png" alt="클래스 사진"></a>
-                    <p class="tab01-ctnt_date text-margin01">
-                        <span class="gray">2023.04.10 PM 05&#58;30</span>
-                    </p>
-                    <p class="tab01-ctnt_title text-margin01">
-                      <a href="#none" title="">
-                        <span class="bold">프로그램 개발자 양성 강의</span>
-                      </a>
-                    </p>
-                    <p class="tab01-ctnt_lect text-margin01"><span class="">전창우 강사</span></p>
-                    </li>
-                    <li class="t-01_ctntimg"><a href="#none" title="클래스 관리 바로가기" class="tab01-class_img"><img src="./images/main/class01.png" alt="클래스 사진"></a>
-                      <p class="tab01-ctnt_date text-margin01">
-                          <span class="gray">2023.04.10 PM 05&#58;30</span>
-                      </p>
-                      <p class="tab01-ctnt_title text-margin01">
-                        <a href="#none" title="">
-                          <span class="bold">프로그램 개발자 양성 강의</span>
-                        </a>
-                      </p>
-                      <p class="tab01-ctnt_lect text-margin01"><span class="">전창우 강사</span></p>
-                      </li>
+                </li> -->
+
+
+                <!-- <li class="t-01_ctntimg"><a href="#none" title="클래스 관리 바로가기" class="tab01-class_img"><img src="./images/main/class01.png" alt="클래스 사진"></a>
+                  <p class="tab01-ctnt_date text-margin01">
+                      <span class="gray">2023.04.10 PM 05&#58;30</span>
+                  </p>
+                  <p class="tab01-ctnt_title text-margin01">
+                    <a href="#none" title="">
+                      <span class="bold">프로그램 개발자 양성 강의</span>
+                    </a>
+                  </p>
+                  <p class="tab01-ctnt_lect text-margin01"><span class="">전창우 강사</span></p>
+                </li> -->
+
+                <!-- <li class="t-01_ctntimg"><a href="#none" title="클래스 관리 바로가기" class="tab01-class_img"><img src="./images/main/class01.png" alt="클래스 사진"></a>
+                  <p class="tab01-ctnt_date text-margin01">
+                      <span class="gray">2023.04.10 PM 05&#58;30</span>
+                  </p>
+                  <p class="tab01-ctnt_title text-margin01">
+                    <a href="#none" title="">
+                      <span class="bold">프로그램 개발자 양성 강의</span>
+                    </a>
+                  </p>
+                  <p class="tab01-ctnt_lect text-margin01"><span class="">전창우 강사</span></p>
+                </li> -->
+                <!-- <li class="t-01_ctntimg"><a href="#none" title="클래스 관리 바로가기" class="tab01-class_img"><img src="./images/main/class01.png" alt="클래스 사진"></a>
+                  <p class="tab01-ctnt_date text-margin01">
+                      <span class="gray">2023.04.10 PM 05&#58;30</span>
+                  </p>
+                  <p class="tab01-ctnt_title text-margin01">
+                    <a href="#none" title="">
+                      <span class="bold">프로그램 개발자 양성 강의</span>
+                    </a>
+                  </p>
+                  <p class="tab01-ctnt_lect text-margin01"><span class="">전창우 강사</span></p>
+                </li> -->
               </ul>
             </li>
 

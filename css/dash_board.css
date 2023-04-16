@@ -240,3 +240,10 @@ thead th {
 .u_table-title {
   font-size : var(--f-size03);
 }
+
+
+
+.class_img{
+  width : 298px;
+  height : 198px;
+}
