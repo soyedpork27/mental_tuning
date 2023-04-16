@@ -5,7 +5,7 @@
 
 <header class="flexable">
 
-
+    <!-- 헤더 콘텐츠 영역 시작 -->
     <div class="header-ctnt_area flexable">
 
       <!-- 헤더 로고 시작 -->
@@ -17,11 +17,20 @@
       <!-- 헤더 로고 끝 -->
 
       <!-- 검색박스 시작 -->
-      <form action="./search.php" method="post" name="search" class="header-search_form">
+      <form action="./search.php" method="post" id="search_form" name="search" class="header-search_form">
         <input type="text" placeholder="무엇을 배우고 싶나요?" id="search" name="search" class="search_form-search_box">
+
+        <!-- 검색 버튼 -->
+        <button type="submit" class="search_btn">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <!--  -->
       </form>
       <!-- 검색박스 끝 -->
+
     </div>
+    <!-- 헤더 콘텐츠 영역 끝 -->
 
     <!-- 우측 토글버튼 시작 -->
     <div class="header-toggle_box">

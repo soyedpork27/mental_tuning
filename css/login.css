@@ -2,6 +2,13 @@
 
 
 
+/* 좌측 로그인 폼 영역 서식 시작 */
+
+/* 좌측 폼 양식 감싸는 article 서식 */
+.sect01-art01 {
+  width : 500px;
+}
+
 /* 이메일, 비밀번호 인풋 박스 서식 */
 .form-input01 {
   display : block;
@@ -10,13 +17,35 @@
   border : none;
   border-radius : 15px;
   margin : 30px 0;
+  text-indent : 14px;
 }
 
 
-/* 찾기, 체크박스 박스 서식 시작 */
+/* 계정 찾기와 체크박스를 감싸는 박스 서식 시작 */
 .login_form-find_wrap{
-  margin : 40px 0 ;
+  width : 480px;
+  margin : 40px auto;
+  justify-content : space-between;
 }
+
+/* 계정 찾기 박스 */
+.find_wrap-find_text{
+
+}
+.find_wrap-find_text a {
+  display : inline-block;
+  margin-right : 15px ;
+}
+
+/* 체크박스를 감싸는 박스 */
+.find_wrap-check_save{
+  
+}
+.find_wrap-check_save label {
+  display : inline-block;
+  margin-left : 15px;
+}
+
 
 /* 로그인, 회원가입 버튼 공통서식 */
 .login_btn, .signup_btn{
@@ -42,4 +71,17 @@
   color : var(--f-color02);
   text-align : center;
   line-height : 50px;
+}
+
+
+
+/* 좌측 로그인 폼 영역 서식 끝 */
+
+
+
+
+/* 우측 배너 이미지 영역 서식 시작 */
+
+.sect01-art02 {
+
 }
