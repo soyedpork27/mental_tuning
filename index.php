@@ -3,6 +3,299 @@
   include './db_con.php';
   include './config.php';
 
-  
-
 ?>
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>대시 보드</title>
+
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/admin_common.css">
+  <link rel="stylesheet" href="./css/index.css">
+
+  
+  
+  <!-- 폰트어썸 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+  <!-- 제이쿼리 CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+  <!-- 헤더 스크립트 연결 -->
+  <script src="./script/script.js" defer></script>
+
+</head>
+<body>
+  <div class="t_wrap">
+    <div class="left_box">
+      &nbsp;
+    </div>
+    <header>
+      <h1>
+        <a href="index.html" title="메인 바로가기">
+          <img src="../images/classu_logo.png" alt="로고 이미지">
+          <p>ADMIN PAGE</p>
+        </a>
+      </h1>
+      <nav>
+        <ul class="nav-lv1">
+          <li><a href="#none"><img src="../images/icon_dashboard.png" alt="대시보드">대시보드</a></li>
+          <li><a href="#none"><img src="../images/icon_user.png" alt="회원 관리">회원 관리</a></li>
+          <li class="nav-open">
+            <a href="#none"><img src="../images/icon_class.png" alt="클래스 관리">클래스 관리</a>
+            <ul class="nav-lv2">
+              <li><a href="#none">클래스 신청내역</a></li>
+              <li><a href="#none">클래스 개설목록</a></li>
+            </ul>
+          </li>
+          <li class="nav-open">
+            <a href="#none"><img src="../images/icon_content.png" alt="콘텐츠 관리">콘텐츠 관리</a>
+            <ul class="nav-lv2">
+              <li><a href="#none">커뮤니티 관리</a></li>
+              <li><a href="#none">공지사항 관리</a></li>
+              <li><a href="#none">이벤트 관리</a></li>
+            </ul>
+          </li>
+          <li><a href="#none"><img src="../images/icon_customer.png" alt="고객지원 관리">고객지원 관리</a></li>
+        </ul>
+
+        <div class="logout_btn"><a href="#none" title="로그아웃" id="logout_btn"><img src="../images/icon_logout.png" alt="로그아웃">로그아웃</a></div>
+      </nav>
+    </header>
+
+
+
+    <main>
+      <section class="ctnt_area">
+        <h2 class="sect-title">
+          <a href="#" title="대쉬보드 바로가기">
+            <img src="./images/back.png" alt="뒤로가기">
+          </a>
+          대시보드
+        </h2>
+
+        <article class="ctnt_box01 t_wrap" id="sect-title01">
+          <h3 class="hidden">첫 번째 아티클</h3>
+
+          <ul class="art01-tab01 t_wrap">
+
+            <li class="tab01_btn">
+              <span class="tab_text">
+                신규알림
+              </span>
+
+              <div class="tab01_ctnt t_wrap hidden" id="tab01-ctnt01">
+
+                <figure class="ctnt01-fig">
+                  <a href="#none" title="">
+                    <img src="./images/dash_alarm01.png" alt="">
+                  </a>
+                  <figcaption class="alarm_title">
+                    <a href="#none" title="">
+                      신규 개설 신청
+                    </a>
+                  </figcaption>
+                </figure>
+
+                <figure class="ctnt01-fig">
+                  <a href="#none" title="">
+                    <img src="./images/dash_alarm02.png" alt="">
+                  </a>
+                  <figcaption class="alarm_title">
+                    <a href="#none" title="">
+                      Q&#38;A
+                    </a>
+                  </figcaption>
+                </figure>
+
+                <figure class="ctnt01-fig">
+                  <a href="#none" title="">
+                    <img src="./images/dash_alarm03.png" alt="">
+                  </a>
+                  <figcaption class="alarm_title">
+                    <a href="#none" title="">
+                      신고 글
+                    </a>
+                  </figcaption>
+                </figure>
+
+                <figure class="ctnt01-fig">
+                  <a href="#none" title="">
+                    <img src="./images/dash_alarm04.png" alt="">
+                  </a>
+                  <figcaption class="alarm_title">
+                    <a href="#none" title="">
+                      환불 요청
+                    </a>
+                  </figcaption>
+                </figure>
+
+              </div>
+
+            </li>
+
+            <li class="tab01_btn">
+              <span class="tab_text on">
+                신규클래스
+              </span>
+              <ul class="tab01_ctnt t_wrap" id="tab01-ctnt02">
+                <li class="t-01_ctntimg"><a href="#none" title="클래스 관리 바로가기" class="tab01-class_img"><img src="./images/main/class01.png" alt="클래스 사진"></a>
+                <p class="tab01-ctnt_date text-margin01">
+                    <span class="gray">2023.04.10 PM 05&#58;30</span>
+                </p>
+                <p class="tab01-ctnt_title text-margin01">
+                  <a href="#none" title="">
+                    <span class="bold">프로그램 개발자 양성 강의</span>
+                  </a>
+                </p>
+                <p class="tab01-ctnt_lect text-margin01"><span class="">전창우 강사</span></p>
+                </li>
+                <li class="t-01_ctntimg"><a href="#none" title="클래스 관리 바로가기" class="tab01-class_img"><img src="./images/main/class01.png" alt="클래스 사진"></a>
+                  <p class="tab01-ctnt_date text-margin01">
+                      <span class="gray">2023.04.10 PM 05&#58;30</span>
+                  </p>
+                  <p class="tab01-ctnt_title text-margin01">
+                    <a href="#none" title="">
+                      <span class="bold">프로그램 개발자 양성 강의</span>
+                    </a>
+                  </p>
+                  <p class="tab01-ctnt_lect text-margin01"><span class="">전창우 강사</span></p>
+                  </li>
+                  <li class="t-01_ctntimg"><a href="#none" title="클래스 관리 바로가기" class="tab01-class_img"><img src="./images/main/class01.png" alt="클래스 사진"></a>
+                    <p class="tab01-ctnt_date text-margin01">
+                        <span class="gray">2023.04.10 PM 05&#58;30</span>
+                    </p>
+                    <p class="tab01-ctnt_title text-margin01">
+                      <a href="#none" title="">
+                        <span class="bold">프로그램 개발자 양성 강의</span>
+                      </a>
+                    </p>
+                    <p class="tab01-ctnt_lect text-margin01"><span class="">전창우 강사</span></p>
+                    </li>
+                    <li class="t-01_ctntimg"><a href="#none" title="클래스 관리 바로가기" class="tab01-class_img"><img src="./images/main/class01.png" alt="클래스 사진"></a>
+                      <p class="tab01-ctnt_date text-margin01">
+                          <span class="gray">2023.04.10 PM 05&#58;30</span>
+                      </p>
+                      <p class="tab01-ctnt_title text-margin01">
+                        <a href="#none" title="">
+                          <span class="bold">프로그램 개발자 양성 강의</span>
+                        </a>
+                      </p>
+                      <p class="tab01-ctnt_lect text-margin01"><span class="">전창우 강사</span></p>
+                      </li>
+              </ul>
+            </li>
+
+          </ul>
+
+        </article>
+        <div class="t_wrap sect-ctnt02">
+          <article class="ctnt_box02">
+            <h3 class="art-title mem-man-title">회원 관리</h3>
+
+
+
+
+            <div class="t_wrap table_wrap">
+
+              <div class="">
+                <table class="mem_table u_table">
+                  <caption class="u_table-title">신규 회원</caption>
+
+                  <thead class="u_table-head">
+                    <tr>
+                      <th>이름</th>
+                      <th>관심분야</th>
+                      <th>수강 강좌 수</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="u_table-body">
+
+                  </tbody>
+
+                </table>
+
+              </div>
+              
+
+              <div>
+                <table class="tutor_table u_table">
+                  <caption class="u_table-title">신규 강사</caption>
+
+                  <thead class="u_table-head">
+                    <tr>
+                      <th>이름</th>
+                      <th>직업</th>
+                      <th>개설 강좌 수</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="u_table-body">
+
+                  </tbody>
+                  
+                </table>
+
+              </div>
+
+            </div>
+
+
+          </article>
+  
+          <article class="ctnt_box02">
+            <h3 class="art-title">신규 회원 가입 현황</h3>
+            
+          </article>
+
+          <article class="ctnt_box02 coulm">
+            <h3 class="hidden">세 번째 아티클 박스 제목</h3>
+            
+            <a href="#none" title="커뮤니티 관리" class="manage_bar t_wrap">
+              <span class="manage_title">
+                커뮤니티 관리
+              </span>
+              <i class="fa-solid fa-angle-right angle_60"></i>
+            </a>
+
+            <a href="#none" title="이벤트 관리" class="manage_bar t_wrap">
+              <span class="manage_title">
+                이벤트 관리
+              </span>
+              <i class="fa-solid fa-angle-right angle_60"></i>
+            </a>
+
+            <a href="#none" title="공지사항 관리" class="manage_bar t_wrap">
+              <span class="manage_title">
+                공지사항 관리
+              </span>
+              <i class="fa-solid fa-angle-right angle_60"></i>
+            </a>
+
+          </article>
+
+          <article class="ctnt_box02">
+            <h3 class="hidden">calander</h3>
+
+
+          </article>
+
+
+        </div>
+
+      </section>
+    </main>
+  </div>
+</body>
+</html>
+
+
