@@ -1,5 +1,8 @@
 <?php
 
+include './db_con.php';
+include './config.php';
+
 unset($_SESSION['user_name']);
 unset($_SESSION['user_code']);
 unset($_SESSION['user_email']);
