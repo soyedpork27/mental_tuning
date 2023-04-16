@@ -5,8 +5,8 @@
 //변수
 $mysql_host = 'localhost';
 $mysql_user = 'root';
-$mysql_password='';
-$mysql_db='classu';
+$mysql_password= '';
+$mysql_db= 'classu';
 
 //데이터베이스에 연결하는 변수
 $con = mysqli_connect($mysql_host, $mysql_user, $mysql_password, $mysql_db);

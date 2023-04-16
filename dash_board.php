@@ -1,5 +1,7 @@
 <?php
 
+
+
   include './db_con.php';
   include './config.php';
 
@@ -13,7 +15,6 @@
         location.href='index.php';
       </script>
     ");
-
   }
 
 ?>
@@ -135,16 +136,18 @@
               </span>
               <ul class="tab01_ctnt t_wrap" id="tab01-ctnt02">
                 <li class="t-01_ctntimg"><a href="#none" title="클래스 관리 바로가기" class="tab01-class_img"><img src="./images/main/class01.png" alt="클래스 사진"></a>
-                <p class="tab01-ctnt_date text-margin01">
-                    <span class="gray">2023.04.10 PM 05&#58;30</span>
-                </p>
-                <p class="tab01-ctnt_title text-margin01">
-                  <a href="#none" title="">
-                    <span class="bold">프로그램 개발자 양성 강의</span>
-                  </a>
-                </p>
-                <p class="tab01-ctnt_lect text-margin01"><span class="">전창우 강사</span></p>
+                  <p class="tab01-ctnt_date text-margin01">
+                      <span class="gray">2023.04.10 PM 05&#58;30</span>
+                  </p>
+                  <p class="tab01-ctnt_title text-margin01">
+                    <a href="#none" title="">
+                      <span class="bold">프로그램 개발자 양성 강의</span>
+                    </a>
+                  </p>
+                  <p class="tab01-ctnt_lect text-margin01"><span class="">전창우 강사</span></p>
                 </li>
+
+
                 <li class="t-01_ctntimg"><a href="#none" title="클래스 관리 바로가기" class="tab01-class_img"><img src="./images/main/class01.png" alt="클래스 사진"></a>
                   <p class="tab01-ctnt_date text-margin01">
                       <span class="gray">2023.04.10 PM 05&#58;30</span>
@@ -240,14 +243,15 @@
 
                   <tbody class="u_table-body">
                   <?php
+
                     $sql_member = "select * from member where level=3 and code<5";
                     $result_member = mysqli_query($con, $sql_member);
                     while($row_member = mysqli_fetch_assoc($result_member)){
                     ?>
                       <tr>
                         <td><?=$row_member['name']?></td>
-                        <td><?=$row_member['interest']?></td>
-                        <td><?=$row_member['apply_class']?></td>
+                        <td><?=$row_member['job']?></td>
+                        <td><?=$row_member['open_class']?></td>
                       </tr>
                     <?php
                     }
