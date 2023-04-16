@@ -34,7 +34,30 @@
 
     <!-- 우측 토글버튼 시작 -->
     <div class="header-toggle_box">
-      <img src="./images/gnb_btn.png" alt="gnb 버튼" class="gnb_btn">
+
+      <!-- 임시 로그인 버튼 -->
+      <?php
+      // 세션에 유저 코드 정보가 저장되어 있지 않을 경우 (로그아웃 상태인 경우)
+      if(!isset($_SESSION['user_code'])){
+      ?>
+        <a href="./login.html" title="로그인 페이지로 이동">
+          <img src="./images/gnb_btn.png" alt="gnb 버튼" class="gnb_btn">
+        </a>
+      <?php
+      // 로그인 상태인 경우
+      }else {
+      ?>
+      <a href="./logout.php" title="로그아웃 하기">
+        <button>
+          로그아웃
+        </button>
+        <!-- <img src="./images/gnb_btn.png" alt="gnb 버튼" class="gnb_btn"> -->
+      </a>
+      <?php
+      }
+      ?>
+
+
       <ul class="gnb hidden">
         <li class="gnb-cate">카테고리</li>
         <li class="gnb-class">CLASS</li>
