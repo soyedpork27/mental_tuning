@@ -48,6 +48,8 @@
   <!-- 헤더 스크립트 연결 -->
   <script src="./script/script.js" defer></script>
 
+  <script src="./script/admin_common.js" defer></script>
+
 </head>
 <body>
   <div class="t_wrap">
