@@ -30,6 +30,12 @@
 }
 
 
+.ctnt_area {
+  padding : 50px 100px;
+  box-sizing : border-box;
+}
+
+
 
 /* 자주 쓰이는 서식 끝 */
 

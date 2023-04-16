@@ -17,12 +17,17 @@ $input_pw = $_POST['pw'];
 // 멤버 테이블에서 이메일 데이터가 입력한 이메일 값과 같은 데이터를 가져오도록 명령
 $sql01 = "select * from member where email='$input_email'";
 
+
 // 데이터베이스에 접근하고 쿼리문을 실행
 $result01 = mysqli_query($con,$sql01);
+
 
 // 쿼리문 실행 결과를 객체로 저장
 $row01 = mysqli_fetch_assoc($result01);
 
+// var_dump($row01);
+// var_dump($result01);
+// die;
 
 
 
@@ -105,6 +110,13 @@ if($row01){
     }
   }
 
+}else {
+  echo ("
+    <script>
+      alert('로그인 실패');
+      location.href='login.html';
+    </script>
+  ");
 }
 
 

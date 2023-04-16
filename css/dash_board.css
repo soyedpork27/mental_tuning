@@ -1,0 +1,242 @@
+@charset "utf-8";
+
+
+
+
+/* 표 서식 시작 */
+
+/* table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+thead, tfoot {
+  background-color: #f8f8f8;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 16px 24px;
+  text-align: center;
+} */
+
+/* 표 서식 끝 */
+
+
+main {
+  background-color : #fbfbfb;
+  width : calc(100% - 250px);
+}
+
+
+.sect-title {
+  font-size : var(--f-size01);
+  margin-bottom : 50px;
+  line-height : 38px;
+}
+
+
+
+.ctnt_area {
+  padding : 50px 100px;
+  box-sizing : border-box;
+}
+
+
+.ctnt_box01 {
+  width : 1300px;
+  height : 460px;
+  padding : 32px;
+  background-color : #fff;
+  border : 1px solid #000;
+  box-sizing: border-box;
+  padding : 32px;
+  border-radius : 15px;
+}
+
+
+.art01-tab01{
+  width : 100%;
+  position : relative;
+}
+
+.tab01_btn {
+  
+}
+
+.tab_text{
+  cursor : pointer;
+  color : #888;
+  font-size : var(--f-size02);
+  position : relative; 
+  z-index : 3;
+
+}
+
+.tab_text.on {
+  color : var(--f-color02);
+  font-weight : bold;
+}
+
+.tab01_btn {
+  
+}
+
+.tab01_btn:first-child {
+  margin-right : 32px;
+
+}
+
+.t-01_ctntimg {
+  margin-right : 16px;
+}
+
+.tab01-class_img {
+  display : block;
+  margin-bottom : 15px;
+}
+
+.tab01_ctnt {
+  position : absolute;
+  left : 0;
+  top : 0;
+}
+
+#tab01-ctnt01 {
+  width : 100%;
+  padding : 80px 0;
+  justify-content : space-around;
+}
+
+.alarm_title {
+  text-align : center;
+  margin-top : 32px;
+}
+
+.alarm_title > a {
+  font-size : var(--f-size03);
+  font-weight : bold;
+}
+
+#tab01-ctnt02 {
+  padding : 80px 0;
+}
+
+.text-margin01 {
+  margin : 10px 0;
+}
+
+.tab01-ctnt_date {
+  font-size : var(--f-size07);
+}
+
+.tab01-ctnt_title {
+  font-size : var(--f-size04);
+}
+
+.bold {
+  font-weight : bold;
+}
+
+.gray {
+  color : var(--f-color03);
+}
+
+#sect-title01 {
+  margin-bottom : 32px;
+}
+
+.ctnt_box02 {
+  width : 634px;
+  height : 290px;
+  background-color : #BBC2FF;
+  border-radius : 15px;
+  padding : 16px;
+  box-sizing : border-box;
+  margin : 0 32px 32px 0;
+}
+
+.art-title{
+  font-size : var(--f-size02);
+  font-weight : bold;
+}
+
+.sect-ctnt02 {
+  width : 1332px;
+  flex-wrap : wrap;
+}
+
+.manage_title {
+  font-size : var(--f-size03);
+}
+
+.manage_bar {
+  width : 550px;
+  border-radius : 25px;
+  background-color : #A3FF78;
+  height : 60px;
+  line-height : 60px;
+  padding : 0 32px;
+  box-sizing : border-box;
+  margin : 16px auto;
+  justify-content : space-between;
+}
+
+.angle_60::before {
+  line-height : 60px;
+  font-size : var(--f-size03);
+}
+
+
+
+.mem-man-title{
+  margin-bottom : 16px;
+}
+
+.u_table-title{
+  font-weight : bold;
+  font-size : var(--f-size03);
+  margin-bottom : 10px;
+  text-align : start;
+  text-indent : 10px;
+}
+
+/* 회원관리 표 서식 */
+
+.table_wrap {
+  width : 100%;
+  justify-content : space-around;
+}
+
+
+.u_table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+thead th {
+  font-weight : bold;
+  font-size : var(--f-size05);
+}
+
+.u_table tr th, .u_table tr td {
+  border: 1px solid #000;
+  line-height : 25px;
+  text-align: center;
+}
+
+.u_table tr th:nth-child(2), .u_table tr td:nth-child(2) {
+  width : 100px;
+}
+.u_table tr th:last-child, .u_table tr td:last-child {
+  padding : 0 6px;
+}
+
+.u_table tr th:first-child, .u_table tr td:first-child {
+  width : 62px;
+}
+
+
+
+.u_table-title {
+  font-size : var(--f-size03);
+}

@@ -32,7 +32,9 @@
   <link rel="stylesheet" href="./css/base.css">
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/admin_common.css">
-  <link rel="stylesheet" href="./css/index.css">
+
+
+  <link rel="stylesheet" href="./css/dash_board.css">
 
   
   
