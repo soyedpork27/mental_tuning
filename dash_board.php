@@ -35,6 +35,7 @@
   <link rel="stylesheet" href="./css/admin_common.css">
 
 
+  <!-- 대시보드 css 서식 -->
   <link rel="stylesheet" href="./css/dash_board.css">
 
   
@@ -48,7 +49,7 @@
   <!-- 헤더 스크립트 연결 -->
   <script src="./script/script.js" defer></script>
 
-  <script src="./script/admin_common.js" defer></script>
+  <script src="./script/admin_dashboard.js" defer></script>
 
 </head>
 <body>
@@ -68,8 +69,8 @@
         <h2 class="sect-title">
           <a href="#" title="대쉬보드 바로가기">
             <img src="./images/back.png" alt="뒤로가기">
+            대시보드
           </a>
-          대시보드
         </h2>
 
         <article class="ctnt_box01 t_wrap" id="sect-title01">
@@ -77,12 +78,12 @@
 
           <ul class="art01-tab01 t_wrap">
 
-            <li class="tab01_btn">
+            <li class="tab01_btn on">
               <span class="tab_text">
                 신규알림
               </span>
 
-              <div class="tab01_ctnt t_wrap hidden" id="tab01-ctnt01">
+              <div class="tab01_ctnt t_wrap" id="tab01-ctnt01">
 
                 <figure class="ctnt01-fig">
                   <a href="#none" title="">
@@ -133,7 +134,7 @@
             </li>
 
             <li class="tab01_btn">
-              <span class="tab_text on">
+              <span class="tab_text">
                 신규클래스
               </span>
               <ul class="tab01_ctnt t_wrap" id="tab01-ctnt02">
@@ -159,53 +160,6 @@
                   }
                 ?>
 
-                <!-- <li class="t-01_ctntimg"><a href="#none" title="클래스 관리 바로가기" class="tab01-class_img"><img src="./images/main/class01.png" alt="클래스 사진"></a>
-                  <p class="tab01-ctnt_date text-margin01">
-                      <span class="gray">2023.04.10 PM 05&#58;30</span>
-                  </p>
-                  <p class="tab01-ctnt_title text-margin01">
-                    <a href="#none" title="">
-                      <span class="bold">프로그램 개발자 양성 강의</span>
-                    </a>
-                  </p>
-                  <p class="tab01-ctnt_lect text-margin01"><span class="">전창우 강사</span></p>
-                </li> -->
-
-
-                <!-- <li class="t-01_ctntimg"><a href="#none" title="클래스 관리 바로가기" class="tab01-class_img"><img src="./images/main/class01.png" alt="클래스 사진"></a>
-                  <p class="tab01-ctnt_date text-margin01">
-                      <span class="gray">2023.04.10 PM 05&#58;30</span>
-                  </p>
-                  <p class="tab01-ctnt_title text-margin01">
-                    <a href="#none" title="">
-                      <span class="bold">프로그램 개발자 양성 강의</span>
-                    </a>
-                  </p>
-                  <p class="tab01-ctnt_lect text-margin01"><span class="">전창우 강사</span></p>
-                </li> -->
-
-                <!-- <li class="t-01_ctntimg"><a href="#none" title="클래스 관리 바로가기" class="tab01-class_img"><img src="./images/main/class01.png" alt="클래스 사진"></a>
-                  <p class="tab01-ctnt_date text-margin01">
-                      <span class="gray">2023.04.10 PM 05&#58;30</span>
-                  </p>
-                  <p class="tab01-ctnt_title text-margin01">
-                    <a href="#none" title="">
-                      <span class="bold">프로그램 개발자 양성 강의</span>
-                    </a>
-                  </p>
-                  <p class="tab01-ctnt_lect text-margin01"><span class="">전창우 강사</span></p>
-                </li> -->
-                <!-- <li class="t-01_ctntimg"><a href="#none" title="클래스 관리 바로가기" class="tab01-class_img"><img src="./images/main/class01.png" alt="클래스 사진"></a>
-                  <p class="tab01-ctnt_date text-margin01">
-                      <span class="gray">2023.04.10 PM 05&#58;30</span>
-                  </p>
-                  <p class="tab01-ctnt_title text-margin01">
-                    <a href="#none" title="">
-                      <span class="bold">프로그램 개발자 양성 강의</span>
-                    </a>
-                  </p>
-                  <p class="tab01-ctnt_lect text-margin01"><span class="">전창우 강사</span></p>
-                </li> -->
               </ul>
             </li>
 
@@ -235,7 +189,8 @@
 
                   <tbody class="u_table-body">
                     <?php
-                    $sql_member = "select * from member order by code desc limit 4";
+                    // 멤버 테이블에서 유저 레벨이 0,4 가 아닌 유저들을 뒤에서부터 4 개 불러온다
+                    $sql_member = "select * from member where level !=4 and level !=0 order by code desc limit 4";
                     $result_member = mysqli_query($con, $sql_member);
                     while($row_member = mysqli_fetch_assoc($result_member)){
                     ?>
@@ -269,14 +224,14 @@
                   <tbody class="u_table-body">
                   <?php
 
-                    $sql_member = "select * from member where level=3 order by code desc limit 4 ";
-                    $result_member = mysqli_query($con, $sql_member);
-                    while($row_member = mysqli_fetch_assoc($result_member)){
+                    $sql_tutor = "select * from member where level=3 order by code desc limit 4 ";
+                    $result_tutor = mysqli_query($con, $sql_tutor);
+                    while($row_tutor = mysqli_fetch_assoc($result_tutor)){
                     ?>
                       <tr>
-                        <td><?=$row_member['name']?></td>
-                        <td><?=$row_member['job']?></td>
-                        <td><?=$row_member['open_class']?></td>
+                        <td><?=$row_tutor['name']?></td>
+                        <td><?=$row_tutor['job']?></td>
+                        <td><?=$row_tutor['open_class']?></td>
                       </tr>
                     <?php
                     }

@@ -6,7 +6,7 @@
 <header class="flexable">
 
 
-    <div class="ctnt_area flexable">
+    <div class="header-ctnt_area flexable">
 
       <!-- 헤더 로고 시작 -->
       <h1 class="logo">

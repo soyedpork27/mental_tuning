@@ -17,6 +17,8 @@
 .ctnt_area {
   width : 62.5%;
   margin : 0 auto;
+  padding : 50px 100px;
+  box-sizing : border-box;
 }
 
 /* 섹션 기본 상하 마진 */
@@ -30,10 +32,7 @@
 }
 
 
-.ctnt_area {
-  padding : 50px 100px;
-  box-sizing : border-box;
-}
+
 
 
 
@@ -68,6 +67,11 @@ header {
   box-sizing : border-box;
 }
 
+.header-ctnt_area {
+  width : 62.5%;
+  margin : 0 auto;
+}
+
 /* 헤더 h1 태그 서식 시작 */
 .logo {
   line-height : 120px;
@@ -81,7 +85,7 @@ header {
 
 .logo img {
   width : 180px;
-  margin-top : calc( (120px - 41px)/2 ) ;
+  /* margin-top : calc( (120px - 41px)/2 ) ; */
 }
 
 /* 헤더 h1 태그 서식 끝 */

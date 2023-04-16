@@ -1,13 +1,14 @@
 @charset "utf-8";
 
 
-.t_wrap{
-  display: flex;
-  position: relative;
-}
 
 .hidden{
   display: none;
+}
+
+.t_wrap{
+  display: flex;
+  position: relative;
 }
 
 .left_box{

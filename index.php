@@ -55,8 +55,8 @@ include './config.php';
   <!-- 메인 영역 시작 -->
   <main>
 
-    <p class="wait_please">
-        COMMING SOON ...
+    <p class="wait_please ctnt_area">
+        USER PAGE COMING SOON ...
     </p>
 
 

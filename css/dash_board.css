@@ -73,7 +73,7 @@ main {
 
 }
 
-.tab_text.on {
+.tab01_btn.on > span {
   color : var(--f-color02);
   font-weight : bold;
 }
