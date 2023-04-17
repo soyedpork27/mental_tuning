@@ -8,16 +8,21 @@ include './db_con.php';
 $get_email = $_POST['email'];
 
 // 받아온 비밀번호 값을 변수로 담는다.
-$get_pw = $_POST['pw'];
+$get_pw = password_hash($_POST['pw'],PASSWORD_DEFAULT);
+
+$get_pwc = password_hash($_POST['pwc'],PASSWORD_DEFAULT);
+
+// 받아온 이름을 변수로 담는다.
+$get_name = $_POST['name'];
 
 // 받아온 생년월일을 변수로 담는다.
 $get_birth = $_POST['birth'];
 
 // 받아온 성별 정보를 변수로 담는다.
-$get_gender = $_POST['gender'];
+$get_gender = $_POST['radio_gender'];
 
 // 받아온 휴대전화 정보를 변수로 담는다.
-$get_gender = $_POST['phone'];
+$get_phone = $_POST['phone'];
 
 // 받아온 직업 정보를 변수로 담는다.
 $get_job = $_POST['job'];
@@ -29,6 +34,29 @@ $get_interest = $_POST['interest'];
 $get_sms = $_POST['radio_SMS'];
 
 
-$sql = "insert into member(name, email, )"
+// $sql = "insert into member(name, email, pw, pwc,  birth, radio_gender, phone, job, interest ) values('$get_name', '$get_email', '$get_pw', '$get_pwc' , '$get_birth', '$get_gender', '$get_phone', '$get_job' , '$get_interest' , '$get_sms' )";
+
+$sql = "insert members set email='$get_email', name='$name', pass='$pass', pass2='$pass2', email='$email', address='$address', phone='$phone', regist_day='$regist_day'";
+
+
+$result = mysqli_query($con, $sql);
+
+var_dump($result);
+
+die;
+
+
+
+
+mysqli_close($con);
+
+echo("
+  <script>
+    alert('회원가입이 완료되었습니다.');
+    location.href='./login.html';
+  </script>
+");
+
+
 
 ?>

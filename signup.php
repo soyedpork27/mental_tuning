@@ -44,9 +44,9 @@ include './db_con.php';
 
   $(document).ready(function(){
 
-    $('#id').blur(function(){
+    $('#email').blur(function(){
       if($(this).val() === ""){
-        $('#id_check_msg').html('이메일을 입력해주세요').css('color','#f00').attr('data-check','0');
+        $('#id_check_msg').html('이메일을 입력해주세요<br>').css('color','#f00').attr('data-check','0');
       }else {
         checkIdAjax();
       }
@@ -62,10 +62,10 @@ include './db_con.php';
       },
       success:function(data){
         if(data.check){
-          $('#id_check_msg').html('사용 가능한 이메일 입니다.').css('color','#00f').attr('data-check','1');
+          $('#id_check_msg').html('사용 가능한 이메일 입니다.<br>').css('color','#00f').attr('data-check','1');
         }
         else{
-          $('#id_check_msg').html('중복된 이메일 입니다.').css('color','#f00').attr('data-check','0');
+          $('#id_check_msg').html('중복된 이메일 입니다.<br>').css('color','#f00').attr('data-check','0');
 
         }
       } 
@@ -88,8 +88,8 @@ include './db_con.php';
       }
 
       if($('#id_check_msg').attr('data-check')=='0'){
-        alert('이미 존재하는 아이디 입니다. 다시 입력하세요.');
-        $('#id').focus();
+        alert('이미 존재하는 이메일 입니다. 다시 입력하세요.');
+        $('#email').focus();
         return false;
       }
 
@@ -170,7 +170,7 @@ include './db_con.php';
           <input type="password" id="pwc" name="pwc" placeholder="비밀번호를 입력해 주세요." class="form-input01">
 
           <label for="name" class="">
-            생년월일
+            이름
           </label>
           <input type="text" id="name" name="name" placeholder="이름을 입력해 주세요." class="form-input01">
 
