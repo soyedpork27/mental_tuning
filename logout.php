@@ -8,6 +8,7 @@ unset($_SESSION['user_code']);
 unset($_SESSION['user_email']);
 unset($_SESSION['user_level']);
 session_unset();
+session_destroy();
 
 echo ("
   <script>

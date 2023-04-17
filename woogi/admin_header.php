@@ -40,6 +40,6 @@ include './db_con.php';
         <a href="./index.php" title="메인페이지로 바로가기" class="to_main">메인페이지로 바로가기</a>
       </p>
 
-        <div class="logout_btn"><a href="#none" title="로그아웃" id="logout_btn"><img src="../images/icon_logout.png" alt="로그아웃">로그아웃</a></div>
+        <div class="logout_btn"><a href="../logout.php" title="로그아웃" id="logout_btn"><img src="../images/icon_logout.png" alt="로그아웃">로그아웃</a></div>
       </nav>
     </header>
