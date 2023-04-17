@@ -32,15 +32,22 @@
         </h2>
 
         <form action="" method="" name="강좌검색" class="f_box">
-          <label for="fillter"><img src="./images/fillter.png" alt="필터 아이콘"></label>
-          <select class="filter">
-            <option value="">검색할 항목을 선택하세요</option>
-            <option value="">강좌 이름</option>
-            <option value="">강사 이름</option>
-            <option value="">가격</option>
-          </select>
-          <label for="search"><img src="./images/research.png" alt="검색 아이콘"></label>
-          <input type="text" placeholder="검색어를 입력하세요." class="search">
+          <fieldset class="searchbox">
+            <legend class="hidden">클래스 정보 검색</legend>
+            <label for="filter"><img src="./images/fillter.png" alt="필터 아이콘"></label>
+            <select name="searchfilter" id="searchfilter" class="filter">
+              <option value="검색할 항목을 선택하세요">검색할 항목을 선택하세요</option>
+              <option value="카테고리">카테고리</option>
+              <option value="클래스명">클래스명</option>
+              <option value="강사명">강사명</option>
+              <option value="검색 태그">검색 태그</option>
+              <option value="개강일">개강일</option>
+              <option value="기간">기간</option>
+              <option value="개설여부">개설여부</option>
+            </select>
+            <label for="search"><img src="./images/research.png" alt="검색 아이콘"></label>
+            <input type="searchbox" placeholder="검색어를 입력하세요" class="search">
+        </fieldset>
           
           <article class="video_list">
             <h3>개설 신청목록</h3>
