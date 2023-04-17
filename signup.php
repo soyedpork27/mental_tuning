@@ -38,8 +38,99 @@ include './db_con.php';
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   
   
-  
   <title>회원가입</title>
+
+  <script>
+
+  $(document).ready(function(){
+
+    $('#id').blur(function(){
+      if($(this).val() === ""){
+        $('#id_check_msg').html('아이디를 입력해주세요').css('color','#f00').attr('data-check','0');
+      }else {
+        checkIdAjax();
+      }
+    });
+
+    function checkIdAjax(){
+    $.ajax({
+      url: './ajax/check_id.php',
+      type: 'post',
+      dataType: 'json',
+      data: {
+        'id':$('#id').val()
+      },
+      success:function(data){
+        if(data.check){
+          $('#id_check_msg').html('사용 가능한 아이디 입니다.').css('color','#00f').attr('data-check','1');
+        }
+        else{
+          $('#id_check_msg').html('중복된 아이디 입니다.').css('color','#f00').attr('data-check','0');
+
+        }
+      } 
+    });
+  }
+
+
+
+
+    $('#s_form').click(function(){
+      check_input();
+      return false;
+    });
+
+    function check_input(){
+      if(!$('#email').val()){
+        alert('아이디를 입력해주세요');
+        $('#email').focus();
+        return false;
+      }
+
+      if($('#id_check_msg').attr('data-check')=='0'){
+        alert('이미 존재하는 아이디 입니다. 다시 입력하세요.');
+        $('#id').focus();
+        return false;
+      }
+
+      if(!$('#pass').val()){
+        alert('비밀번호를 입력해주세요');
+        $('#pass').focus();
+        return false;
+      }
+      if(!$('#pass2').val()){
+        alert('비밀번호를 입력해주세요');
+        $('#pass2').focus();
+        return false;
+      }
+      if(!$('#name').val()){
+        alert('이름을 입력해주세요');
+        $('#name').focus();
+        return false;
+      }
+      if(!$('#email').val()){
+        alert('이메일을 입력해주세요');
+        $('#email').focus();
+        return false;
+      }
+      if($('#pass').val() !== $('#pass2').val() ){
+        alert('비밀번호가 일치하지 않습니다.\n 다시 입력해주세요');
+        $('#pass2').val('');
+        $('#pass2').focus();
+        return false;
+      }
+
+      // 위 입력양식을 모두 통과하면 아래 폼 내용 전송
+      $('#member_form').submit();
+
+
+    }
+  });
+
+</script>
+
+
+
   
 </head>
 <body>
@@ -56,13 +147,13 @@ include './db_con.php';
 
       <h2 class="hidden">섹션 제목 (숨겨짐)</h2>
 
-      <!-- 로그인 박스 시작 -->
+      <!-- 회원가입 박스 시작 -->
       <article class="sect01-art01 ">
         
         <h3 class="sect_title01">회원가입</h3>
 
         <!-- 로그인 폼 태그 시작 -->
-        <form action="./signup_db.php" name="login" method="post" class="art01_form">
+        <form action="./signup_db.php" name="signup" method="post" class="art01_form">
         
           <!-- 이메일 인풋박스 -->
           <label for="email" class="">
@@ -128,7 +219,7 @@ include './db_con.php';
           </label>
           <input type="radio" id="sms_disagree" name="radio_SMS" value="N">
 
-          <button type="submit" class="login_btn form_btn">
+          <button type="submit" class="login_btn form_btn" id="s_form">
             회원 가입
           </button>
 
