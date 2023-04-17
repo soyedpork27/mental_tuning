@@ -47,6 +47,10 @@
         &nbsp;
       </div>
       
+    <?php
+    include_once ('../admin_header.php');
+    ?>
+
     <!-- 메인영역 -->
     <main>
       <section>
