@@ -69,15 +69,25 @@ section h2 a:nth-child(2) {
 
 .user-profile {
   text-align: center;
-  margin-right: 32px;
+  margin-left: 5px;
+  margin-right: 40px;
 }
 
 .tutor-profile {
   text-align: center;
-  margin-right: 50px;
+  margin-right: 60px;
 }
 
 /* 테이블 서식 */
+.profile-table-wrap {
+  width: 100%;
+}
+
+.profile-table {
+  width: 70%;
+}
+
+
 .profile-table tbody tr td{
   padding: 10px;
 }
@@ -160,9 +170,10 @@ section h2 a:nth-child(2) {
 #menu1 ul {
   margin-top: 32px;
   margin-bottom: 20px;
-  display: flex;
   justify-content: left;
   gap: 12px;
+  display: none;
+  /* display: flex; */
 }
 
 #menu1 ul li {
