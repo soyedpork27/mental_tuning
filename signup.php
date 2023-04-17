@@ -46,7 +46,7 @@ include './db_con.php';
 
     $('#id').blur(function(){
       if($(this).val() === ""){
-        $('#id_check_msg').html('아이디를 입력해주세요').css('color','#f00').attr('data-check','0');
+        $('#id_check_msg').html('이메일을 입력해주세요').css('color','#f00').attr('data-check','0');
       }else {
         checkIdAjax();
       }
@@ -58,14 +58,14 @@ include './db_con.php';
       type: 'post',
       dataType: 'json',
       data: {
-        'id':$('#id').val()
+        'email':$('#email').val()
       },
       success:function(data){
         if(data.check){
-          $('#id_check_msg').html('사용 가능한 아이디 입니다.').css('color','#00f').attr('data-check','1');
+          $('#id_check_msg').html('사용 가능한 이메일 입니다.').css('color','#00f').attr('data-check','1');
         }
         else{
-          $('#id_check_msg').html('중복된 아이디 입니다.').css('color','#f00').attr('data-check','0');
+          $('#id_check_msg').html('중복된 이메일 입니다.').css('color','#f00').attr('data-check','0');
 
         }
       } 
@@ -93,14 +93,14 @@ include './db_con.php';
         return false;
       }
 
-      if(!$('#pass').val()){
+      if(!$('#pw').val()){
         alert('비밀번호를 입력해주세요');
-        $('#pass').focus();
+        $('#pw').focus();
         return false;
       }
-      if(!$('#pass2').val()){
+      if(!$('#pwc').val()){
         alert('비밀번호를 입력해주세요');
-        $('#pass2').focus();
+        $('#pwc').focus();
         return false;
       }
       if(!$('#name').val()){
@@ -108,20 +108,16 @@ include './db_con.php';
         $('#name').focus();
         return false;
       }
-      if(!$('#email').val()){
-        alert('이메일을 입력해주세요');
-        $('#email').focus();
-        return false;
-      }
-      if($('#pass').val() !== $('#pass2').val() ){
+      
+      if($('#pw').val() !== $('#pwc').val() ){
         alert('비밀번호가 일치하지 않습니다.\n 다시 입력해주세요');
-        $('#pass2').val('');
-        $('#pass2').focus();
+        $('#pwc').val('');
+        $('#pwc').focus();
         return false;
       }
 
       // 위 입력양식을 모두 통과하면 아래 폼 내용 전송
-      $('#member_form').submit();
+      $('#signup').submit();
 
 
     }
@@ -153,13 +149,14 @@ include './db_con.php';
         <h3 class="sect_title01">회원가입</h3>
 
         <!-- 로그인 폼 태그 시작 -->
-        <form action="./signup_db.php" name="signup" method="post" class="art01_form">
+        <form action="./signup_db.php" id="signup" name="signup" method="post" class="art01_form">
         
           <!-- 이메일 인풋박스 -->
           <label for="email" class="">
             이메일
           </label>
           <input type="text" id="email" name="email" placeholder="이메일을 입력해 주세요." class="form-input01">
+          <span id="id_check_msg" data-check="0"></span>
       
           <!-- 비밀번호 인풋박스 -->
           <label for="pw" class="">
@@ -172,10 +169,15 @@ include './db_con.php';
           </label>
           <input type="password" id="pwc" name="pwc" placeholder="비밀번호를 입력해 주세요." class="form-input01">
 
+          <label for="name" class="">
+            생년월일
+          </label>
+          <input type="text" id="name" name="name" placeholder="이름을 입력해 주세요." class="form-input01">
+
           <label for="birth" class="">
             생년월일
           </label>
-          <input type="text" id="birth" name="birth" placeholder="생년월일을 입력해주세요 예)1999-01-01" class="form-input01">
+          <input type="text" id="birth" name="birth" placeholder="생년월일을 입력해주세요. 예)1999-01-01" class="form-input01">
 
 
 
