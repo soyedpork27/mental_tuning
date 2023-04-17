@@ -54,7 +54,9 @@ include './config.php';
 
   <!-- 메인 영역 시작 -->
   <main>
-
+    <p class="wait_please ctnt_area">
+        인덱스 페이지 입니다.
+    </p>
     <p class="wait_please ctnt_area">
         USER PAGE COMING SOON ...
     </p>

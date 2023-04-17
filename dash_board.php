@@ -58,7 +58,7 @@
       &nbsp;
     </div>
     <?php
-    include './admin_header.php'
+    include './admin_header.php';
     ?>
     
 
@@ -67,7 +67,7 @@
     <main>
       <section class="ctnt_area">
         <h2 class="sect-title">
-          <a href="#" title="대쉬보드 바로가기">
+          <a href="./dash_board.php" title="대쉬보드 바로가기">
             <img src="./images/back.png" alt="뒤로가기">
             대시보드
           </a>

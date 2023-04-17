@@ -58,6 +58,7 @@ if($row01){
 
   // 데이터 베이스에서 비밀번호와 입력 한 비밀번호가 일치한다면
   if($member_pw == $input_pw){
+  // if(password_verify($input_pw,$member_pw)){
 
     // 만약 멤버의 레벨이 0 이라면 (탈퇴신청 회원이라면)
     if($member_level == 0) {
@@ -80,9 +81,16 @@ if($row01){
       ");
 
       session_start();
+      // 세션에 로그인 한 유저 코드 저장하기
       $_SESSION['user_code'] = $member_code;
+
+      // 세션에 로그인 한 유저 이름 저장하기
       $_SESSION['user_name'] = $member_name;
+
+      // 세션에 로그인 한 유저 이메일 저장하기
       $_SESSION['user_email'] = $member_email;
+
+      // 세션에 로그인 한 유저 레벨 저장하기
       $_SESSION['user_level'] = $member_level;
 
     
@@ -91,7 +99,7 @@ if($row01){
       
         echo("
           <script>
-            alert('관리자 계정입니다.');
+            alert('관리자 계정입니다. 관리자 페이지로 이동합니다.');
             location.href='./dash_board.php';
           </script>
         ");
@@ -118,8 +126,6 @@ if($row01){
     </script>
   ");
 }
-
-
 
 
 

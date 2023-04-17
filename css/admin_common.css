@@ -31,7 +31,10 @@ header{
   background-color: #111;
   margin-bottom: 60px;
   z-index : 1;
+  color : var(--f-color01);
 }
+
+
 header > h1 {
   text-align: center;
   margin-top: 50px;
@@ -141,6 +144,7 @@ main{
   background-color: #f2f2f2;
   flex: 1 1 auto;
   padding: 50px 3.67%;
+  overflow-x : hidden;
 }
 section > h2{
   font-size: 28px;
@@ -152,4 +156,12 @@ section > h2{
   color : var(--f-color01)!important;
   margin-top : 250px;
   text-align : center;
+}
+
+
+
+.to_main {
+  color : var(--f-color01);
+  text-align : center;
+  margin-top : 16px;
 }

@@ -9,7 +9,7 @@ include './db_con.php';
 
 <header>
       <h1>
-        <a href="./dash_bord.php" title="메인 바로가기">
+        <a href="./dash_board.php" title="메인 바로가기">
           <img src="../images/classu_logo.png" alt="로고 이미지">
           <p>ADMIN PAGE</p>
         </a>
@@ -36,7 +36,9 @@ include './db_con.php';
           <li><a href="#none"><img src="../images/icon_customer.png" alt="고객지원 관리">고객지원 관리</a></li>
         </ul>
 
-        <p class="username"><?=$user_name?> 님의 계정입니다.</p>
+        <p class="username"><?=$user_name?> 님의 계정입니다. <br><br>
+        <a href="./index.php" title="메인페이지로 바로가기" class="to_main">메인페이지로 바로가기</a>
+      </p>
 
         <div class="logout_btn"><a href="#none" title="로그아웃" id="logout_btn"><img src="../images/icon_logout.png" alt="로그아웃">로그아웃</a></div>
       </nav>
