@@ -9,14 +9,6 @@
   <link rel="stylesheet" href="../css/base.css" type="text/css">
   <link rel="stylesheet" href="../css/admin_common.css" type="text/css">
   <link rel="stylesheet" href="./css/class_open.css" type="text/css">
-
-  <!-- 제이쿼리 CDN -->
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-  <!-- 헤더 스크립트 연결 -->
-  <script src="../script/script.js" defer></script>
-
-
 </head>
 <body>
   <div class="t_wrap">
@@ -26,34 +18,9 @@
     <header>
       <h1>
         <a href="index.html" title="메인 바로가기">
-          <img src="../images/classu_logo.png" alt="로고 이미지">
-          <p>ADMIN PAGE</p>
+          <img src="./images/classu_logo_white 4.png" alt="로고 이미지">
         </a>
       </h1>
-      <nav>
-        <ul class="nav-lv1">
-          <li><a href="#none"><img src="../images/icon_dashboard.png" alt="대시보드">대시보드</a></li>
-          <li><a href="#none"><img src="../images/icon_user.png" alt="회원 관리">회원 관리</a></li>
-          <li class="nav-open">
-            <a href="#none"><img src="../images/icon_class.png" alt="클래스 관리">클래스 관리</a>
-            <ul class="nav-lv2">
-              <li><a href="#none">클래스 신청내역</a></li>
-              <li><a href="#none">클래스 개설목록</a></li>
-            </ul>
-          </li>
-          <li class="nav-open">
-            <a href="#none"><img src="../images/icon_content.png" alt="콘텐츠 관리">콘텐츠 관리</a>
-            <ul class="nav-lv2">
-              <li><a href="#none">커뮤니티 관리</a></li>
-              <li><a href="#none">공지사항 관리</a></li>
-              <li><a href="#none">이벤트 관리</a></li>
-            </ul>
-          </li>
-          <li><a href="#none"><img src="../images/icon_customer.png" alt="고객지원 관리">고객지원 관리</a></li>
-        </ul>
-
-        <div class="logout_btn"><a href="#none"><img src="../images/icon_logout.png" alt="로그아웃">로그아웃</a></div>
-      </nav>
     </header>
     <main>
       <section>
@@ -79,7 +46,7 @@
         <article class="video_list">
           <h3>개설 신청목록</h3>
           <ul>
-            <li>
+            <li class="c_btn01">
               <a href="#none" title="클래스 관리보기">
                 <div class="c_img_box">
                   <img src="./images/class1.jpg" alt="강의1">
@@ -92,7 +59,7 @@
                 </div>
               </a>
             </li>
-            <li>
+            <li class="c_btn01">
               <a href="#none" title="클래스 관리보기">
                 <div class="c_img_box">
                   <img src="./images/class2.jpg" alt="강의2">
@@ -105,7 +72,7 @@
                 </div>
               </a>
             </li>
-            <li>
+            <li class="c_btn01">
               <a href="#none" title="클래스 관리보기">
                 <div class="c_img_box">
                   <img src="./images/class3.jpg" alt="강의3">
@@ -131,7 +98,7 @@
                 </div>
               </a>
             </li>
-            <li>
+            <li class="c_btn01">
               <a href="#none" title="클래스 관리보기">
                 <div class="c_img_box">
                   <img src="./images/class5.jpg" alt="강의5">
@@ -144,7 +111,7 @@
                 </div>
               </a>
             </li>
-            <li>
+            <li class="c_btn01">
               <a href="#none" title="클래스 관리보기">
                 <div class="c_img_box">
                   <img src="./images/class6.jpg" alt="강의6">
@@ -196,6 +163,7 @@
       </section>
       <div class="c_modal_wrap">
         <div class="c_modal">
+          <img src="./images/close.png" alt="닫기버튼" class="c_btn02">
           <dl>
             <dt>강사님 프로플</dt>
             <dd><img src="./images/profile.png" alt="강사님 사진"></dd>
@@ -233,5 +201,14 @@
     </main>
   </div>
   <!-- 모달창 -->
+  <script>
+    let btn1 = document.querySelectorAll('.c_btn01');
+    let btn2 = document.querySelector('.c_btn02');
+    let modal = document.querySelector('.c_modal_wrap');
+    for(let i=0; i<btn1.length;i++){
+      btn1[i].addEventListener("click",()=>{modal.style.display="block"});
+    }
+    btn2.addEventListener("click",()=>{modal.style.display="none"});
+  </script>
 </body>
 </html>

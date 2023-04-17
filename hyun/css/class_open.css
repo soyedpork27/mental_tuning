@@ -207,9 +207,11 @@ select > h2 > a{
 /* 모달창 */
 .c_modal_wrap{
   position: fixed;
+  display: none;
   width: 100%;
   height: 100vh;
   background: rgba(0,0,0,0.7);
+  z-index: 3;
   /* float: right; */
   right: 0px; top: 0px;
 }
