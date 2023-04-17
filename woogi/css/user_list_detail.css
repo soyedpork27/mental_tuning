@@ -38,10 +38,6 @@ section h2 a:nth-child(2) {
 
 
 /* 서식 */
-#menu2 {
-  display:none;
-}
-
 .profile-title {
   font-size: 24px;
   font-weight: 700;
@@ -124,18 +120,6 @@ section h2 a:nth-child(2) {
   font-size: 24px;
 }
 
-.profile-tabmenu li:first-child a{
-  font-weight: 700;
-}
-
-.profile-tabmenu li:first-child span{
-  font-size: 24px;
-  font-weight: 900;
-  color: var(--m-color);
-  margin-left: 8px;
-  position: relative;
-}
-
 .profile-tabmenu li:first-child span::after{
   content: '';
   width: 2px; height: 24px;
@@ -144,14 +128,6 @@ section h2 a:nth-child(2) {
   position: absolute; right: -22px; top: 4px;
 }
 
-.profile-tabmenu li:last-child a{
-  color: #888;
-}
-
-.profile-tabmenu li:last-child span{
-  margin-left: 8px;
-  font-size: 24px;
-}
 
 /* 목록 */
 .img_overflow {
@@ -167,16 +143,50 @@ section h2 a:nth-child(2) {
   height: 100%;
 }
 
-#menu1 ul {
+/* 탭메뉴 서식 */
+.tabcon {
+  display: none;
+}
+
+.tabcon ul {
   margin-top: 32px;
   margin-bottom: 20px;
   justify-content: left;
   gap: 12px;
-  display: none;
-  /* display: flex; */
+  display: flex;
 }
 
-#menu1 ul li {
+.t-on {
+  display: block;
+}
+
+.profile-tabmenu li a{
+  color: #888;
+  font-weight: 400;
+}
+
+.tab-on2{
+  font-weight: 700 !important;
+  color: #111 !important;
+}
+
+.profile-tabmenu li span{
+  margin-left: 8px;
+  font-size: 24px;
+  font-weight: 800;
+  position: relative;
+}
+
+.tab-on3{
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--m-color);
+  margin-left: 8px;
+}
+
+
+
+.tabcon ul li {
   width: 25%;
 }
 
@@ -229,7 +239,21 @@ section h2 a:nth-child(2) {
 }
 
 .qna-table th, .qna-table td {
-  padding: 10px 32px;
+  padding: 10px 10px;
+}
+
+.qna-table th:first-child{
+  text-align: center;
+}
+.qna-table th:last-child{
+  text-align: center;
+}
+.qna-table tr td:first-child{
+  text-align: center;
+}
+
+.qna-table tr td:last-child{
+  text-align: center;
 }
 
 .qna-table td {
