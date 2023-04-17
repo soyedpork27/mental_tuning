@@ -136,7 +136,7 @@
                   <td><?=$row['interest']?></td>
                   <td><?=$row['apply_class']?></td>
                   <td><?=$row['open_class']?></td>
-                  <td class="btn"><a href="../woogi/user_list_detail.html" title="회원상세정보보기" class="list_edit_btn">관리</a></td>
+                  <td class="btn"><a href="../woogi/user_list_detail.php?no=<?=$row['code']?>" title="회원상세정보보기" class="list_edit_btn">관리</a></td>
                 </tr>
                 <?php
               }
