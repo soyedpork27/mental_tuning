@@ -16,13 +16,13 @@ include './db_con.php';
       </h1>
       <nav>
         <ul class="nav-lv1">
-          <li><a href="#none"><img src="../images/icon_dashboard.png" alt="대시보드">대시보드</a></li>
-          <li><a href="#none"><img src="../images/icon_user.png" alt="회원 관리">회원 관리</a></li>
+          <li><a href="./dash_board.php" title=""><img src="../images/icon_dashboard.png" alt="대시보드">대시보드</a></li>
+          <li><a href="./kw/user_list.php"><img src="../images/icon_user.png" alt="회원 관리">회원 관리</a></li>
           <li class="nav-open">
             <a href="#none"><img src="../images/icon_class.png" alt="클래스 관리">클래스 관리</a>
             <ul class="nav-lv2">
-              <li><a href="#none">클래스 신청내역</a></li>
-              <li><a href="#none">클래스 개설목록</a></li>
+              <li><a href="./hyun/class_open.html" title="">클래스 신청내역</a></li>
+              <li><a href="./kw/class_list.php">클래스 개설목록</a></li>
             </ul>
           </li>
           <li class="nav-open">
