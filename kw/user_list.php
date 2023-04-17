@@ -1,7 +1,8 @@
 <?php
-  include_once('./db_con.php');
+  include_once('../db_con.php');
+  include_once('../config.php');
 
-  $query_list = "SELECT * FROM member  ORDER BY code desc";
+  $query_list = "SELECT * FROM member  ORDER BY code desc limit 10";
   $result_list = mysqli_query($con, $query_list);
 
 ?>
@@ -35,7 +36,11 @@
     <div class="left_box">
       &nbsp;
     </div>
-    <header>
+
+    <?php
+      include_once('../admin_header.php')
+    ?>
+    <!-- <header>
       <h1>
         <a href="index.html" title="메인 바로가기">
           <img src="../images/classu_logo.png" alt="로고 이미지">
@@ -66,7 +71,7 @@
 
         <div class="logout_btn"><a href="#none"><img src="../images/icon_logout.png" alt="로그아웃">로그아웃</a></div>
       </nav>
-    </header>
+    </header> -->
 
     <main>
       <section id="mem_list">
@@ -302,4 +307,14 @@
     </main>
   </div>
 </body>
+
+<script>
+	$(document).ready(function(){
+    	$(".check_all").click(function() {
+          if($(".check_all").is(":checked")) $("input[class=checkselect]").prop("checked", true);
+          else $("input[class=checkselect]").prop("checked", false);
+      });
+    });
+</script>
+
 </html>
