@@ -33,7 +33,7 @@
     $result = mysqli_query($con, $sql);
     $row = mysqli_fetch_array($result);
 
-    $query_tutor_list = "SELECT class_list.tutor_name FROM `class_list` INNER JOIN `member` ON class_list.code = member.code WHERE member.code = $num";
+    $query_tutor_list = "SELECT class_list.tutor_name FROM `class_list` INNER JOIN `member` ON class_list.tutor_code = member.code WHERE member.code = $num";
     $tutor_list = mysqli_query($con, $query_tutor_list);
     $tutor_row = mysqli_fetch_array($tutor_list);
 
@@ -48,7 +48,7 @@
       </div>
       
     <?php
-    include_once ('../admin_header.php');
+    include_once ('./admin_header.php');
     ?>
 
     <!-- 메인영역 -->
@@ -124,7 +124,7 @@
                   </table>
                 </div>
               </div>
-              <a href="#none" class="edit-btn">수정</a>
+              <a href="./user_data_modify.php?num=<?=$num?>" class="edit-btn">수정</a>
             </div>
 
 
