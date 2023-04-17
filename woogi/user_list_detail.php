@@ -1,7 +1,7 @@
 <?php
 
-  include '../db_con.php';
-  include '../config.php';
+  include './db_con.php';
+  include './config.php';
 
   // 선택한 넘버를 변수에 담는다
   $num = $_GET['code'];
@@ -52,10 +52,10 @@
       <section>
         <!-- 페이지 타이틀 -->
         <h2>
-          <a href="#none" title="대쉬보드 바로가기">
+          <a href="../kw/user_list.php" title="">
             <img src="../images/back.png" alt="뒤로가기">
           </a>
-          <a href="#none">회원 관리</a>
+          <a href="../kw/user_list.php">회원 관리</a>
         </h2>
 
         <!-- 회원정보 아티클 -->
