@@ -4,7 +4,7 @@
   include './config.php';
 
   // 선택한 넘버를 변수에 담는다
-  $num = $_GET['code'];
+  $num = $_GET['no'];
 
 ?>
 
