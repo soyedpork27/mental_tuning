@@ -86,11 +86,11 @@
               <div class="tab01_ctnt t_wrap" id="tab01-ctnt01">
 
                 <figure class="ctnt01-fig">
-                  <a href="./hyun/open_class.html" title="">
+                  <a href="./hyun/class_open.html" title="">
                     <img src="./images/dash_alarm01.png" alt="">
                   </a>
                   <figcaption class="alarm_title">
-                    <a href="./hyun/open_class.html" title="">
+                    <a href="./hyun/class_open.html" title="">
                       신규 개설 신청
                     </a>
                   </figcaption>
