@@ -34,17 +34,14 @@ $get_interest = $_POST['interest'];
 $get_sms = $_POST['radio_SMS'];
 
 
-// $sql = "insert into member(name, email, pw, pwc,  birth, radio_gender, phone, job, interest, sms_agree ) values('$get_name', '$get_email', '$get_pw', '$get_pwc' , '$get_birth', '$get_gender', '$get_phone', '$get_job' , '$get_interest' , '$get_sms' )";
+$sql = "insert into member(name, email, pw, pwc,  birth, gender, phone, job, interest, sms_agree ) values('$get_name', '$get_email', '$get_pw', '$get_pwc' , '$get_birth', '$get_gender', '$get_phone', '$get_job' , '$get_interest' , '$get_SMS' )";
 
-$sql = "insert member set email='$get_email', name='$get_name', pw='$get_pw', pwc='$get_pwc', birth = $get_birth , gender=$get_gender , phone='$get_phone', job='$get_job', interest='$get_interest', sms_agree='$get_sms'";
+// $sql = "insert member set email='$get_email', name='$get_name', pw='$get_pw', pwc='$get_pwc', birth = $get_birth , gender=$get_gender , phone='$get_phone', job='$get_job', interest='$get_interest', sms_agree='$get_sms'";
 
 
 $result = mysqli_query($con, $sql);
 
 var_dump($result);
-die;
-
-
 
 mysqli_close($con);
 

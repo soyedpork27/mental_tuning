@@ -177,7 +177,7 @@ include './db_con.php';
           <label for="birth" class="">
             생년월일
           </label>
-          <input type="text" id="birth" name="birth" placeholder="생년월일을 입력해주세요. 예)1999-01-01" class="form-input01">
+          <input type="date" id="birth" name="birth" placeholder="생년월일을 입력해주세요. 예)1999-01-01" class="form-input01">
 
 
 

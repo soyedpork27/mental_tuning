@@ -57,8 +57,8 @@ $member_pw = $row01['pw'];
 if($row01){
 
   // 데이터 베이스에서 비밀번호와 입력 한 비밀번호가 일치한다면
-  if($member_pw == $input_pw){
-  // if(password_verify($input_pw,$member_pw)){
+  // if($member_pw == $input_pw){
+  if(password_verify($input_pw,$member_pw)){
 
     // 만약 멤버의 레벨이 0 이라면 (탈퇴신청 회원이라면)
     if($member_level == 0) {
