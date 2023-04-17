@@ -1,3 +1,13 @@
+<?php
+
+  include '../db_con.php';
+  include '../config.php';
+
+  // 선택한 넘버를 변수에 담는다
+  $num = $_GET['code'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -8,55 +18,35 @@
   <link rel="stylesheet" href="../css/reset.css" type="text/css">
   <link rel="stylesheet" href="../css/base.css" type="text/css">
   <link rel="stylesheet" href="../css/admin_common.css" type="text/css">
-  <!-- 현재페이지 서식 -->
+  <!-- user_list_detail 서식 -->
   <link rel="stylesheet" href="./css/user_list_detail.css" type="text/css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="../script/header.js"></script>
-  <!-- 현재페이지 스크립트 -->
+  <!-- user_list_detail 스크립트 -->
   <script src="./script/user_list_detail.js"></script>
 </head>
 <body>
 
+  <?php
+
+    $sql = "select * from member where code=$num";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_array($result);
+
+    $query_tutor_list = "SELECT class_list.tutor_name FROM `class_list` INNER JOIN `member` ON class_list.code = member.code WHERE member.code = $num";
+    $tutor_list = mysqli_query($con, $query_tutor_list);
+    $tutor_row = mysqli_fetch_array($tutor_list);
+
+  ?>
+
   <div class="t_wrap">
 
     <!-- 헤더(&내비게이션)영역 -->
-    <div class="left_box">
-      &nbsp;
-    </div>
-
-    <header>
-      <h1>
-        <a href="index.html" title="메인 바로가기">
-          <img src="../images/classu_logo.png" alt="로고 이미지">
-          <p>ADMIN PAGE</p>
-        </a>
-      </h1>
-      <nav>
-        <ul class="nav-lv1">
-          <li><a href="#none"><img src="../images/icon_dashboard.png" alt="대시보드">대시보드</a></li>
-          <li><a href="#none"><img src="../images/icon_user.png" alt="회원 관리">회원 관리</a></li>
-          <li class="nav-open">
-            <a href="#none"><img src="../images/icon_class.png" alt="클래스 관리">클래스 관리</a>
-            <ul class="nav-lv2">
-              <li><a href="#none">클래스 신청내역</a></li>
-              <li><a href="#none">클래스 개설목록</a></li>
-            </ul>
-          </li>
-          <li class="nav-open">
-            <a href="#none"><img src="../images/icon_content.png" alt="콘텐츠 관리">콘텐츠 관리</a>
-            <ul class="nav-lv2">
-              <li><a href="#none">커뮤니티 관리</a></li>
-              <li><a href="#none">공지사항 관리</a></li>
-              <li><a href="#none">이벤트 관리</a></li>
-            </ul>
-          </li>
-          <li><a href="#none"><img src="../images/icon_customer.png" alt="고객지원 관리">고객지원 관리</a></li>
-        </ul>
-
-        <div class="logout_btn"><a href="#none"><img src="../images/icon_logout.png" alt="로그아웃">로그아웃</a></div>
-      </nav>
-    </header>
-
+    <div class="t_wrap">
+      <div class="left_box">
+        &nbsp;
+      </div>
+      
     <!-- 메인영역 -->
     <main>
       <section>
@@ -78,13 +68,13 @@
                   <div class="profile-circle">
                     <img src="./images/user_profile.png" alt="일반회원 프로필사진">
                   </div>
-                  <p class="profile-name">홍길동</p>
+                  <p class="profile-name"><?=$row['name']?></p>
                 </div>
                 <div class="tutor-profile">
                   <div class="profile-circle">
                     <img src="./images/user_profile.png" alt="강사회원 프로필사진">
                   </div>
-                  <p class="profile-name">코딩선생님</p>
+                  <p class="profile-name"><?=$tutor_row['tutor_name']?></p>
                 </div>
             <!-- 프로필 테이블 -->
               <div class="profile-table-wrap">
@@ -98,33 +88,33 @@
                   <tbody>
                     <tr>
                       <td>이름</td>
-                      <td>홍길동</td>
+                      <td><?=$row['name']?></td>
                       <td>강사명</td>
-                      <td>코딩선생님</td>
+                      <td><?=$tutor_row['tutor_name']?></td>
                     </tr>
                     <tr>
                       <td>생년월일</td>
-                      <td>98.01.04</td>
+                      <td><?=$row['birth']?></td>
                       <td>성별</td>
-                      <td>남</td>
+                      <td><?=$row['gender']?></td>
                     </tr>
                     <tr>
                       <td>이메일</td>
-                      <td>hong@naver.com</td>
+                      <td><?=$row['email']?></td>
                       <td>마케팅 수신</td>
-                      <td>Y</td>
+                      <td><?=$row['sms_agree']?></td>
                     </tr>
                     <tr>
                       <td>전화번호</td>
-                      <td>010-6539-0018</td>
+                      <td><?=$row['phone']?></td>
                       <td>가입날짜</td>
-                      <td>23.04.12 22:14</td>
+                      <td><?=$row['join_date']?></td>
                     </tr>
                     <tr>
                       <td>직업</td>
-                      <td>학생</td>
+                      <td><?=$row['job']?></td>
                       <td>관심분야</td>
-                      <td>어학/코딩</td>
+                      <td><?=$row['interest']?></td>
                     </tr>
                   </tbody>
                   </table>
@@ -133,11 +123,12 @@
               <a href="#none" class="edit-btn">수정</a>
             </div>
 
+
             <div class="user-wrap-bottom">
               
               <!-- 탭메뉴 목록 -->
               <ul class="profile-tabmenu">
-                <li class="tab-on" data-tab="menu1"><a href="#none" class="tab-on2">수강중인 클래스<span class="tab-on3">5</span></a></li>
+                <li class="tab-on" data-tab="menu1"><a href="#none" class="tab-on2">수강중인 클래스<span class="tab-on3">4</span></a></li>
                 <li data-tab="menu2"><a href="#none">개설한 클래스<span>3</span></a></li>
               </ul>
 
@@ -184,15 +175,6 @@
 
               <div id="menu2" class="tabcon">  <!-- 탭메뉴 2 :: 개설한 클래스 -->
                 <ul>
-                  <li>
-                    <a href="#none"><div class="img_overflow"><img src="./images/class_thum.jpg" alt=""></div></a>
-                  <div class="class-desc">
-                    <span>D-28</span>
-                    <span>2023.04.10 - 2023.05.10</span>
-                    <p><a href="#none">프로그램 개발자 양성 강의2</a></p>
-                    <p>전창우 강사</p>
-                  </div>
-                  </li>
                   <li>
                     <a href="#none"><div class="img_overflow"><img src="./images/class_thum.jpg" alt=""></div></a>
                   <div class="class-desc">
