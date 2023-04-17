@@ -1,6 +1,6 @@
 <?php
-  include_once('../db_con.php');
-  include_once('../config.php');
+  include_once('./db_con.php');
+  include_once('./config.php');
 
   $query_list = "SELECT * FROM class_list ORDER BY code desc limit 10";
   $result_list = mysqli_query($con, $query_list);
@@ -39,7 +39,7 @@
     </div>
 
     <?php
-      include_once('../admin_header.php')
+      include_once('./admin_header.php')
     ?>
     <!-- <header>
       <h1>

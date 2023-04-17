@@ -77,7 +77,7 @@
     <main>
       <section id="mem_list">
         <h2>
-          <a href="#" title="대시보드 바로가기">
+          <a href="../dash_board.php" title="대시보드 바로가기">
             <img src="../images/back.png" alt="뒤로가기"> 회원 정보
           </a>
         </h2>
