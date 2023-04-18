@@ -51,6 +51,8 @@
 
   <script src="./script/admin_dashboard.js" defer></script>
 
+  <script src="./script/header.js" defer></script>
+
 </head>
 <body>
   <div class="t_wrap">

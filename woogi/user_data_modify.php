@@ -25,13 +25,19 @@ $row = mysqli_fetch_array($result);
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>정보 수정</title>
+  
   <link rel="stylesheet" href="../css/reset.css" type="text/css">
+
   <link rel="stylesheet" href="../css/base.css" type="text/css">
+
   <link rel="stylesheet" href="../css/admin_common.css" type="text/css">
+
   <!-- user_list_detail 서식 -->
   <link rel="stylesheet" href="./css/user_list_detail.css" type="text/css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="../script/header.js"></script>
+
+  <script src="../script/header.js" defer></script>
+
   <!-- user_list_detail 스크립트 -->
   <script src="./script/user_list_detail.js"></script>
 </head>

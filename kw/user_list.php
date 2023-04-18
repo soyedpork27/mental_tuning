@@ -29,7 +29,7 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <!-- 헤더 스크립트 연결 -->
-    <script src="../script/script.js" defer></script>
+    <script src="../script/header.js" defer></script>
   
 </head>
 <body>

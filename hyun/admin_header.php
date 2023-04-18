@@ -9,7 +9,7 @@ include './db_con.php';
 
 <header>
       <h1>
-        <a href="./dash_board.php" title="메인 바로가기">
+        <a href="../dash_board.php" title="메인 바로가기">
           <img src="../images/classu_logo.png" alt="로고 이미지">
           <p>ADMIN PAGE</p>
         </a>

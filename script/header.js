@@ -19,6 +19,8 @@
     // });
   
 
+
+    // admin 헤더 오버 시 2단 gnb 페이드인
     $(function(){
 
       $('.nav-open').hover(function(){
