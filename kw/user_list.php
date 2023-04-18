@@ -99,7 +99,7 @@
                 <option value="성별">성별</option>
               </select>
               <label for="search"><img src="../images/research.png" alt="검색 아이콘"></label>
-              <input type="searchbox" placeholder="검색어를 입력하세요" class="search">
+              <input type="search" placeholder="검색어를 입력하세요" class="search">
           </fieldset>
 
           <article id="mem_list_table">
@@ -117,6 +117,7 @@
                       <th>관심분야<i class="fa fa-angle-down"></i></th>
                       <th>수강강좌<i class="fa fa-angle-down"></i></th>
                       <th>개설강좌<i class="fa fa-angle-down"></i></th>
+                      <th>&nbsp;</th>
                   </tr>
               </thead>
 

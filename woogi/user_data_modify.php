@@ -106,13 +106,6 @@ $row = mysqli_fetch_array($result);
 
                     </tr>
                     <tr>
-                      <td>생년월일</td>
-                      <td><input type="date" id="birth" name="birth" placeholder="<?=$row['birth']?>"></td>
-
-                      
-
-                    </tr>
-                    <tr>
                       <td>이메일</td>
                       <td><input type="email" id="email" name="email" placeholder="<?=$row['email']?>"></td>
 

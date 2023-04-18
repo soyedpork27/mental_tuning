@@ -43,7 +43,8 @@ header > h1 {
 header > h1  img{
   width: 180px;
 }
-header > h1 a p {
+header > h1 a span {
+  display : block;
   font-family: 'SUIT-Regular';
   font-size: 20px;
   color: #fff;
@@ -94,7 +95,7 @@ header nav{
   transform: translateY(-56px);
   display: none;
   color: #fff;
-  background: #000000c0;
+  background: #000000;
   border-radius: 0px 7px 7px 0px;
 }
 
@@ -140,7 +141,7 @@ nav div img {
 }
 
 main{
-  width: calc(100%-250px);
+  width: calc( 100% - 250px );
   background-color: #f2f2f2;
   flex: 1 1 auto;
   padding: 50px 3.67%;

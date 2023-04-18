@@ -13,12 +13,8 @@ include './config.php';
 
 
 
-
   if($_POST['name'])   $g_name = $_POST['name'];
   else $g_name = $row01['name'];
-
-  if($_POST['birth'])   $g_birth = $_POST['birth'];
-  else $g_birth = $row01['birth'];
 
   if($_POST['email'])   $g_email = $_POST['email'];
   else $g_email = $row01['email'];
@@ -33,15 +29,13 @@ include './config.php';
   else $g_interest = $row01['interest'];
 
 
-  $sql2 = "UPDATE member SET name='$g_name', birth ='$g_birth', email='$g_email', phone='$g_phone', job='$g_job' interest='$g_interest'  where code='$num'";
+  $sql2 = "UPDATE member SET name='$g_name', email='$g_email', phone='$g_phone', job='$g_job' interest='$g_interest' where code='$num'";
+
+  
 
 
+  mysqli_query($con,$sql2);
 
-
-  $result2 = mysqli_query($con,$sql2);
-
-  var_dump($result2);
-  die;
 
   mysqli_close($con);
 
@@ -51,7 +45,7 @@ include './config.php';
   echo("
   <script>
     alert('정보 수정이 완료되었습니다.');
-    location.href='./user_list_detail.php?no=<?=$num?>';
+    location.href='../kw/user_list.php';
   </script>
 ");
 
