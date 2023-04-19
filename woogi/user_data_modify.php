@@ -32,6 +32,8 @@ $row = mysqli_fetch_array($result);
 
   <link rel="stylesheet" href="../css/admin_common.css" type="text/css">
 
+  <link rel="stylesheet" href="./css/user_data_modify.css" type="text/css">
+
   <!-- user_list_detail 서식 -->
   <link rel="stylesheet" href="./css/user_list_detail.css" type="text/css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -77,55 +79,71 @@ $row = mysqli_fetch_array($result);
           <h3 class="profile-title">정보 수정</h3>
 
             <form method="post" action="./db_modify.php?no=<?=$num?>" class="user-wrap-top">
-              <div class="profile-flex">
-                <div class="user-profile">
-                  <div class="profile-circle">
+              <div class="profile-flex01 flexible">
+                <!-- 유저 사진 -->
+                <div class="user-profile01 flexible">
+                  <div class="profile-circle01">
                     <img src="./images/user_profile.png" alt="일반회원 프로필사진">
                   </div>
-                  <p class="profile-name"><?=$row['name']?></p>
+                  <p class="profile-name01"><?=$row['name']?></p>
                 </div>
-                <div class="tutor-profile">
-                  <div class="profile-circle">
+                <!-- 강사 사진 -->
+                <div class="tutor-profile01 flexible">
+                  <div class="profile-circle01">
                     <img src="./images/user_profile.png" alt="강사회원 프로필사진">
                   </div>
-                  <p class="profile-name"><?=$tutor_row['tutor_name']?></p>
+                  <p class="profile-name01"><?=$tutor_row['tutor_name']?></p>
                 </div>
             <!-- 프로필 테이블 -->
-              <div class="profile-table-wrap">
-                <table class="profile-table">
-                  <colgroup>
-                  <col width="20%">
-                  <col width="30%">
-                  <col width="20%">
-                  <col width="30%">
-                  </colgroup>
-                  <tbody>
-                    <tr>
-                      <td>이름</td>
-                      <td><input type="text" id="name" name="name" placeholder="<?=$row['name']?>"></td>
 
-                    </tr>
-                    <tr>
-                      <td>이메일</td>
-                      <td><input type="email" id="email" name="email" placeholder="<?=$row['email']?>"></td>
-
-                    </tr>
-                    <tr>
-                      <td>전화번호</td>
-                      <td><input type="text" id="phone" name="phone" placeholder="<?=$row['phone']?>"></td>
+                      <dl class="input_wrap">
+                        <dt>
+                          <label for="name">이름<label>
+                        </dt>
+                        <dd>
+                          <input type="text" id="name" name="name" placeholder="<?=$row['name']?>" class="admin_modify_input">
+                        </dd>
+                      </dl>
 
 
-                    </tr>
-                    <tr>
-                      <td>직업</td>
-                      <td><input type="text" id="job" name="job" placeholder="<?=$row['job']?>"></td>
+                      <dl class="input_wrap">
+                        <dt>
+                          <label for ="email">이메일</label>
+                        </dt>
+                        <dd>
+                          <input type="email" id="email" name="email" placeholder="<?=$row['email']?>" class="admin_modify_input">
+                        </dd>
+                      </dl>
 
-                      <td>관심분야</td>
-                      <td><input type="text" id="interest" name="interest" placeholder="<?=$row['interest']?>"></td>
+                      <dl class="input_wrap">
+                        <dt>
+                          <label for="phone">전화번호</label>
+                        </dt>
+                        <dd>
+                          <input type="text" id="phone" name="phone" placeholder="<?=$row['phone']?>" class="admin_modify_input">
+                        </dd>
+                      </dl>
 
-                    </tr>
-                    </tbody>
-                  </table>
+
+                      <dl class="input_wrap">
+                        <dt>
+                          <label for="job">직업</label>
+                        </dt>
+                        <dd>
+                          <input type="text" id="job" name="job" placeholder="<?=$row['job']?>" class="admin_modify_input">
+                        </dd>
+                      </dl>
+
+                      <dl class="input_wrap">
+                        <dt>
+                          <label for="interest">관심분야</label>
+                        </dt>
+                        <dd>
+                          <input type="text" id="interest" name="interest" placeholder="<?=$row['interest']?>" class="admin_modify_input">
+                        </dd>
+                      </dl>
+
+                    
               </div>
             </div>
               <button type="submit" class="edit-btn">수정 완료</button>

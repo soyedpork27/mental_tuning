@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+
+.input_wrap {
+  padding : 30px 50px;
+  display : flex;
+}
+
+.input_wrap dt {
+  width : 90px;
+  line-height : 45px;
+}
+
+.input_wrap dd {
+}
+
+.admin_modify_input{
+  border : none;
+  background-color : #eee;
+  padding : 0;
+  margin : 0;
+  width : 230px;
+  height : 45px;
+  border-radius : 15px;
+  text-indent : 15px;
+}
+
+.profile-flex01 {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.flexible {
+  display : flex;
+}
+
+/* 유저 프로필 사진 영역 */
+.user-profile01 {
+  display : block;
+}
+
+/* 강사 프로필 사진 영역 */
+.tutor-profile01 {
+  display : flex;
+}
+
+.profile-circle01 {}
+
+.profile-name01 {
+  
+}

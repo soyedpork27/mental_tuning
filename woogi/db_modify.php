@@ -9,6 +9,8 @@ include './config.php';
 
   $sql1 = "select * from member where code='$num'";
   $result1 = mysqli_query($con,$sql1);
+
+  // row01 은 기존의 데이터 이다
   $row01 = mysqli_fetch_array($result1);
 
 
