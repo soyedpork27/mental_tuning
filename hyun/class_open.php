@@ -11,11 +11,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>클래스 개설 신청 관리</title>
   <link rel="stylesheet" href="../css/reset.css" type="text/css">
   <link rel="stylesheet" href="../css/base.css" type="text/css">
   <link rel="stylesheet" href="../css/admin_common.css" type="text/css">
   <link rel="stylesheet" href="./css/class_open.css" type="text/css">
+
+  <script src="../script/header.js" defer></script>
+
+  <title>클래스 개설 신청 관리</title>
 </head>
 <body>
   <div class="t_wrap">
