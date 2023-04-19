@@ -53,6 +53,8 @@
 
   <script src="./script/header.js" defer></script>
 
+  <script src="./script/calendar.js" defer></script>
+
 </head>
 <body>
   <div class="t_wrap">
@@ -282,6 +284,27 @@
 
           <article class="ctnt_box02">
             <h3 class="hidden">calander</h3>
+            <div class="sec_cal">
+            <div class="cal_nav">
+              <a href="javascript:;" class="nav-btn go-prev">prev</a>
+              <div class="year-month"></div>
+              <a href="javascript:;" class="nav-btn go-next">next</a>
+            </div>
+            <div class="cal_wrap">
+              <div class="days">
+                <div class="day">MON</div>
+                <div class="day">TUE</div>
+                <div class="day">WED</div>
+                <div class="day">THU</div>
+                <div class="day">FRI</div>
+                <div class="day">SAT</div>
+                <div class="day">SUN</div>
+              </div>
+                <div class="dates">
+                
+                </div>
+              </div>
+            </div>
 
 
           </article>
