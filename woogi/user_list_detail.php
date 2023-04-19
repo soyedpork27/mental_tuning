@@ -45,7 +45,6 @@
 
   ?>
 
-  <div class="t_wrap">
 
     <!-- 헤더(&내비게이션)영역 -->
     <div class="t_wrap">
@@ -136,6 +135,13 @@
 
             <div class="user-wrap-bottom">
               
+            <?php
+              $query_class_list = "SELECT * FROM class_list";
+              $result_class_list = mysqli_query($con, $query_class_list);
+              
+              $result_class_list2 = mysqli_query($con, $query_class_list);
+            ?>
+
               <!-- 탭메뉴 목록 -->
               <ul class="profile-tabmenu">
                 <li class="tab-on" data-tab="menu1"><a href="#none" class="tab-on2">수강중인 클래스<span class="tab-on3">4</span></a></li>
@@ -144,74 +150,53 @@
 
               <div id="menu1" class="tabcon t-on">  <!-- 탭메뉴 1 :: 수강중인 클래스 -->
                 <ul>
+                  <?php
+                  while($row = mysqli_fetch_array($result_class_list)) {
+                  ?>
                   <li>
-                    <a href="#none"><div class="img_overflow"><img src="./images/class_thum.jpg" alt=""></div></a>
+                    <a href="#none">
+                      <div class="img_overflow">
+                        <img src="./images/<?=$row['class_img']?>" alt="">
+                      </div>
+                    </a>
                     <div class="class-desc">
                       <span>D-28</span>
-                      <span>2023.04.10 - 2023.05.10</span>
-                      <p><a href="#none">프로그램 개발자 양성 강의</a></p>
-                      <p>전창우 강사</p>
+                      <span><?=substr($row['open_date'], 0, 10)?> &#126; <?=$row['class_term']?></span>
+                      <p>
+                        <a href="#none"><?=$row['class_name']?></a>
+                      </p>
+                      <p><?=$row['tutor_name']?> 강사</p>
                     </div>
                   </li>
-                  <li>
-                    <a href="#none"><div class="img_overflow"><img src="./images/class_thum2.jpg" alt=""></div></a>
-                    <div class="class-desc">
-                      <span>D-28</span>
-                      <span>2023.04.10 - 2023.05.10</span>
-                      <p><a href="#none">프로그램 개발자 양성 강의</a></p>
-                      <p>전창우 강사</p>
-                    </div>
-                  </li>
-                  <li>
-                    <a href="#none"><div class="img_overflow"><img src="./images/class_thum.jpg" alt=""></div></a>
-                    <div class="class-desc">
-                      <span>D-28</span>
-                      <span>2023.04.10 - 2023.05.10</span>
-                      <p><a href="#none">프로그램 개발자 양성 강의</a></p>
-                      <p>전창우 강사</p>
-                    </div>
-                  </li>
-                  <li>
-                    <a href="#none"><div class="img_overflow"><img src="./images/class_thum2.jpg" alt=""></div></a>
-                    <div class="class-desc">
-                      <span>D-28</span>
-                      <span>2023.04.10 - 2023.05.10</span>
-                      <p><a href="#none">프로그램 개발자 양성 강의</a></p>
-                      <p>전창우 강사</p>
-                    </div>
-                  </li>
+                  <?php
+                  }
+                  ?>
                 </ul>
               </div>
 
               <div id="menu2" class="tabcon">  <!-- 탭메뉴 2 :: 개설한 클래스 -->
                 <ul>
+                  <?php
+                  while($row = mysqli_fetch_array($result_class_list2)) {
+                  ?>
                   <li>
-                    <a href="#none"><div class="img_overflow"><img src="./images/class_thum.jpg" alt=""></div></a>
-                  <div class="class-desc">
-                    <span>D-28</span>
-                    <span>2023.04.10 - 2023.05.10</span>
-                    <p><a href="#none">프로그램 개발자 양성 강의2</a></p>
-                    <p>전창우 강사</p>
-                  </div>
+                    <a href="#none">
+                      <div class="img_overflow">
+                        <img src="./images/class_thum.jpg" alt="">
+                      </div>
+                    </a>
+                    <div class="class-desc">
+                      <span>D-28</span>
+                      <span>2023.04.10 - 2023.05.10</span>
+                      <p>
+                        <a href="#none"><?=$row['class_name']?></a>
+                      </p>
+                      <p><?=$row['tutor_name']?> 강사</p>
+                    </div>
                   </li>
-                  <li>
-                    <a href="#none"><div class="img_overflow"><img src="./images/class_thum.jpg" alt=""></div></a>
-                  <div class="class-desc">
-                    <span>D-28</span>
-                    <span>2023.04.10 - 2023.05.10</span>
-                    <p><a href="#none">프로그램 개발자 양성 강의2</a></p>
-                    <p>전창우 강사</p>
-                  </div>
-                  </li>
-                  <li>
-                    <a href="#none"><div class="img_overflow"><img src="./images/class_thum.jpg" alt=""></div></a>
-                  <div class="class-desc">
-                    <span>D-28</span>
-                    <span>2023.04.10 - 2023.05.10</span>
-                    <p><a href="#none">프로그램 개발자 양성 강의2</a></p>
-                    <p>전창우 강사</p>
-                  </div>
-                  </li>
+                  <?php
+                  }
+                  ?>
                 </ul>
               </div>
 
