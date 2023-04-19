@@ -1,0 +1,242 @@
+<?php
+
+
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>클래스 개설 신청 관리</title>
+  <link rel="stylesheet" href="../css/reset.css" type="text/css">
+  <link rel="stylesheet" href="../css/base.css" type="text/css">
+  <link rel="stylesheet" href="../css/admin_common.css" type="text/css">
+  <link rel="stylesheet" href="./css/class_open.css" type="text/css">
+</head>
+<body>
+  <div class="t_wrap">
+    <div class="left_box">
+      &nbsp;
+    </div>
+    <!-- 헤더영역 시작 -->
+    <?php
+    include './admin_header.php';
+    ?>
+    <!-- 헤더영역 끝 -->
+    <main>
+      <section>
+        <h2>
+          <a href="#" title="대쉬보드 바로가기">
+            <img src="./images/back.png" alt="뒤로가기">
+          </a>
+          클래스 개설 신청 관리
+        </h2>
+
+        <form action="" method="" name="강좌검색" class="f_box">
+          <fieldset class="searchbox">
+            <legend class="hidden">클래스 정보 검색</legend>
+            <label for="filter"><img src="./images/fillter.png" alt="필터 아이콘"></label>
+            <select name="searchfilter" id="searchfilter" class="filter">
+              <option value="검색할 항목을 선택하세요">검색할 항목을 선택하세요</option>
+              <option value="카테고리">카테고리</option>
+              <option value="클래스명">클래스명</option>
+              <option value="강사명">강사명</option>
+              <option value="검색 태그">검색 태그</option>
+              <option value="개강일">개강일</option>
+              <option value="기간">기간</option>
+              <option value="개설여부">개설여부</option>
+            </select>
+            <label for="search"><img src="./images/research.png" alt="검색 아이콘"></label>
+            <input type="searchbox" placeholder="검색어를 입력하세요" class="search">
+        </fieldset>
+          
+          <article class="video_list">
+            <h3>개설 신청목록</h3>
+            <ul>
+              <li class="c_btn01">
+                <a href="#none" title="클래스 관리보기">
+                  <div class="c_img_box">
+                    <img src="./images/class1.jpg" alt="강의1">
+                    <img src="./images/plus.png" alt="플러스" class="plus">
+                  </div>
+                  <div class="c_desc">
+                    <p>2023-04-10 PM 05:32</p>
+                    <p class="explain">포토샵 실무 꿀팁!</p>
+                    <p>전창우</p>
+                  </div>
+                </a>
+              </li>
+              <li class="c_btn01">
+                <a href="#none" title="클래스 관리보기">
+                  <div class="c_img_box">
+                    <img src="./images/class2.jpg" alt="강의2">
+                    <img src="./images/plus.png" alt="플러스" class="plus">
+                  </div>
+                  <div class="c_desc">
+                    <p>2023-04-10 PM 05:32</p>
+                    <p class="explain">쉽게 그림을 같이 그려봐요!</p>
+                    <p>전창우</p>
+                  </div>
+                </a>
+              </li>
+              <li class="c_btn01">
+                <a href="#none" title="클래스 관리보기">
+                  <div class="c_img_box">
+                    <img src="./images/class3.jpg" alt="강의3">
+                    <img src="./images/plus.png" alt="플러스" class="plus">
+                  </div>
+                  <div class="c_desc">
+                    <p>2023-04-10 PM 05:32</p>
+                    <p class="explain">[공간 디자인] Simple is BEST가 뭔지 보여줄께</p>
+                    <p>정우현</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#none" title="클래스 관리보기">
+                  <div class="c_img_box">
+                    <img src="./images/class4.jpg" alt="강의4">
+                    <img src="./images/plus.png" alt="플러스" class="plus">
+                  </div>
+                  <div class="c_desc">
+                    <p>2023-04-10 PM 05:32</p>
+                    <p class="explain">건축 설계의 모든 것!</p>
+                    <p>셜록현준</p>
+                  </div>
+                </a>
+              </li>
+              <li class="c_btn01">
+                <a href="#none" title="클래스 관리보기">
+                  <div class="c_img_box">
+                    <img src="./images/class5.jpg" alt="강의5">
+                    <img src="./images/plus.png" alt="플러스" class="plus">
+                  </div>
+                  <div class="c_desc">
+                    <p>2023-04-10 PM 05:32</p>
+                    <p class="explain">인생이 힘들어? 무료니깐 들어봐</p>
+                    <p>정우현</p>
+                  </div>
+                </a>
+              </li>
+              <li class="c_btn01">
+                <a href="#none" title="클래스 관리보기">
+                  <div class="c_img_box">
+                    <img src="./images/class6.jpg" alt="강의6">
+                    <img src="./images/plus.png" alt="플러스" class="plus">
+                  </div>
+                  <div class="c_desc">
+                    <p>2023-04-10 PM 05:32</p>
+                    <p class="explain">비트란 너의 감성이다! 감성을 찾고 싶어?</p>
+                    <p>정우현</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </article>
+          
+          <article class="apply_list">
+            <h3>개설 신청 내역</h3>
+            <table>
+              <thead>
+                <th>번호</th>
+                <th>제목</th>
+                <th>신청 시간</th>
+                <th>희망 가격</th>
+                <th>답변상태</th>
+              </thead>
+              <tr>
+                <td>00001</td>
+                <td>비트란 너의 감성이다! 감성을 찾고 싶어?</td>
+                <td>2023.04.11 PM 05:59</td>
+                <td>100원</td>
+                <td><span class="agree">수락</span></td>
+              </tr>
+              <tr>
+                <td>00002</td>
+                <td>인생이 힘들어? 무료니깐 들어봐</td>
+                <td>2023.04.11 PM 05:59</td>
+                <td>무료</td>
+                <td><span class="wait">대기</span></td>
+              </tr>
+              <tr>
+                <td>00003</td>
+                <td>[공간 디자인] Simple BEST가 뭔지 보여줄께</td>
+                <td>2023.04.11 PM 05:59</td>
+                <td>1000원</td>
+                <td><span class="reject">거부</span></td>
+              </tr>
+            </table>
+          </article>
+        </section>
+      </form>
+        <!-- 모달창 -->
+        <div class="c_modal_wrap">
+          <div class="c_modal">
+            <img src="./images/close.png" alt="닫기버튼" class="c_btn02">
+            <dl class="p_info flexable">
+              <div class="c_box00">
+                <dt class="hidden">강사님 프로플</dt>
+                <dd><img src="./images/profile.png" alt="강사님 사진"></dd>
+              <dt class="hidden">강사님 이름</dt><br>
+              <dd>전창우</dd>
+            </div>
+            <div class="c_box01">
+              <dt>강사 소개</dt><br>
+              <dd>저는 000에서 이 사업을 하고 있고, 저에 직업은 000입니다.<br><br>
+                지금은 부업또는 전업으로 하고 있고 저를 후원해 주고 계시는 분은 000이십니다.<br> 
+                오늘 강의해주실 사장님은 이 사업에 경험이 많으신 분이고, 많은 분들을 성공하실 수 있도록 도움을 주신 경험도 풍부하신 분이십니다.</dd>
+            </div>
+          </dl>
+          <dl class="c_info">
+            <div class="flexable">
+              <div class="c_info01">
+                <dt class="hidden">썸네일</dt>
+                <dd><img src="./images/class1.jpg" alt="강의"></dd>
+              </div>
+              <div class="c_info02">
+                <dt>클래스명</dt>
+                <dd>포토샵 꿀팁!</dd><br>
+                <dt>카테고리</dt>
+                <dd>포토샵 / 디자인</dd><br>
+                <dt>희망가격</dt>
+                <dd>1000원</dd><br>
+                <dt>검색태그</dt>
+                <dd>#포토샵 #디자인 #편집 #자격증</dd><br>
+                <dt>개설 신청일</dt>
+                <dd>2023.04.12</dd>
+              </div>
+            </div>
+            <div class="c_info03">
+              <dt>클래스 소개</dt><br>
+              <dd>포토샵을 배우고 어느정도 수준에 오르면 학교나 학원에서는 배운것보다 전문적인 수준의 스킬을 배우고 싶어 합니다. 웹통에서도 포토샵 초급 강좌를 소개해드린적이 있는데요.<br>어느정도 수준에 올라온 포토샵 유저에겐 부족한점이 많습니다.<br><br>이 강의는 중급 이상의 그래픽 디자이너에게 추천드리는 포토샵 강좌입니다. 튜터리얼을 통홰 수준높은 텍스트 효과를 만드는 방법에 대해 배울 수 있으며<br> 조금만 응용해도 지루한 디자인에 놀라운 효과를 만들어 낼수 있습니다.</dd><br>
+              <dt>강의계획서</dt><br>
+              <dd>1주차 - 포토샵의 기본적인 사용법을 숙지하고 기본적인 보정, 합성, 선택 기능을 사용해봅니다.<br>
+                2주차 - 포토샵으로 멋진 카드뉴스, 아트워크를 제작하고 도구(Tool) 백과사전의 사용법을 학습합니다.<br>
+                3주차 - 포토샵으로 문자, 브러시 도구 등을 사용해보고 메뉴바 백과사전의 사용법을 학습합니다.</dd><br>
+              <dt>영상파일</dt><br>
+              <dd>???</dd>
+            </div>
+          </dl>
+          <div class="btn_wrap">
+            <button type="submit" class="call">승인</button>
+            <button type="submit" class="fuck">거부</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script>
+    let btn1 = document.querySelectorAll('.c_btn01');
+    let btn2 = document.querySelector('.c_btn02');
+    let modal = document.querySelector('.c_modal_wrap');
+    for(let i=0; i<btn1.length;i++){
+      btn1[i].addEventListener("click",()=>{modal.style.display="block"});
+    }
+    btn2.addEventListener("click",()=>{modal.style.display="none"});
+  </script>
+</body>
+</html>
