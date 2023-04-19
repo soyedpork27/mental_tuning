@@ -21,7 +21,7 @@ include './db_con.php';
           <li class="nav-open">
             <a href="#none"><img src="../images/icon_class.png" alt="클래스 관리">클래스 관리</a>
             <ul class="nav-lv2">
-              <li><a href="./class_open.html" title="">클래스 신청내역</a></li>
+              <li><a href="./class_open.php" title="">클래스 신청내역</a></li>
               <li><a href="../kw/class_list.php">클래스 개설목록</a></li>
             </ul>
           </li>
