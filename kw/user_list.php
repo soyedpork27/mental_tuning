@@ -3,8 +3,36 @@
   include_once('./db_con.php');
   include_once('./config.php');
 
-  $query_list = "SELECT * FROM member  ORDER BY code desc limit 10";
+
+  $sql = "SELECT * FROM member";
+  // $row_num = mysqli_num_rows($sql); // 게시판 총 레코드 수
+
+  $result_member_row = mysqli_query($con, $sql);
+  $row_num = mysqli_num_rows($result_member_row); // 게시판 총 레코드 수
+
+
+  // var_dump ($sql);
+  // var_dump ($row_num);
+
+  // die;
+
+  $list_num = 10; //한 페이지에 보여질 데이터 수
+  $page_num = 5; //한 블럭에 보여질 데이터 수
+
+  $page = isset($_GET["page"]) ? $_GET["page"] : 1; //현재 페이지
+  $now_block = ceil($page / $page_num); //현재 블럭 번호 = 현재 페이지 번호 / 블럭 당 페이지 수
+  $s_pageNum = ($now_block - 1) * $page_num + 1; //블럭 당 시작 페이지 번호 = (해당 글 블럭 번호 - 1) * 블럭 당 페이지 수 + 1
+
+  $start = ($page - 1) * $list_num; //시작 번호 = (현재 페이지 번호 - 1) * 페이지 당 보여질 데이터 수 
+  $total_page = ceil($row_num / $list_num);  //전체 페이지 수 =  전체데이터 / 페이지 당 데이터 개수
+
+  $numberof = ceil( $row_num / $list_num );
+
+
+
+  $query_list = "SELECT * FROM member  ORDER BY code desc limit $start, $list_num";
   $result_list = mysqli_query($con, $query_list);
+
 
 ?>
 
@@ -140,161 +168,58 @@
                   <td class="btn"><a href="../woogi/user_list_detail.php?no=<?=$row['code']?>" title="회원상세정보보기" class="list_edit_btn">관리</a></td>
                 </tr>
                 <?php
-              }
-              ?>
+                }
+                ?>
               </tbody>
-    
-              <!-- <tbody> -->
-                  <!--
-                    데이터 입력할 때 사용 
-                    <tr>
-                      <td><input type="checkbox" class="checkselect"></td>
-                      <td><</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td class="btn"><a href="#" title=""></a></td>
-                    </tr> -->
-
-                  <!-- <tr>
-                      <td><input type="checkbox" class="checkselect"></td>
-                      <td>1</td>
-                      <td>홍길동</td>
-                      <td>mail@naver.com</td>
-                      <td>00.00.00</td>
-                      <td>M</td>
-                      <td>어학, 재테크</td>
-                      <td>0</td>
-                      <td>0</td>
-                      <td class="btn"><a href="#" title="">관리</a></td>
-                  </tr>
-
-                  <tr>
-                      <td><input type="checkbox" class="checkselect"></td>
-                      <td>2</td>
-                      <td>홍길동</td>
-                      <td>mail@naver.com</td>
-                      <td>00.00.00</td>
-                      <td>M</td>
-                      <td>어학, 재테크</td>
-                      <td>0</td>
-                      <td>0</td>
-                      <td class="btn"><a href="#" title="">관리</a></td>
-                  </tr>
-
-                  <tr>
-                    <td><input type="checkbox" class="checkselect"></td>
-                    <td>3</td>
-                    <td>홍길동</td>
-                    <td>mail@naver.com</td>
-                    <td>00.00.00</td>
-                    <td>M</td>
-                    <td>어학, 재테크</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td class="btn"><a href="#" title="">관리</a></td>
-                  </tr> 
-
-                  <tr>
-                    <td><input type="checkbox" class="checkselect"></td>
-                    <td>4</td>
-                    <td>홍길동</td>
-                    <td>mail@naver.com</td>
-                    <td>00.00.00</td>
-                    <td>M</td>
-                    <td>어학, 재테크</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td class="btn"><a href="#" title="">관리</a></td>
-                  </tr>
-
-                  <tr>
-                    <td><input type="checkbox" class="checkselect"></td>
-                    <td>5</td>
-                    <td>홍길동</td>
-                    <td>mail@naver.com</td>
-                    <td>00.00.00</td>
-                    <td>M</td>
-                    <td>어학, 재테크</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td class="btn"><a href="#" title="">관리</a></td>
-                  </tr>
-
-                  <tr>
-                    <td><input type="checkbox" class="checkselect"></td>
-                    <td>6</td>
-                    <td>홍길동</td>
-                    <td>mail@naver.com</td>
-                    <td>00.00.00</td>
-                    <td>M</td>
-                    <td>어학, 재테크</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td class="btn"><a href="#" title="">관리</a></td>
-                  </tr>
-
-                  <tr>
-                    <td><input type="checkbox" class="checkselect"></td>
-                    <td>7</td>
-                    <td>홍길동</td>
-                    <td>mail@naver.com</td>
-                    <td>00.00.00</td>
-                    <td>M</td>
-                    <td>어학, 재테크</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td class="btn"><a href="#" title="">관리</a></td>
-                  </tr>
-
-                  <tr>
-                    <td><input type="checkbox" class="checkselect"></td>
-                    <td>8</td>
-                    <td>홍길동</td>
-                    <td>mail@naver.com</td>
-                    <td>00.00.00</td>
-                    <td>M</td>
-                    <td>어학, 재테크</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td class="btn"><a href="#" title="">관리</a></td>
-                  </tr>
-
-                  <tr>
-                    <td><input type="checkbox" class="checkselect"></td>
-                    <td>9</td>
-                    <td>홍길동</td>
-                    <td>mail@naver.com</td>
-                    <td>00.00.00</td>
-                    <td>M</td>
-                    <td>어학, 재테크</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td class="btn"><a href="#" title="">관리</a></td>
-                  </tr>
-
-                  <tr>
-                    <td><input type="checkbox" class="checkselect"></td>
-                    <td>10</td>
-                    <td>홍길동</td>
-                    <td>mail@naver.com</td>
-                    <td>00.00.00</td>
-                    <td>M</td>
-                    <td>어학, 재테크</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td class="btn"><a href="#" title="">관리</a></td>
-                  </tr> -->
-              <!-- </tbody> -->
     
               <tfoot>
               </tfoot>
             </table>
+
+            <!-- 이전 버튼 -->
             <ul class="pagination">
+              <?php
+                if($page <= 1){ //현재 페이지가 1보다 작거나 같으면
+              ?> 
+              <a href="user_list.php?page=1"><i class="fa fa-angle-left"></i></a>
+              <?php
+              }
+              else{ 
+              ?>
+              <a href="user_list.php?page=<?php echo($page-1);?>"><i class="fa fa-angle-left"></i></a>
+              <?php 
+              };
+              ?>
+
+              <!-- 페이지 넘버 -->
+              <?php
+                for($print_page = 1; $print_page <= $numberof; $print_page++){
+                  // echo $s_pageNum;
+                  // var_dump($s_pageNum);
+                  // die;
+              ?>
+              <li class="page_num"><a href="user_list.php?page=<?php echo $print_page;?>" class="">
+                <?=$print_page?>
+              </a></li>
+              <?php
+              };
+              ?>
+
+              <!-- 다음 버튼 -->
+              <?php
+              if($page >= $total_page){
+              ?>
+              <a href="user_list.php?page=<?php echo $total_page; ?>"><i class="fa fa-angle-right"></i></a>
+              <?php
+              }else{
+              ?>
+              <a href="user_list.php?page=<?php echo ($page+1); ?>"><i class="fa fa-angle-right"></i></a>
+              <?php
+              };
+              ?>
+            </div>
+
+            <!-- <ul class="pagination">
               <li><a href="#" title=""><i class="fa fa-angle-left"></i></a></li>
               <li><a href="#" title="" class="on">1</a></li>
               <li><a href="#" title="">2</a></li>
@@ -302,7 +227,7 @@
               <li><a href="#" title="">4</a></li>
               <li><a href="#" title="">5</a></li>
               <li><a href="#" title=""><i class="fa fa-angle-right"></i></a></li>
-            </ul>
+            </ul> -->
           </article>
         </form>
       </section>
@@ -316,6 +241,16 @@
           if($(".check_all").is(":checked")) $("input[class=checkselect]").prop("checked", true);
           else $("input[class=checkselect]").prop("checked", false);
       });
+
+
+      $('li.page_num > a:first-child').addClass('on'); 
+
+      $("li.page_num > a").click(function(){
+        console.log(this);
+        removeclass();
+        $(this).addclass('on');
+      })
+
     });
 </script>
 
