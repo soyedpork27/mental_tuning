@@ -29,7 +29,7 @@ include './config.php';
   else $g_interest = $row01['interest'];
 
 
-  $sql2 = "UPDATE member SET name='$g_name', email='$g_email', phone='$g_phone', job='$g_job' interest='$g_interest' where code='$num'";
+  $sql2 = "UPDATE member SET name='$g_name', email='$g_email', phone='$g_phone', job='$g_job', interest='$g_interest' where code='$num'";
 
   
 
