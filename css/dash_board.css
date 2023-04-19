@@ -156,6 +156,19 @@ main {
   margin : 0 32px 32px 0;
 }
 
+/* 캘린더 감싸는 박스 */
+.ctnt_box03 {
+  width : 634px;
+  height : 612px;
+  background-color : #BBC2FF;
+  border-radius : 15px;
+  padding : 16px;
+  box-sizing : border-box;
+  margin : 0 32px 32px 0;
+}
+
+
+
 .art-title{
   font-size : var(--f-size02);
   font-weight : bold;
@@ -254,6 +267,19 @@ thead th {
   height : 198px;
 }
 
+.color002 {
+  background-color : #FFD4D1;
+}
+
+
+.color003 {
+  background-color: #E1BBFF;
+}
+
+.color004 {
+  background-color : #D7FAFF;
+}
+
 
 
 
@@ -347,13 +373,16 @@ thead th {
   justify-content: center;
   width: calc(100% / 7);
   text-align: left;
-  color: #999;
+  color: rgb(0, 0, 0);
   font-size: 12px;
   text-align: center;
   border-radius:5px
 }
 
-.current.today {background: rgb(242 242 242);}
+.current.today {
+  background: rgb(255, 148, 48);
+  border-radius : 45px;
+}
 
 .sec_cal .cal_wrap .dates {
   display: flex;
@@ -362,11 +391,11 @@ thead th {
 }
 
 .sec_cal .cal_wrap .day:nth-child(7n -1) {
-  color: #3c6ffa;
+  color: #245dfa;
 }
 
 .sec_cal .cal_wrap .day:nth-child(7n) {
-  color: #ed2a61;
+  color: #ff0000;
 }
 
 .sec_cal .cal_wrap .day.disable {
