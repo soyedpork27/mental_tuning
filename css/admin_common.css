@@ -145,7 +145,7 @@ main{
   background-color: #f2f2f2;
   flex: 1 1 auto;
   padding: 50px 3.67%;
-  overflow-x : hidden;
+  /* overflow-x : hidden; */
 }
 section > h2{
   font-size: 28px;
