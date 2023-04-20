@@ -11,6 +11,9 @@
   $row_num = mysqli_num_rows($result_member_row); // 게시판 총 레코드 수
 
 
+  //get으로 받은 컬럼변수
+  $order = $_GET['order'];
+
   // var_dump ($sql);
   // var_dump ($row_num);
 
@@ -30,7 +33,17 @@
 
 
 
-  $query_list = "SELECT * FROM member  ORDER BY code desc limit $start, $list_num";
+  if(!$order){
+    $query_list = "SELECT * FROM member  ORDER BY code desc limit $start, $list_num";
+  }
+  else{
+    $query_list = "SELECT * FROM member  ORDER BY $order asc limit $start, $list_num";
+  }
+
+
+
+
+
   $result_list = mysqli_query($con, $query_list);
 
 
@@ -61,6 +74,24 @@
   
 </head>
 <body>
+
+<script>
+    let b;
+    $(document).ready(function(){
+
+      $('i.fa-angle-down').click(function(){
+          $(this).css("rotate", "180deg");
+          b = $(this).attr("id");
+          console.log(b);
+          location.href="user_list.php?order="+b;
+        });
+    });
+</script>
+
+<?php
+//  $id_col = "<script>document.write(b);</script>";
+?>
+
   <div class="t_wrap">
     <div class="left_box">
       &nbsp;
@@ -110,7 +141,7 @@
           </a>
         </h2>
 
-        <form name="" method="" action="">
+        <form name="" method="" action="user_list.php">
           <fieldset class="searchbox">
               <legend class="hidden">회원 정보 검색</legend>
               <label for="filter"><img src="../images/fillter.png" alt="필터 아이콘"></label>
@@ -138,13 +169,13 @@
                   <tr>
                       <th><input type="checkbox" class="check_all"></th>
                       <th>No</th>
-                      <th>이름<i class="fa fa-angle-down"></i></th>
-                      <th>이메일<i class="fa fa-angle-down"></i></th>
-                      <th>생년월일<i class="fa fa-angle-down"></i></th>
-                      <th>성별<i class="fa fa-angle-down"></i></th>
-                      <th>관심분야<i class="fa fa-angle-down"></i></th>
-                      <th>수강강좌<i class="fa fa-angle-down"></i></th>
-                      <th>개설강좌<i class="fa fa-angle-down"></i></th>
+                      <th>이름<i class="fa fa-angle-down" id="name" name="name"></i></th>
+                      <th>이메일<i class="fa fa-angle-down" id="email" name="email"></i></th>
+                      <th>생년월일<i class="fa fa-angle-down" id="bitrh"></i></th>
+                      <th>성별<i class="fa fa-angle-down" id="gender"></i></th>
+                      <th>관심분야<i class="fa fa-angle-down" id="interest"></i></th>
+                      <th>수강강좌<i class="fa fa-angle-down" id="apply_class"></i></th>
+                      <th>개설강좌<i class="fa fa-angle-down" id="open_class"></i></th>
                       <th>&nbsp;</th>
                   </tr>
               </thead>
@@ -175,6 +206,11 @@
               <tfoot>
               </tfoot>
             </table>
+
+            <?php
+              var_dump ($id_col);
+              
+            ?>
 
             <ul class="pagination">
               <!-- 이전 버튼 -->
@@ -244,10 +280,14 @@
 
   <script>
 	$(document).ready(function(){
+
     	$(".check_all").click(function() {
-          if($(".check_all").is(":checked")) $("input[class=checkselect]").prop("checked", true);
-          else $("input[class=checkselect]").prop("checked", false);
+          if($(".check_all").is(":checked")) {$("input[class=checkselect]").prop("checked", true);}
+          else {$("input[class=checkselect]").prop("checked", false);}
       });
+
+    
+
 
 
       // $('li.page_num > a:first-child').addClass('on'); 
