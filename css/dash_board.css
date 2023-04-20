@@ -116,7 +116,9 @@ main {
 }
 
 #tab01-ctnt02 {
+  width : 100%;
   padding : 80px 0;
+  justify-content : space-between;
 }
 
 .text-margin01 {
@@ -284,6 +286,7 @@ thead th {
 .class_img{
   width : 298px;
   height : 198px;
+  border-radius : 15px;
 }
 
 .color002 {
