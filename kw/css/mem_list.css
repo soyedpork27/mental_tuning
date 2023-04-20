@@ -76,6 +76,7 @@ table thead tr th{
 
 i.fa-angle-down {
   margin-left: 5px;
+  cursor : pointer;
 }
 
 table tbody tr td{
