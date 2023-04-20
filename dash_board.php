@@ -220,7 +220,8 @@
               <dl class="ctnt_box02 color002">
                 <dt class="ctnt_head">
                   <h3 class="art-title mem-man-title">
-                    <a href="./kw/user_list.php" title="">회원 관리</a>  
+                    <a href="./kw/user_list.php" title="">회원 관리</a>
+                    <a href="./kw/user_list.php" title=""></a>
                   </h3>
                 </dt>
                 <dd>
