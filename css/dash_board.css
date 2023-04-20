@@ -44,7 +44,7 @@ main {
 
 
 .ctnt_box01 {
-  width : 1300px;
+  width : 100%;
   height : 460px;
   padding : 32px;
   background-color : #fff;
@@ -67,7 +67,7 @@ main {
 .tab_text{
   cursor : pointer;
   color : #888;
-  font-size : var(--f-size02);
+  font-size : var(--f-size03);
   position : relative; 
   z-index : 3;
 
@@ -78,9 +78,6 @@ main {
   font-weight : bold;
 }
 
-.tab01_btn {
-  
-}
 
 .tab01_btn:first-child {
   margin-right : 32px;
@@ -146,39 +143,50 @@ main {
   margin-bottom : 32px;
 }
 
+
+.ctnt_head {
+  height : 65px;
+  line-height : 65px;
+  border-bottom : 1px solid #D8D8D8;
+  text-indent : 32px;
+}
+
+.ctnt_head a {
+  line-height : 65px;
+}
+
+
 .ctnt_box02 {
-  width : 634px;
-  height : 290px;
+  width : 832px;
+  height : 339px;
   /* background-color : #BBC2FF; */
   border-radius : 15px;
-  padding : 16px;
-  box-sizing : border-box;
   margin : 0 32px 32px 0;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* 캘린더 감싸는 박스 */
 .ctnt_box03 {
-  width : 634px;
-  height : 612px;
+  width : 640px;
+  height : 710px;
   /* background-color : #BBC2FF; */
   border-radius : 15px;
   padding : 16px;
   box-sizing : border-box;
-  margin : 0 32px 32px 0;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 
 
 .art-title{
-  font-size : var(--f-size02);
+  font-size : var(--f-size03);
   font-weight : bold;
 }
 
 .sect-ctnt02 {
-  width : 1332px;
+  width : 100%;
   flex-wrap : wrap;
+  justify-content: space-between;
 }
 
 .manage_title {
@@ -211,6 +219,7 @@ main {
 .u_table-title{
   font-weight : bold;
   font-size : var(--f-size03);
+  margin-top : 20px;
   margin-bottom : 10px;
   text-align : start;
   text-indent : 10px;
@@ -239,26 +248,29 @@ thead th {
   background-color: #D8D8D8;
 }
 
-.u_table tr th, .u_table tr td {
-  line-height : 25px;
+.u_table tr th {
+  line-height : 40px;
   text-align: center;
+  font-weight :bold;
 }
 
-.utable td {
+.u_table tr td {
+  line-height : 36px;
+  text-align: center;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
 
 .u_table tr th:nth-child(2), .u_table tr td:nth-child(2) {
-  width : 100px;
+  width : 130px;
 }
 .u_table tr th:last-child, .u_table tr td:last-child {
-  padding : 0 6px;
+  width : 130px;
 }
 
 .u_table tr th:first-child, .u_table tr td:first-child {
-  width : 62px;
+  width : 100px;
 }
 
 
@@ -303,8 +315,9 @@ thead th {
 /* 대쉬보드 캘린더 css */
 
 .sec_cal {
-  width: 360px;
-  margin: 0 auto;
+  width: 574px;
+  height : 460px;
+  margin: 85px auto 0 auto;
   font-family: "NotoSansR";
 }
 
@@ -394,8 +407,10 @@ thead th {
 }
 
 .current.today {
-  background: rgb(255, 148, 48);
+  background: var(--m-color);
   border-radius : 45px;
+  color : #fff !important;
+  font-weight : bold;
 }
 
 .sec_cal .cal_wrap .dates {

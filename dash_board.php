@@ -216,86 +216,101 @@
         </article>
         <div class="t_wrap sect-ctnt02">
           <div class="">
-            <article class="ctnt_box02 color002">
-              <h3 class="art-title mem-man-title">회원 관리</h3>
-  
-              <div class="t_wrap table_wrap">
-  
-                <div class="">
-                  <table class="member_table u_table">
-                    <caption class="u_table-title">신규 회원</caption>
-  
-                    <thead class="u_table-head">
-                      <tr>
-                        <th>이름</th>
-                        <th>관심분야</th>
-                        <th>수강 강좌 수</th>
-                      </tr>
-                    </thead>
-  
-                    <tbody class="u_table-body">
-                      <?php
-                      // 멤버 테이블에서 유저 레벨이 0,4 가 아닌 유저들을 뒤에서부터 4 개 불러온다
-                      $sql_member = "select * from member where level !=4 and level !=0 order by code desc limit 4";
-                      $result_member = mysqli_query($con, $sql_member);
-                      while($row_member = mysqli_fetch_assoc($result_member)){
-                      ?>
-                        <tr>
-                          <td><?=$row_member['name']?></td>
-                          <td><?=$row_member['interest']?></td>
-                          <td><?=$row_member['apply_class']?></td>
-                        </tr>
-                      <?php
-                      }
-                      ?>
-                    </tbody>
-  
-                  </table>
-  
-                </div>
-                
-  
-                <div>
-                  <table class="tutor_table u_table">
-                    <caption class="u_table-title">신규 강사</caption>
-  
-                    <thead class="u_table-head">
-                      <tr>
-                        <th>이름</th>
-                        <th>직업</th>
-                        <th>개설 강좌 수</th>
-                      </tr>
-                    </thead>
-  
-                    <tbody class="u_table-body">
-                    <?php
-  
-                      $sql_tutor = "select * from member where level=3 order by code desc limit 4 ";
-                      $result_tutor = mysqli_query($con, $sql_tutor);
-                      while($row_tutor = mysqli_fetch_assoc($result_tutor)){
-                      ?>
-                        <tr>
-                          <td><?=$row_tutor['name']?></td>
-                          <td><?=$row_tutor['job']?></td>
-                          <td><?=$row_tutor['open_class']?></td>
-                        </tr>
-                      <?php
-                      }
-                      ?>
-                    </tbody>
+            <article class="">
+              <dl class="ctnt_box02 color002">
+                <dt class="ctnt_head">
+                  <h3 class="art-title mem-man-title">
+                    <a href="./kw/user_list.php" title="">회원 관리</a>  
+                  </h3>
+                </dt>
+                <dd>
+                  <div class="t_wrap table_wrap">
+      
+                    <div class="">
+                      <table class="member_table u_table">
+                        <caption class="u_table-title">신규 회원</caption>
+      
+                        <thead class="u_table-head">
+                          <tr>
+                            <th>이름</th>
+                            <th>관심분야</th>
+                            <th>수강 강좌 수</th>
+                          </tr>
+                        </thead>
+      
+                        <tbody class="u_table-body">
+                          <?php
+                          // 멤버 테이블에서 유저 레벨이 0,4 가 아닌 유저들을 뒤에서부터 4 개 불러온다
+                          $sql_member = "select * from member where level !=4 and level !=0 order by code desc limit 4";
+                          $result_member = mysqli_query($con, $sql_member);
+                          while($row_member = mysqli_fetch_assoc($result_member)){
+                          ?>
+                            <tr>
+                              <td><?=$row_member['name']?></td>
+                              <td><?=$row_member['interest']?></td>
+                              <td><?=$row_member['apply_class']?></td>
+                            </tr>
+                          <?php
+                          }
+                          ?>
+                        </tbody>
+      
+                      </table>
+      
+                    </div>
                     
-                  </table>
-  
-                </div>
-  
-              </div>
-  
-  
+      
+                    <div>
+                      <table class="tutor_table u_table">
+                        <caption class="u_table-title">신규 강사</caption>
+      
+                        <thead class="u_table-head">
+                          <tr>
+                            <th>이름</th>
+                            <th>직업</th>
+                            <th>개설 강좌 수</th>
+                          </tr>
+                        </thead>
+      
+                        <tbody class="u_table-body">
+                        <?php
+      
+                          $sql_tutor = "select * from member where level=3 order by code desc limit 4 ";
+                          $result_tutor = mysqli_query($con, $sql_tutor);
+                          while($row_tutor = mysqli_fetch_assoc($result_tutor)){
+                          ?>
+                            <tr>
+                              <td><?=$row_tutor['name']?></td>
+                              <td><?=$row_tutor['job']?></td>
+                              <td><?=$row_tutor['open_class']?></td>
+                            </tr>
+                          <?php
+                          }
+                          ?>
+                        </tbody>
+                        
+                      </table>
+      
+                    </div>
+      
+                  </div>
+                </dd>
+              </dl>
             </article>
     
             <article class="ctnt_box02 color003">
-              <h3 class="art-title">신규 회원 가입 현황</h3>
-              
+            <dl class="ctnt_box02 color002">
+                <dt class="ctnt_head">
+                  <h3 class="art-title mem-man-title">
+                    <a href="./kw/user_list.php" title="">신규 회원 가입 현황</a>  
+                  </h3>
+                </dt>
+                <dd>
+                  
+                </dd>
+              </dl>
+
+
             </article>
   
           </div>
