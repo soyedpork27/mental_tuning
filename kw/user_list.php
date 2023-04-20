@@ -14,6 +14,11 @@
   //get으로 받은 컬럼변수
   $order = $_GET['order'];
 
+
+  // post로 받은 검색어 변수
+  $search = $_POST['search'];
+  $filter = $_POST['filter'];
+
   // var_dump ($sql);
   // var_dump ($row_num);
 
@@ -38,6 +43,18 @@
   }
   else{
     $query_list = "SELECT * FROM member  ORDER BY $order asc limit $start, $list_num";
+  }
+
+  if($search){
+    $query_list = "select * from member where $filter like &'$search'&";
+  }
+  else{
+    if(!$order){
+      $query_list = "SELECT * FROM member  ORDER BY code desc limit $start, $list_num";
+    }
+    else{
+      $query_list = "SELECT * FROM member  ORDER BY $order asc limit $start, $list_num";
+    }
   }
 
 
@@ -141,24 +158,25 @@
           </a>
         </h2>
 
-        <form name="" method="" action="user_list.php">
+        <form name="search_form" method="post" action="user_list.php">
           <fieldset class="searchbox">
               <legend class="hidden">회원 정보 검색</legend>
               <label for="filter"><img src="../images/fillter.png" alt="필터 아이콘"></label>
-              <select name="searchfilter" id="searchfilter" class="filter">
+              <select name="searchfilter" id="filter" class="filter" name="filter">
                 <option value="검색할 항목을 선택하세요">검색할 항목을 선택하세요</option>
-                <option value="이름">이름</option>
-                <option value="이메일">이메일</option>
-                <option value="생년월일">생년월일</option>
-                <option value="성별">성별</option>
-                <option value="성별">성별</option>
-                <option value="성별">성별</option>
-                <option value="성별">성별</option>
-                <option value="성별">성별</option>
-                <option value="성별">성별</option>
+                <option value="name">이름</option>
+                <option value="email">이메일</option>
+                <option value="birth">생년월일</option>
+                <option value="gender">성별</option>
+                <option value="phone">전화번호</option>
+                <option value="interest">관심분야</option>
+                <option value="apply_class">수강강좌</option>
+                <option value="open_class">개설강좌</option>
+                <option value="job">직업</option>
               </select>
-              <label for="search"><img src="../images/research.png" alt="검색 아이콘"></label>
-              <input type="search" placeholder="검색어를 입력하세요" class="search">
+              <label for="search" class="hide">검색</label>
+              <input type="search" placeholder="검색어를 입력하세요" class="search" id="search" name="search">
+              <button type="submit" class="search_btn"><img src="../images/research.png" alt="검색 버튼"></button>
           </fieldset>
 
           <article id="mem_list_table">

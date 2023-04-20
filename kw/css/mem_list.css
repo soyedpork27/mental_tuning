@@ -5,6 +5,28 @@ a{
 }
 
 
+
+
+
+
+/* 검색 영역 서식 시작 */
+
+.search_btn {
+  background : none;
+  border : none;
+  width : 28px;
+  height : 28px;
+  text-align : center;
+}
+
+
+.search_btn img {
+  width : 24px;
+  height : 24px;
+  padding : 2px;
+}
+
+
 .searchbox {
   width: 100%;
   display: flex;

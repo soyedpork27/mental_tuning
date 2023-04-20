@@ -193,7 +193,7 @@
 
                   while($row_count = mysqli_fetch_assoc($result_count)){
                 ?>
-                  <li class="t-01_ctntimg"><a href="#none" title="클래스 관리 바로가기" class="tab01-class_img"><img src="<?=$row_count['class_img']?>" alt="클래스 사진" class="class_img"></a>
+                  <li class="t-01_ctntimg"><a href="#none" title="클래스 관리 바로가기" class="tab01-class_img"><img src="./images/<?=$row_count['class_img']?>" alt="클래스 사진" class="class_img"></a>
                   <p class="tab01-ctnt_date text-margin01">
                       <span class="gray"><?=$row_count['open_date']?></span>
                   </p>
