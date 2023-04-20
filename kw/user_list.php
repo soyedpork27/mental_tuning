@@ -207,10 +207,7 @@
               </tfoot>
             </table>
 
-            <?php
-              var_dump ($id_col);
-              
-            ?>
+
 
             <ul class="pagination">
               <!-- 이전 버튼 -->
