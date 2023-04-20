@@ -73,18 +73,35 @@
 
             <div class="user-wrap-top">
               <div class="profile-flex">
+
+              <?php
+                if(!$tutor_row){
+              ?>
                 <div class="user-profile">
                   <div class="profile-circle">
                     <img src="./images/user_profile.png" alt="일반회원 프로필사진">
                   </div>
                   <p class="profile-name"><?=$row['name']?></p>
                 </div>
-                <div class="tutor-profile">
+              <?php
+                }else{
+              ?>
+              <div class="user-profile">
                   <div class="profile-circle">
-                    <img src="./images/user_profile.png" alt="강사회원 프로필사진">
+                      <img src="./images/user_profile.png" alt="일반회원 프로필사진">
+                  </div>
+                  <p class="profile-name"><?=$row['name']?></p>
+              </div>
+              <div class="tutor-profile">
+                  <div class="profile-circle">
+                      <img src="./images/user_profile.png" alt="강사회원 프로필사진">
                   </div>
                   <p class="profile-name"><?=$tutor_row['tutor_name']?></p>
-                </div>
+              </div>
+              <?php
+                }
+              ?>
+
             <!-- 프로필 테이블 -->
               <div class="profile-table-wrap">
                 <table class="profile-table">
@@ -95,12 +112,27 @@
                   <col width="30%">
                   </colgroup>
                   <tbody>
+
+                  <?php
+                    if(!$tutor_row){
+                  ?>
+                    <tr>
+                      <td>이름</td>
+                      <td><?=$row['name']?></td>
+                    </tr>
+                  <?php
+                    }else{   
+                  ?>
                     <tr>
                       <td>이름</td>
                       <td><?=$row['name']?></td>
                       <td>강사명</td>
                       <td><?=$tutor_row['tutor_name']?></td>
                     </tr>
+                  <?php
+                    }
+                  ?>
+
                     <tr>
                       <td>생년월일</td>
                       <td><?=$row['birth']?></td>
@@ -136,11 +168,30 @@
             <div class="user-wrap-bottom">
               
             <?php
-              $query_class_list = "SELECT * FROM class_list";
-              $result_class_list = mysqli_query($con, $query_class_list);
+
+              $query_apply_list =
+              "SELECT class_list.class_img, class_list.tutor_name, class_apply.class_name, class_apply.class_date, class_apply.class_term
+              FROM class_apply
+              LEFT JOIN member
+              ON member.code=class_apply.mem_code
+              LEFT JOIN class_list
+              ON class_list.code = class_apply.class_code
+              WHERE member.code = $num";
+
+              $result_apply_list = mysqli_query($con, $query_apply_list);
+
+
+              $query_create_list = 
+              "SELECT class_list.class_img, class_list.class_name, class_list.tutor_name, class_list.open_date, class_list.class_term
+              FROM class_list
+              LEFT JOIN member
+              ON member.code=class_list.tutor_code
+              WHERE member.code = $num";
               
-              $result_class_list2 = mysqli_query($con, $query_class_list);
+              $result_create_list = mysqli_query($con, $query_create_list);
+
             ?>
+
 
               <!-- 탭메뉴 목록 -->
               <ul class="profile-tabmenu">
@@ -150,9 +201,20 @@
 
               <div id="menu1" class="tabcon t-on">  <!-- 탭메뉴 1 :: 수강중인 클래스 -->
                 <ul>
+
                   <?php
-                  while($row = mysqli_fetch_array($result_class_list)) {
+                  while($row = mysqli_fetch_array($result_apply_list)) {
+                  
+                  // 수강중인 강좌 디데이 계산
+                  if(!$row['class_term']){
+                    //아무런 반응 없음
+                  }else{
+                    $to_date = date("Y-m-d", time());
+                    $end_date = $row['class_term'];
+                    $d_day = intval((strtotime($end_date) - strtotime($to_date)) / 86400);
+                  }
                   ?>
+
                   <li>
                     <a href="#none">
                       <div class="img_overflow">
@@ -160,8 +222,8 @@
                       </div>
                     </a>
                     <div class="class-desc">
-                      <span>D-28</span>
-                      <span><?=substr($row['open_date'], 0, 10)?> &#126; <?=$row['class_term']?></span>
+                      <span>D-<?=$d_day?></span>
+                      <span><?=substr($row['class_date'], 0, 10)?> &#126; <?=$row['class_term']?></span>
                       <p>
                         <a href="#none"><?=$row['class_name']?></a>
                       </p>
@@ -176,18 +238,29 @@
 
               <div id="menu2" class="tabcon">  <!-- 탭메뉴 2 :: 개설한 클래스 -->
                 <ul>
+
                   <?php
-                  while($row = mysqli_fetch_array($result_class_list2)) {
+                  while($row = mysqli_fetch_array($result_create_list)) {
+                  
+                  // 개설한 강좌 디데이 계산
+                  if(!$row['class_term']){
+                    //아무런 반응 없음
+                  }else{
+                    $to_date2 = date("Y-m-d", time());
+                    $end_date2 = $row['class_term'];
+                    $d_day2 = intval((strtotime($end_date2) - strtotime($to_date2)) / 86400);
+                  }
                   ?>
+
                   <li>
                     <a href="#none">
                       <div class="img_overflow">
-                        <img src="./images/class_thum.jpg" alt="">
+                        <img src="./images/<?=$row['class_img']?>" alt="">
                       </div>
                     </a>
                     <div class="class-desc">
-                      <span>D-28</span>
-                      <span>2023.04.10 - 2023.05.10</span>
+                      <span>D-<?=$d_day2?></span>
+                      <span><?=substr($row['open_date'], 0, 10)?> &#126; <?=$row['class_term']?></span>
                       <p>
                         <a href="#none"><?=$row['class_name']?></a>
                       </p>
@@ -208,11 +281,11 @@
           <h3 class="profile-title">회원 문의내역<a href="#none"><span>3</span></a></h3>
             <table class="qna-table">
               <colgroup>
-                <col width="15%">
-                <col width="35%">
-                <col width="17.5%">
-                <col width="17.5%">
-                <col width="15%">
+                <col style="width:15%">
+                <col style="width:35%">
+                <col style="width:17.5%">
+                <col style="width:17.5%">
+                <col style="width:15%">
               </colgroup>
               <thead>
                 <tr>

@@ -28,7 +28,6 @@ section h2 a:nth-child(2) {
 }
 
 .user-info{
-  padding-bottom: 50px;
   margin-bottom: 50px;
   position: relative;
 }
@@ -150,10 +149,16 @@ section h2 a:nth-child(2) {
 
 .tabcon ul {
   margin-top: 32px;
-  margin-bottom: 20px;
   justify-content: left;
   gap: 12px;
   display: flex;
+  flex-wrap: wrap;
+}
+
+
+.tabcon ul li {
+  width: 24%;
+  margin-bottom: 24px;
 }
 
 .t-on {
@@ -185,11 +190,6 @@ section h2 a:nth-child(2) {
 }
 
 
-
-.tabcon ul li {
-  width: 25%;
-}
-
 .class-desc {
   margin-top: 16px;
 }
@@ -199,7 +199,7 @@ section h2 a:nth-child(2) {
   padding: 4px 16px;
   color: #fff;
   border-radius: 3px;
-  margin-right: 8px;
+  margin-right: 6px;
 }
 
 .class-desc span:last-of-type {
