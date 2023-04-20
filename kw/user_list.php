@@ -19,7 +19,7 @@
   $list_num = 10; //한 페이지에 보여질 데이터 수
   $page_num = 5; //한 블럭에 보여질 데이터 수
 
-  $page = isset($_GET["page"]) ? $_GET["page"] : 1; //현재 페이지
+  $page = isset($_GET['page']) ? $_GET['page'] : 1; //현재 페이지
   $now_block = ceil($page / $page_num); //현재 블럭 번호 = 현재 페이지 번호 / 블럭 당 페이지 수
   $s_pageNum = ($now_block - 1) * $page_num + 1; //블럭 당 시작 페이지 번호 = (해당 글 블럭 번호 - 1) * 블럭 당 페이지 수 + 1
 
@@ -176,8 +176,8 @@
               </tfoot>
             </table>
 
-            <!-- 이전 버튼 -->
             <ul class="pagination">
+              <!-- 이전 버튼 -->
               <?php
                 if($page <= 1){ //현재 페이지가 1보다 작거나 같으면
               ?> 
@@ -197,12 +197,20 @@
                   // echo $s_pageNum;
                   // var_dump($s_pageNum);
                   // die;
-              ?>
-              <li class="page_num"><a href="user_list.php?page=<?php echo $print_page;?>" class="">
-                <?=$print_page?>
-              </a></li>
-              <?php
-              };
+              
+                  if($page == $print_page){ //만약 page가 $print_page와 같다면 
+                  // var_dump($_GET["page"]."/". $print_page."/". $page);
+                  // die;
+
+                  echo ("<li class='page_num'><a href='user_list.php?page=$print_page' class='on'>
+                    $print_page
+                  </a></li>"); //현재 페이지에 해당하는 번호에 클래스 적용
+                  }else{
+                  echo ("<li class='page_num'><a href='user_list.php?page=$print_page' class=''>
+                    $print_page
+                  </a></li>"); //아니라면 클래스 없음
+                  }
+                };
               ?>
 
               <!-- 다음 버튼 -->
@@ -233,9 +241,8 @@
       </section>
     </main>
   </div>
-</body>
 
-<script>
+  <script>
 	$(document).ready(function(){
     	$(".check_all").click(function() {
           if($(".check_all").is(":checked")) $("input[class=checkselect]").prop("checked", true);
@@ -243,15 +250,15 @@
       });
 
 
-      $('li.page_num > a:first-child').addClass('on'); 
+      // $('li.page_num > a:first-child').addClass('on'); 
 
-      $("li.page_num > a").click(function(){
-        console.log(this);
-        removeclass();
-        $(this).addclass('on');
-      })
+      // $("li.page_num > a").click(function(){
+      //   console.log(this);
+      //   removeclass();
+      //   $(this).addclass('on');
+      // })
 
     });
 </script>
-
+</body>
 </html>
