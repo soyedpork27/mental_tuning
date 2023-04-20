@@ -19,6 +19,8 @@
 
 ?>
 
+<!-- php 출력문을 찾기 위해 ( php 출력 ) 을 검색해주세요 -->
+
 
 
 
@@ -34,11 +36,13 @@
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/admin_common.css">
 
+  <!-- 부트스트랩 연결 -->
+  <!-- <link rel="stylesheet" href="./css/bootstrap.css"> -->
+
+
 
   <!-- 대시보드 css 서식 -->
   <link rel="stylesheet" href="./css/dash_board.css">
-
-  
   
   <!-- 폰트어썸 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
@@ -94,8 +98,18 @@
                     <img src="./images/dash_alarm01.png" alt="">
                   </a>
                   <figcaption class="alarm_title">
-                    <a href="./hyun/class_open.html" title="">
-                      신규 개설 신청
+                    <a href="./hyun/class_open.php" title="">
+                      개설신청
+                    </a>
+                    <!-- php 출력 -->
+                    <!-- 건 수 출력하기 -->
+                    <?php
+                    $sql_open = "select * from class_open";
+                    $result_open = mysqli_query($con,$sql_open);
+                    $row_open = mysqli_num_rows($result_open);
+                    ?>
+                    <a href="./hyun/class_open.php" title="" class="number_of_data">
+                      <span class="number_many"><?=$row_open?></span>건
                     </a>
                   </figcaption>
                 </figure>
@@ -106,7 +120,17 @@
                   </a>
                   <figcaption class="alarm_title">
                     <a href="#none" title="">
-                      Q&#38;A
+                      고객문의
+                    </a>
+                    <!-- php 출력 -->
+                    <!-- 건 수 출력하기 -->
+                    <?php
+                    $sql_qna = "select * from qna";
+                    $result_qna = mysqli_query($con,$sql_qna);
+                    $row_qna = mysqli_num_rows($result_qna);
+                    ?>
+                    <a href="./hyun/class_open.php" title="" class="number_of_data">
+                      <span class="number_many"><?=$row_qna?></span>건
                     </a>
                   </figcaption>
                 </figure>
@@ -117,7 +141,17 @@
                   </a>
                   <figcaption class="alarm_title">
                     <a href="#none" title="">
-                      신고 글
+                      게시글 신고
+                    </a>
+                    <!-- php 출력 -->
+                    <!-- 건 수 출력하기 -->
+                    <?php
+                    $sql_open = "select * from class_open";
+                    $result_open = mysqli_query($con,$sql_open);
+                    $row_open = mysqli_num_rows($result_open);
+                    ?>
+                    <a href="./hyun/class_open.php" title="" class="number_of_data">
+                      <span class="number_many"><?=$row_open?></span>건
                     </a>
                   </figcaption>
                 </figure>
@@ -129,6 +163,16 @@
                   <figcaption class="alarm_title">
                     <a href="#none" title="">
                       환불 요청
+                    </a>
+                    <!-- php 출력 -->
+                    <!-- 건 수 출력하기 -->
+                    <?php
+                    $sql_open = "select * from class_open";
+                    $result_open = mysqli_query($con,$sql_open);
+                    $row_open = mysqli_num_rows($result_open);
+                    ?>
+                    <a href="./hyun/class_open.php" title="" class="number_of_data">
+                      <span class="number_many"><?=$row_open?></span>건
                     </a>
                   </figcaption>
                 </figure>
@@ -175,13 +219,10 @@
             <article class="ctnt_box02 color002">
               <h3 class="art-title mem-man-title">회원 관리</h3>
   
-  
-  
-  
               <div class="t_wrap table_wrap">
   
                 <div class="">
-                  <table class="mem_table u_table">
+                  <table class="member_table u_table">
                     <caption class="u_table-title">신규 회원</caption>
   
                     <thead class="u_table-head">
