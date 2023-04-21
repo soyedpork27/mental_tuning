@@ -63,10 +63,10 @@
 
   <!-- 프로그래스 바 시작 -->
   <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="jQuery-plugin-progressbar.css">
+	<link rel="stylesheet" href="./css/jQuery-plugin-progressbar.css">
 
   <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-	<script src="jQuery-plugin-progressbar.js" defer></script>
+	<script src="jQuery-plugin-progressbar.js"></script>
 
 </head>
 <body>
@@ -316,8 +316,8 @@
                 </dt>
                 <dd class="pro-bar_box">
                   <!-- 추가한 영역 시작 -->
-                <div class="progress-bar position" data-percent="60" data-duration="1000" data-color="#ccc,yellow">&nbsp;</div>
-                <div class="progress-bar position" data-percent="60" data-duration="1000" data-color="#ccc,yellow">&nbsp;</div>
+                <div class="progress-bar position" data-percent="60" data-duration="1000" data-color="#ccc,yellow"></div>
+                <div class="progress-bar position" data-percent="60" data-duration="1000" data-color="#ccc,yellow"></div>
                   <!-- 추가한 영역 끝 -->
                 </dd>
               </dl>
