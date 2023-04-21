@@ -30,8 +30,11 @@ include './config.php';
   if($_POST['interest'])   $g_interest = $_POST['interest'];
   else $g_interest = $row01['interest'];
 
+  if($_POST['sms_agree'])   $g_sms_agree = $_POST['sms_agree'];
+  else $g_sms_agree = $row01['sms_agree'];
 
-  $sql2 = "UPDATE member SET name='$g_name', email='$g_email', phone='$g_phone', job='$g_job', interest='$g_interest' where code='$num'";
+
+  $sql2 = "UPDATE member SET name='$g_name', email='$g_email', phone='$g_phone', job='$g_job', interest='$g_interest', sms_agree='$g_sms_agree' where code='$num'";
 
   
 
@@ -46,8 +49,8 @@ include './config.php';
 
   echo("
   <script>
-    alert('정보 수정이 완료되었습니다.');
-    location.href='../kw/user_list.php';
+    alert('회원정보 수정이 완료되었습니다.');
+    location.href='../woogi/user_list_detail.php?no=$num';
   </script>
 ");
 

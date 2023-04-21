@@ -79,7 +79,7 @@
               ?>
                 <div class="user-profile">
                   <div class="profile-circle">
-                    <img src="./images/user_profile.png" alt="일반회원 프로필사진">
+                    <img src="./images/<?=$row['profile']?>" alt="일반회원 프로필사진">
                   </div>
                   <p class="profile-name"><?=$row['name']?></p>
                 </div>
@@ -88,13 +88,13 @@
               ?>
               <div class="user-profile">
                   <div class="profile-circle">
-                      <img src="./images/user_profile.png" alt="일반회원 프로필사진">
+                      <img src="./images/<?=$row['profile']?>" alt="일반회원 프로필사진">
                   </div>
                   <p class="profile-name"><?=$row['name']?></p>
               </div>
               <div class="tutor-profile">
                   <div class="profile-circle">
-                      <img src="./images/user_profile.png" alt="강사회원 프로필사진">
+                      <img src="./images/<?=$row['profile']?>" alt="강사회원 프로필사진">
                   </div>
                   <p class="profile-name"><?=$tutor_row['tutor_name']?></p>
               </div>
