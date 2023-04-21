@@ -4,63 +4,88 @@
   include_once('./config.php');
 
 
-  $sql = "SELECT * FROM member";
-  // $row_num = mysqli_num_rows($sql); // 게시판 총 레코드 수
-
-  $result_member_row = mysqli_query($con, $sql);
-  $row_num = mysqli_num_rows($result_member_row); // 게시판 총 레코드 수
-
-
-  //get으로 받은 컬럼변수
-  $order = $_GET['order'];
-
-
-  // post로 받은 검색어 변수
-  $search = $_POST['search'];
-  $filter = $_POST['filter'];
-
-  // var_dump ($sql);
-  // var_dump ($row_num);
-
-  // die;
-
+  // 페이지네이션 01 시작
   $list_num = 10; //한 페이지에 보여질 데이터 수
   $page_num = 5; //한 블럭에 보여질 데이터 수
 
   $page = isset($_GET['page']) ? $_GET['page'] : 1; //현재 페이지
-  $now_block = ceil($page / $page_num); //현재 블럭 번호 = 현재 페이지 번호 / 블럭 당 페이지 수
-  $s_pageNum = ($now_block - 1) * $page_num + 1; //블럭 당 시작 페이지 번호 = (해당 글 블럭 번호 - 1) * 블럭 당 페이지 수 + 1
 
   $start = ($page - 1) * $list_num; //시작 번호 = (현재 페이지 번호 - 1) * 페이지 당 보여질 데이터 수 
-  $total_page = ceil($row_num / $list_num);  //전체 페이지 수 =  전체데이터 / 페이지 당 데이터 개수
 
-  $numberof = ceil( $row_num / $list_num );
+  // 페이지네이션 01 끝
+  
 
+  // get으로 받은 컬럼변수
+  $order = $_GET['order'];
 
+  // post로 받은 검색어 변수
+  $search = $_REQUEST['search'];
 
-  if(!$order){
-    $query_list = "SELECT * FROM member  ORDER BY code desc limit $start, $list_num";
+  // post로 받은 항목 변수
+  if(($_REQUEST['filter'] == 'null')){
+  }else {
+    $filter = $_REQUEST['filter'];
   }
-  else{
-    $query_list = "SELECT * FROM member  ORDER BY $order asc limit $start, $list_num";
-  }
 
-  if($search){
-    $query_list = "select * from member where $filter like &'$search'&";
-  }
-  else{
-    if(!$order){
+  // 기본 쿼리문
+  $query_list = "SELECT * FROM member  ORDER BY code desc limit $start, $list_num";
+
+
+   // 검색어가 있다면
+  if(isset($search)){
+    // 검색어는 있지만 검색 항목 선택을 하지 않았다면
+    if(!isset($filter)){
+      echo ("<script>
+            alert('검색 할 항목을 선택해주세요.');
+            </script>");
+      // 코드를 기준으로 출력한다.(기본 쿼리문)
       $query_list = "SELECT * FROM member  ORDER BY code desc limit $start, $list_num";
+    }else{
+      // 검색어가 있고 검색항목을 선택 했다면
+      $query_list = "select * from member where $filter like '%$search%' ORDER BY code desc limit $start, $list_num";
+      // 검색을 성공한 상태에서 컬럼을 클릭해 정렬할 경우
+      if(isset($order)){
+        $query_list = "select * from member where $filter like '%$search%' ORDER BY $order desc limit $start, $list_num";
+      }
     }
-    else{
+  }else{
+    // 검색어가 없는 경우
+
+    // 클릭 정렬을 하지 않는 경우
+    if(!isset($order)){
+    }else {
+      // 클릭 정렬을 하는 경우
       $query_list = "SELECT * FROM member  ORDER BY $order asc limit $start, $list_num";
     }
   }
 
 
 
+  // $row_num = mysqli_num_rows($sql); // 게시판 총 레코드 수
+
+  $result_member_row = mysqli_query($con, $query_list);
+  $row_num = mysqli_num_rows($result_member_row); // 게시판 총 레코드 수
 
 
+
+
+
+
+  // 페이지 네이션 02 시작
+
+  $now_block = ceil($page / $page_num); //현재 블럭 번호 = 현재 페이지 번호 / 블럭 당 페이지 수
+  $s_pageNum = ($now_block - 1) * $page_num + 1; //블럭 당 시작 페이지 번호 = (해당 글 블럭 번호 - 1) * 블럭 당 페이지 수 + 1
+
+
+  $total_page = ceil($row_num / $list_num);  //전체 페이지 수 =  전체데이터 / 페이지 당 데이터 개수
+
+  $numberof = ceil( $row_num / $list_num );
+
+  // 페이지 네이션 02 끝
+
+
+
+  // 기본, 검색, 정렬 쿼리문을 실행한다
   $result_list = mysqli_query($con, $query_list);
 
 
@@ -97,10 +122,21 @@
     $(document).ready(function(){
 
       $('i.fa-angle-down').click(function(){
+        alert('클릭');
           $(this).css("rotate", "180deg");
           b = $(this).attr("id");
           console.log(b);
-          location.href="user_list.php?order="+b;
+          <?php
+            if(isset($search)){
+              ?>
+              location.href="user_list.php?order="+b+"&search=<?=$search?>&filter=<?=$filter?>";
+              <?php
+            }else {
+              ?>
+              location.href="user_list.php?order="+b;
+              <?php
+            }
+            ?>
         });
     });
 </script>
@@ -162,8 +198,8 @@
           <fieldset class="searchbox">
               <legend class="hidden">회원 정보 검색</legend>
               <label for="filter"><img src="../images/fillter.png" alt="필터 아이콘"></label>
-              <select name="searchfilter" id="filter" class="filter" name="filter">
-                <option value="검색할 항목을 선택하세요">검색할 항목을 선택하세요</option>
+              <select id="filter" class="filter" name="filter">
+                <option value="null">검색할 항목을 선택하세요</option>
                 <option value="name">이름</option>
                 <option value="email">이메일</option>
                 <option value="birth">생년월일</option>
@@ -174,7 +210,7 @@
                 <option value="open_class">개설강좌</option>
                 <option value="job">직업</option>
               </select>
-              <label for="search" class="hide">검색</label>
+              <label for="search" class="hidden">검색</label>
               <input type="search" placeholder="검색어를 입력하세요" class="search" id="search" name="search">
               <button type="submit" class="search_btn"><img src="../images/research.png" alt="검색 버튼"></button>
           </fieldset>
@@ -189,7 +225,7 @@
                       <th>No</th>
                       <th>이름<i class="fa fa-angle-down" id="name" name="name"></i></th>
                       <th>이메일<i class="fa fa-angle-down" id="email" name="email"></i></th>
-                      <th>생년월일<i class="fa fa-angle-down" id="bitrh"></i></th>
+                      <th>생년월일<i class="fa fa-angle-down" id="birth"></i></th>
                       <th>성별<i class="fa fa-angle-down" id="gender"></i></th>
                       <th>관심분야<i class="fa fa-angle-down" id="interest"></i></th>
                       <th>수강강좌<i class="fa fa-angle-down" id="apply_class"></i></th>
