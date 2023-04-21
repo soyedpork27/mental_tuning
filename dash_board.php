@@ -59,6 +59,15 @@
 
   <script src="./script/calendar.js" defer></script>
 
+
+
+  <!-- 프로그래스 바 시작 -->
+  <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="jQuery-plugin-progressbar.css">
+
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="jQuery-plugin-progressbar.js" defer></script>
+
 </head>
 <body>
   <div class="t_wrap">
@@ -221,7 +230,6 @@
                 <dt class="ctnt_head">
                   <h3 class="art-title mem-man-title">
                     <a href="./kw/user_list.php" title="">회원 관리</a>
-                    <a href="./kw/user_list.php" title=""></a>
                   </h3>
                 </dt>
                 <dd>
@@ -307,9 +315,36 @@
                   </h3>
                 </dt>
                 <dd>
-                  
+                  <!-- 추가한 영역 시작 -->
+                <div class="progress-bar position" data-percent="60" data-duration="1000" data-color="#ccc,yellow"></div>
+                <div class="progress-bar position" data-percent="60" data-duration="1000" data-color="#ccc,yellow"></div>
+                  <!-- 추가한 영역 끝 -->
                 </dd>
               </dl>
+
+              <!-- 추가한 영역 시작 -->
+              <script>
+		            $(".progress-bar").loading();
+		            $('input').on('click', function () {
+			            $(".progress-bar").loading();
+		            });
+	            </script>
+	            <script type="text/javascript">
+		            var _gaq = _gaq || [];
+		            _gaq.push(['_setAccount', 'UA-36251023-1']);
+		            _gaq.push(['_setDomainName', 'jqueryscript.net']);
+		            _gaq.push(['_trackPageview']);
+
+		            (function () {
+			            var ga = document.createElement('script');
+			            ga.type = 'text/javascript';
+			            ga.async = true;
+			            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			            var s = document.getElementsByTagName('script')[0];
+			            s.parentNode.insertBefore(ga, s);
+		            })();
+	            </script>
+              <!-- 추가한 영역 끝 -->
 
 
             </article>

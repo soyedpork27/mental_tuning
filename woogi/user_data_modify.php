@@ -36,6 +36,7 @@ $row = mysqli_fetch_array($result);
 
   <!-- user_list_detail 서식 -->
   <link rel="stylesheet" href="./css/user_list_detail.css" type="text/css">
+  
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
   <script src="../script/header.js" defer></script>
