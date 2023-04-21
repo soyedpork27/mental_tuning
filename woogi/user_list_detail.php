@@ -193,10 +193,26 @@
             ?>
 
 
+              <?php
+
+              // 수강중인 클래스 숫자 카운팅
+              $sql_num01 = "select mem_code from class_apply where mem_code = '$num'";
+              $result_num01 = mysqli_query($con,$sql_num01);
+              $row_num01 = mysqli_num_rows($result_num01);
+            
+              // 개설한 클래스 숫자 카운팅
+              $sql_num02 = "select tutor_code from class_list where tutor_code = '$num'";
+              $result_num02 = mysqli_query($con,$sql_num02);
+              $row_num02 = mysqli_num_rows($result_num02);
+
+
+              ?>
+
+
               <!-- 탭메뉴 목록 -->
               <ul class="profile-tabmenu">
-                <li class="tab-on" data-tab="menu1"><a href="#none" class="tab-on2">수강중인 클래스<span class="tab-on3">4</span></a></li>
-                <li data-tab="menu2"><a href="#none">개설한 클래스<span>3</span></a></li>
+                <li class="tab-on" data-tab="menu1"><a href="#none" class="tab-on2">수강중인 클래스<span class="tab-on3"><?=$row_num01?></span></a></li>
+                <li data-tab="menu2"><a href="#none">개설한 클래스<span><?=$row_num02?></span></a></li>
               </ul>
 
               <div id="menu1" class="tabcon t-on">  <!-- 탭메뉴 1 :: 수강중인 클래스 -->
