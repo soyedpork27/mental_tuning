@@ -106,10 +106,10 @@
               <div class="profile-table-wrap">
                 <table class="profile-table">
                   <colgroup>
-                  <col width="20%">
-                  <col width="30%">
-                  <col width="20%">
-                  <col width="30%">
+                  <col style="width:15%">
+                  <col style="width:35%">
+                  <col style="width:15%">
+                  <col style="width:35%">
                   </colgroup>
                   <tbody>
 
