@@ -29,6 +29,7 @@
 
   // 기본 쿼리문
   $query_list = "SELECT * FROM member  ORDER BY code desc limit $start, $list_num";
+  $query_numof = "SELECT * FROM member  ORDER BY code desc";
 
 
    // 검색어가 있다면
@@ -40,12 +41,15 @@
             </script>");
       // 코드를 기준으로 출력한다.(기본 쿼리문)
       $query_list = "SELECT * FROM member  ORDER BY code desc limit $start, $list_num";
+      $query_numof = "SELECT * FROM member  ORDER BY code desc";
     }else{
       // 검색어가 있고 검색항목을 선택 했다면
       $query_list = "select * from member where $filter like '%$search%' ORDER BY code desc limit $start, $list_num";
+      $query_numof = "select * from member where $filter like '%$search%'";
       // 검색을 성공한 상태에서 컬럼을 클릭해 정렬할 경우
       if(isset($order)){
         $query_list = "select * from member where $filter like '%$search%' ORDER BY $order desc limit $start, $list_num";
+        $query_numof = "select * from member where $filter like '%$search%' ORDER BY $order desc";
       }
     }
   }else{
@@ -56,6 +60,7 @@
     }else {
       // 클릭 정렬을 하는 경우
       $query_list = "SELECT * FROM member  ORDER BY $order asc limit $start, $list_num";
+      $query_numof = "SELECT * FROM member  ORDER BY $order asc";
     }
   }
 
@@ -63,9 +68,8 @@
 
   // $row_num = mysqli_num_rows($sql); // 게시판 총 레코드 수
 
-  $result_member_row = mysqli_query($con, $query_list);
+  $result_member_row = mysqli_query($con, $query_numof);
   $row_num = mysqli_num_rows($result_member_row); // 게시판 총 레코드 수
-
 
 
 
@@ -82,6 +86,7 @@
   $numberof = ceil( $row_num / $list_num );
 
   // 페이지 네이션 02 끝
+
 
 
 
@@ -122,7 +127,6 @@
     $(document).ready(function(){
 
       $('i.fa-angle-down').click(function(){
-        alert('클릭');
           $(this).css("rotate", "180deg");
           b = $(this).attr("id");
           console.log(b);
@@ -281,6 +285,10 @@
               <!-- 페이지 넘버 -->
               <?php
                 for($print_page = 1; $print_page <= $numberof; $print_page++){
+                  // echo($page);
+                  // var_dump($page);
+                  // echo $numberof;
+                  // var_dump($numberof);
                   // echo $s_pageNum;
                   // var_dump($s_pageNum);
                   // die;

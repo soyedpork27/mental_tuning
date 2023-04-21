@@ -314,10 +314,10 @@
                     <a href="./kw/user_list.php" title="">신규 회원 가입 현황</a>  
                   </h3>
                 </dt>
-                <dd>
+                <dd class="pro-bar_box">
                   <!-- 추가한 영역 시작 -->
-                <div class="progress-bar position" data-percent="60" data-duration="1000" data-color="#ccc,yellow"></div>
-                <div class="progress-bar position" data-percent="60" data-duration="1000" data-color="#ccc,yellow"></div>
+                <div class="progress-bar position" data-percent="60" data-duration="1000" data-color="#ccc,yellow">&nbsp;</div>
+                <div class="progress-bar position" data-percent="60" data-duration="1000" data-color="#ccc,yellow">&nbsp;</div>
                   <!-- 추가한 영역 끝 -->
                 </dd>
               </dl>
@@ -346,9 +346,8 @@
 	            </script>
               <!-- 추가한 영역 끝 -->
 
-
             </article>
-  
+
           </div>
           
           <!-- 캘린더 아티클 -->
