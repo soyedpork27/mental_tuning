@@ -320,7 +320,7 @@
               <?php
               };
               ?>
-            </div>
+            </ul>
 
             <!-- <ul class="pagination">
               <li><a href="#" title=""><i class="fa fa-angle-left"></i></a></li>
